@@ -1,0 +1,32 @@
+"*":
+  editor:
+    showInvisibles: true
+    tabLength: 4
+    invisibles: {}
+  "exception-reporting":
+    userId: "656cfad2-26f2-2bcd-9061-f272d7c96527"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "f40d6ed2e4ced3d965ce60cc13a1bd62929ae147"
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+    audioBeep: false
+  linter:
+    subtleLinterErrors: [
+      "jshint"
+    ]
+    showErrorPanel: false
+  "sass-watch": {}
+  docblockr: {}
+  autoprefixer: {}
+  minimap: {}
+  "linter-jshint": {}
+  "linter-eslint":
+    useGlobalEslint: true
+  "markdown-preview":
+    useGitHubStyle: true
+  emmet: {}

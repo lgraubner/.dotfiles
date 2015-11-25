@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+# Updates things.
+
+source scripts/utils.sh
+
+echo ''
+
+if [ $(which brew) ]
+then
+    running "Updating Homebrew"
+    echo ''
+
+    brew update
+    echo ''
+
+    success "Homebrew updated"
+    echo ''
+
+    running "Upgrading formulaes"
+    echo ''
+
+    brew upgrade --all
+
+    echo ''
+    success "Formulaes upgraded"
+fi
+
+echo ''
+echo 'Updates completed!'

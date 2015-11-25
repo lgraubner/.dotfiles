@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+# bootstrap installs things.
+
+
+source scripts/utils.sh
+
+echo ''
+
+# set ZSH as default shell
+if [ -z "$ZSH_VERSION" ]
+then
+    chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    success "Default shell set to ZSH"
+fi
+
+# install dotfiles
+
+# setup git
+if ! [ -f git/gitconfig.symlink ]
+then
+    echo ''
+    running 'Setting up gitconfig'
+    echo ''
+
+    git_credential='cache'
+    if [ "$(uname -s)" == "Darwin" ]
+    then
+      git_credential='osxkeychain'
+    fi
+
+    read -p 'Author Name: ' git_authorname
+    read -p 'Author E-Mail: ' git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.symlink.example > git/gitconfig.symlink
+
+    echo ''
+    success 'gitconfig created'
+fi
+
+echo ''
+echo 'Finished!'
