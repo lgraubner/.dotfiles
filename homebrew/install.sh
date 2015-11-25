@@ -18,12 +18,10 @@ then
   # Install the correct homebrew for each OS type
   if [ "$(uname)" = "Darwin" ]
   then
-    echo 'a'
-    #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]
   then
-    echo 'b'
-    #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
 
   echo ''

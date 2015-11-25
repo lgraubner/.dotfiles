@@ -41,13 +41,17 @@ fi
 
 # install dotfiles
 echo ''
-info 'installing dotfiles'
+running 'installing dotfiles'
 echo ''
 
-# @TODO: fix space in path
-for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
+find -H "$DOTFILES_ROOT" -maxdepth 2 -iname "*.symlink" | while read src
 do
     dst="$HOME/.$(basename "${src%.*}")"
+    # TODO: check, backup, overwrite?
+    if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+    then
+        #ln -s "$src" "$dst"
+    fi
 done
 
 
