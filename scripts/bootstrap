@@ -2,15 +2,16 @@
 #
 # bootstrap installs things.
 
+DOTFILES_ROOT=$(pwd -P)
 
-source scripts/utils.sh
+source "$DOTFILES_ROOT"/scripts/utils.sh
 
 echo ''
 
 # set ZSH as default shell
 if [ -z "$ZSH_VERSION" ]
 then
-    chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    #chsh -s $(grep /zsh$ /etc/shells | tail -1)
     success "Default shell set to ZSH"
 fi
 
@@ -32,11 +33,23 @@ then
     read -p 'Author Name: ' git_authorname
     read -p 'Author E-Mail: ' git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.symlink.example > git/gitconfig.symlink
+    #sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES_ROOT"/git/gitconfig.symlink.example > "$DOTFILES_ROOT"/git/gitconfig.symlink
 
     echo ''
     success 'gitconfig created'
 fi
+
+# install dotfiles
+echo ''
+info 'installing dotfiles'
+echo ''
+
+# @TODO: fix space in path
+for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
+do
+    dst="$HOME/.$(basename "${src%.*}")"
+done
+
 
 echo ''
 echo 'Finished!'
