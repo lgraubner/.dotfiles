@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+source scripts/utils.sh
+
+update() {
+    echo ''
+
+    if [ $(which brew) ]; then
+        _running "Updating Homebrew"
+        echo ''
+
+        brew update
+        echo ''
+
+        _success "Homebrew updated"
+
+        _running "Upgrading formulaes"
+        echo ''
+
+        brew upgrade --all
+
+        echo ''
+        _success "Formulaes upgraded"
+    fi
+
+    echo ''
+    echo 'Updates completed!'
+}
+
+upgrade() {
+    echo ''
+    _running "Upgrading dotfiles"
+    echo ''
+
+    git checkout master
+    git pull origin master
+    echo ''
+
+    _success "dotfiles upgraded"
+    echo ''
+    echo 'Finished!'
+}
+
+case $1 in
+    update)
+        update
+        ;;
+    upgrade)
+        upgrade
+        ;;
+    *)
+        echo $"Usage: $0 {upgrade|update}"
+        exit 1
+esac
