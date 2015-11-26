@@ -38,7 +38,7 @@ upgrade() {
     _running "Upgrading dotfiles"
     echo ''
 
-    cd $DOTFILES
+    cd ~/.dotfiles
 
     git checkout master
     git pull origin master
