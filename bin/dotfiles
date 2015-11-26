@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $DOTFILES/scripts/utils.sh
+source ~/.dotfiles/scripts/utils.sh
 
 update() {
     echo ''
