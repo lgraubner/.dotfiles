@@ -6,11 +6,12 @@
 
 source ~/.dotfiles/scripts/utils.sh
 
-# Check for NPM
+# Check if NPM is installed
 if [ ! $(which npm) ]; then
   _running "Updating NPM"
   echo ''
 
+  # update NPM
   npm install -g npm
 
   echo ''

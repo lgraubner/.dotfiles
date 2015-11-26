@@ -2,8 +2,7 @@
 #
 # bootstrap installs things.
 
-dot="~/.dotfiles"
-source $dot/scripts/utils.sh
+source ~/.dotfiles/scripts/utils.sh
 
 echo ''
 
@@ -33,7 +32,7 @@ if ! [ -f git/gitconfig.symlink ]; then
     read -p 'Author Name: ' git_authorname
     read -p 'Author E-Mail: ' git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" $dot/git/gitconfig.symlink.example > $dot/git/gitconfig.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" ~/.dotfiles/git/gitconfig.symlink.example > ~/.dotfiles/git/gitconfig.symlink
 
     echo ''
     _success 'gitconfig created'
