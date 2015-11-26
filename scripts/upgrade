@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# Upgrade dotfiles by pulling git changes.
+
+source scripts/utils.sh
+
+echo ''
+_running "Upgrading dotfiles"
+echo ''
+
+git pull https://github.com/lgraubner/dotfiles.git
+echo ''
+
+_success "dotfiles upgraded"
+echo ''
+echo 'Finished!'
