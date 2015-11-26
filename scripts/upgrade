@@ -8,7 +8,8 @@ echo ''
 _running "Upgrading dotfiles"
 echo ''
 
-git pull https://github.com/lgraubner/dotfiles.git
+git checkout master
+git pull origin master
 echo ''
 
 _success "dotfiles upgraded"
