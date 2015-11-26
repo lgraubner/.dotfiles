@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source scripts/utils.sh
+source $ZSH/scripts/utils.sh
 
 update() {
     echo ''

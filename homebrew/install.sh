@@ -5,7 +5,7 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-source scripts/utils.sh
+source $ZSH/scripts/utils.sh
 
 # Check for Homebrew
 if [ ! $(which brew) ]; then
