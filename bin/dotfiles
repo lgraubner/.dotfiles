@@ -13,7 +13,6 @@ update() {
         echo ''
 
         _success "Homebrew updated"
-
         _running "Upgrading formulaes"
         echo ''
 
@@ -21,6 +20,13 @@ update() {
 
         echo ''
         _success "Formulaes upgraded"
+        _running "Clean up old versions"
+
+        brew cleanup
+
+        echo''
+        _success "Finished cleanup"
+
     fi
 
     echo ''
