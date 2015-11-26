@@ -18,8 +18,14 @@ scripts/install
 scripts/bootstrap
 ```
 
-To update things you can run:
+To update things you can now run:
 
 ```bash
-scripts/update
+dotfiles update
+```
+
+You can also upgrade your dotfiles:
+
+```bash
+dotfiles upgrade
 ```
