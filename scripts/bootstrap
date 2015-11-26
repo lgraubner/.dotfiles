@@ -10,7 +10,12 @@ echo ''
 
 # set ZSH as default shell
 if [ -z "$ZSH_VERSION" ]; then
+    _running "Setting default shell to ZSH"
+    echo ''
+
     chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    echo ''
+
     _success "Default shell set to ZSH"
 fi
 
@@ -36,7 +41,6 @@ if ! [ -f git/gitconfig.symlink ]; then
 fi
 
 # log in to npm
-echo ''
 read -p 'Log in to NPM? [y/n] ' npm_login
 echo ''
 if [ "$npm_login" == "y" ]; then
