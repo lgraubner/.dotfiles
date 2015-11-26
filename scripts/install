@@ -2,7 +2,7 @@
 #
 # Run all dotfiles installers.
 
-source $ZSH/scripts/utils.sh
+source $HOME/.dotfiles/scripts/utils.sh
 
 echo ''
 
