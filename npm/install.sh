@@ -4,7 +4,7 @@
 #
 # Installs usefull npm packages.
 
-source $HOME/.dotfiles/scripts/utils.sh
+source ~/.dotfiles/scripts/utils.sh
 
 # Check for NPM
 if [ ! $(which npm) ]; then

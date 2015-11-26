@@ -5,7 +5,7 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-source $HOME/.dotfiles/scripts/utils.sh
+source ~/.dotfiles/scripts/utils.sh
 
 # Check for Homebrew
 if [ ! $(which brew) ]; then
@@ -18,6 +18,9 @@ if [ ! $(which brew) ]; then
   elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
+
+  brew doctor
+  brew update
 
   echo ''
   _success "Homebrew installed"

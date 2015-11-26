@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $HOME/.dotfiles/scripts/utils.sh
+source $DOTFILES/scripts/utils.sh
 
 update() {
     echo ''
@@ -37,6 +37,8 @@ upgrade() {
     echo ''
     _running "Upgrading dotfiles"
     echo ''
+
+    cd $DOTFILES
 
     git checkout master
     git pull origin master
