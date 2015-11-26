@@ -2,7 +2,7 @@
 #
 # NPM
 #
-# Installs usefull npm packages.
+# Installs useful npm packages.
 
 source ~/.dotfiles/scripts/utils.sh
 
