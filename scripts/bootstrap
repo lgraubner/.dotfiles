@@ -38,24 +38,6 @@ if ! [ -f git/gitconfig.symlink ]; then
     _success 'gitconfig created'
 fi
 
-# log in to npm
-read -p 'Log in to NPM? [y/n] ' npm_login
-echo ''
-if [ "$npm_login" == "y" ]; then
-    _running "Logging in to NPM"
-    echo ''
-
-    npm login
-    status=$?
-
-    echo ''
-    if [ "$status" -eq 0 ]; then
-        _success "Logged in to NPM successfully"
-    else
-        _error "Login failed"
-    fi
-fi
-
 # install dotfiles
 _running 'Installing dotfiles'
 
