@@ -41,7 +41,7 @@ fi
 # install dotfiles
 _running 'Installing dotfiles'
 
-find -H "~/.dotfiles" -maxdepth 2 -iname "*.symlink" | while read src; do
+find -H "$HOME/.dotfiles" -maxdepth 2 -iname "*.symlink" | while read src; do
     dst="$HOME/.$(basename "${src%.*}")"
     if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
         mv "$dst" "$dst".backup
