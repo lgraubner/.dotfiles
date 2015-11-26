@@ -12,14 +12,14 @@ if [ $(which npm) ]; then
   echo ''
 
   # update NPM
-  npm install -g npm
+  sudo npm install -g npm
 
   echo ''
   _success "Updated NPM successfully"
   _running "Installing dependencies"
 
   echo ''
-  npm install -g bower jshint sitemap-generator
+  sudo npm install -g bower jshint sitemap-generator
   echo ''
 
   _success "Dependencies installed successfully"
