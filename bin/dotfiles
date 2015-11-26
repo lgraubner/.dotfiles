@@ -49,6 +49,6 @@ case $1 in
         upgrade
         ;;
     *)
-        echo $"Usage: $0 {upgrade|update}"
+        echo $"Usage: dotfiles {upgrade|update}"
         exit 1
 esac
