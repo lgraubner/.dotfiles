@@ -7,34 +7,27 @@
 
 source scripts/utils.sh
 
-echo ''
-
 # Check for Homebrew
-if [ ! $(which brew) ]
-then
-  running "Installing Homebrew"
+if [ ! $(which brew) ]; then
+  _running "Installing Homebrew"
   echo ''
 
   # Install the correct homebrew for each OS type
-  if [ "$(uname)" = "Darwin" ]
-  then
+  if [ "$(uname)" = "Darwin" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]
-  then
+  elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
 
   echo ''
-  success "Homebrew installed"
+  _success "Homebrew installed"
 fi
 
 # Install homebrew packages
-running "Installing formulaes"
+_running "Installing Homebrew formulaes"
 echo ''
 brew install grc coreutils spark node
 echo ''
-success "Required formulaes installed"
-
-echo ''
+_success "Required formulaes installed"
 
 exit 0

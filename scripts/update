@@ -6,24 +6,22 @@ source scripts/utils.sh
 
 echo ''
 
-if [ $(which brew) ]
-then
-    running "Updating Homebrew"
+if [ $(which brew) ]; then
+    _running "Updating Homebrew"
     echo ''
 
     brew update
     echo ''
 
-    success "Homebrew updated"
-    echo ''
+    _success "Homebrew updated"
 
-    running "Upgrading formulaes"
+    _running "Upgrading formulaes"
     echo ''
 
     brew upgrade --all
 
     echo ''
-    success "Formulaes upgraded"
+    _success "Formulaes upgraded"
 fi
 
 echo ''

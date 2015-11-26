@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# credit: https://github.com/holman/dotfiles/blob/master/bin/todo
+
+touch ~/Desktop/"$*"

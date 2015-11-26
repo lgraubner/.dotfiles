@@ -8,7 +8,6 @@
         email = AUTHOREMAIL
 [credential]
         helper = GIT_CREDENTIAL_HELPER
-[alias]
 [color]
         diff = auto
         status = auto

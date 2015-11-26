@@ -9,51 +9,64 @@ source "$DOTFILES_ROOT"/scripts/utils.sh
 echo ''
 
 # set ZSH as default shell
-if [ -z "$ZSH_VERSION" ]
-then
-    #chsh -s $(grep /zsh$ /etc/shells | tail -1)
-    success "Default shell set to ZSH"
+if [ -z "$ZSH_VERSION" ]; then
+    chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    _success "Default shell set to ZSH"
 fi
 
 # install dotfiles
 
 # setup git
-if ! [ -f git/gitconfig.symlink ]
-then
-    echo ''
-    running 'Setting up gitconfig'
+if ! [ -f git/gitconfig.symlink ]; then
+    _running 'Setting up gitconfig'
     echo ''
 
     git_credential='cache'
-    if [ "$(uname -s)" == "Darwin" ]
-    then
+    if [ "$(uname -s)" == "Darwin" ]; then
       git_credential='osxkeychain'
     fi
 
     read -p 'Author Name: ' git_authorname
     read -p 'Author E-Mail: ' git_authoremail
 
-    #sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES_ROOT"/git/gitconfig.symlink.example > "$DOTFILES_ROOT"/git/gitconfig.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" "$DOTFILES_ROOT"/git/gitconfig.symlink.example > "$DOTFILES_ROOT"/git/gitconfig.symlink
 
     echo ''
-    success 'gitconfig created'
+    _success 'gitconfig created'
+fi
+
+# log in to npm
+echo ''
+read -p 'Log in to NPM? [y/n] ' npm_login
+echo ''
+if [ "$npm_login" == "y" ]; then
+    _running "Logging in to NPM"
+    echo ''
+
+    npm login
+    status=$?
+
+    echo ''
+    if [ "$status" -eq 0 ]; then
+        _success "Logged in to NPM successfully"
+    else
+        _error "Login failed"
+    fi
 fi
 
 # install dotfiles
-echo ''
-running 'installing dotfiles'
-echo ''
+_running 'Installing dotfiles'
 
-find -H "$DOTFILES_ROOT" -maxdepth 2 -iname "*.symlink" | while read src
-do
+find -H "$DOTFILES_ROOT" -maxdepth 2 -iname "*.symlink" | while read src; do
     dst="$HOME/.$(basename "${src%.*}")"
-    # TODO: check, backup, overwrite?
-    if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-    then
-        #ln -s "$src" "$dst"
+    if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]; then
+        mv "$dst" "$dst".backup
     fi
+    ln -s "$src" "$dst"
+    _success "Linked $src to $dst"
 done
 
+_success 'dotfiles installed'
 
 echo ''
 echo 'Finished!'
