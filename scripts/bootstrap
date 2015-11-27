@@ -4,7 +4,7 @@
 
 source ~/.dotfiles/scripts/utils.sh
 
-backup_dir="~/.dotfiles/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
+backup_dir="$HOME/.dotfiles/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 backup=
 
 echo ''
