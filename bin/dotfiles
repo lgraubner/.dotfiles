@@ -36,6 +36,9 @@ upgrade() {
     git pull origin master
 
     e_success "dotfiles upgraded"
+
+    # reload shell
+    exec /bin/zsh -l
 }
 
 case $1 in
