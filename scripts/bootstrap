@@ -83,7 +83,6 @@ https://github.com/lgraubner/dotfiles
 Copyright (c) 2015 Lars Graubner
 Licensed under the MIT license.
 HELP
-exit; fi
 
 init
 
