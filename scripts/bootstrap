@@ -46,7 +46,6 @@ _link_files() {
         e_arrow "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
     done
 
-    echo $backup
     if [[ "$backup" -eq 1 ]]; then
         echo -e "\nBackups were moved to ${backup_dir/#$HOME/~}"
     fi
