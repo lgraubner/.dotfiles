@@ -31,8 +31,6 @@ _setup_git() {
 _link_files() {
     e_header 'Linking dotfiles'
 
-    backup=0
-
     find -H "$DOTFILES" -maxdepth 2 -iname "*.symlink" | while read src; do
         dst="$HOME/.$(basename "${src%.*}")"
         if [[ -e "$dst" ]]; then
@@ -46,7 +44,7 @@ _link_files() {
         e_arrow "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
     done
 
-    if [[ "$backup" -eq 1 ]]; then
+    if [[ -e $backup_dir ]]; then
         echo -e "\nBackups were moved to ${backup_dir/#$HOME/~}"
     fi
 
