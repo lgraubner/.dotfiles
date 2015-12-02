@@ -75,7 +75,7 @@ init() {
 cat <<HELP
 Dotfiles - Lars Graubner - http://larsgraubner.de
 
-Usage: $(basename "$0") {init|install|update|upgrade}
+Usage: dotfiles {install|update|upgrade}
 
 See the README for documentation.
 https://github.com/lgraubner/dotfiles
