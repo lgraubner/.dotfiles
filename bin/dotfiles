@@ -3,7 +3,7 @@
 if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 Dotfiles - Lars Graubner - http://larsgraubner.de
 
-Usage: $(basename "$0") {init|install|update|upgrade}
+Usage: $(basename "$0") {install|update|upgrade}
 
 See the README for documentation.
 https://github.com/lgraubner/dotfiles
@@ -15,72 +15,7 @@ exit; fi
 
 export DOTFILES=~/.dotfiles
 
-backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
-
 source $DOTFILES/scripts/utils.sh
-
-enable_zsh() {
-    e_header "Setting default shell to ZSH"
-    chsh -s $(grep /zsh$ /etc/shells | tail -1)
-    e_success "Default shell set to ZSH"
-}
-
-setup_git() {
-    e_header 'Setting up gitconfig'
-
-    git_credential='cache'
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-      git_credential='osxkeychain'
-    fi
-
-    read -p 'Author Name: ' git_authorname
-    read -p 'Author E-Mail: ' git_authoremail
-
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
-
-    e_success 'gitconfig created'
-}
-
-link_files() {
-    e_header 'Linking dotfiles'
-
-    backup=0
-
-    find -H "$DOTFILES" -maxdepth 2 -iname "*.symlink" | while read src; do
-        dst="$HOME/.$(basename "${src%.*}")"
-        if [[ -e "$dst" ]]; then
-            e_arrow "Backing up ${dst/#$HOME\//}"
-            backup=1
-
-            [[ -e "$backup_dir" ]] || mkdir -p "$backup_dir"
-            mv "$dst" "$backup_dir"
-        fi
-        ln -s "$src" "$dst"
-        e_arrow "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
-    done
-
-    echo $backup
-    if [[ "$backup" -eq 1 ]]; then
-        echo -e "\nBackups were moved to ${backup_dir/#$HOME/~}"
-    fi
-
-    e_success "dotfiles linked successfully"
-}
-
-init() {
-    # set ZSH as default shell
-    if [[ -z "$ZSH_VERSION" ]]; then
-        enable_zsh
-    fi
-
-    # setup git
-    if [[ ! -e "$DOTFILES/git/gitconfig.symlink" ]]; then
-        setup_git
-    fi
-
-    # link dotfiles
-    link_files
-}
 
 install() {
     # find installers and run them iteratively
@@ -104,9 +39,6 @@ upgrade() {
 }
 
 case $1 in
-    init)
-        init
-        ;;
     install)
         install
         ;;

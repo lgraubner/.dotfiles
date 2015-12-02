@@ -12,13 +12,16 @@ git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles
 
 cd ~/.dotfiles
 
-# install dependencies
-scripts/install
 # bootstrap setup
 scripts/bootstrap
 ```
 
-To update things you can now run:
+To install dependencies use
+```bash
+dotfiles install
+```
+
+Update your dependencies:
 
 ```bash
 dotfiles update
