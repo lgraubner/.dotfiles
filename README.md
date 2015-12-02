@@ -1,6 +1,6 @@
 # .dotfiles
 
-My personal dotfiles, inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles).
+My personal dotfiles, inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) and [Ben Alman's dotfiles](https://github.com/cowboy/dotfiles).
 
 ## Get started
 
@@ -16,44 +16,49 @@ cd ~/.dotfiles
 scripts/bootstrap
 ```
 
-To install dependencies use
+## Contents
+
+
+## Binaries
+
+### dotfiles
+
 ```bash
-dotfiles install
+dotfiles install    # install dependencies
+dotfiles update     # update dependencies
+dotfiles upgrade    # upgrade dotfiles
 ```
 
-Update your dependencies:
+### e
 
 ```bash
-dotfiles update
+e               # open current directory in editor
+e path/to/dir   # open specified dir in editor
 ```
 
-You can also upgrade your dotfiles:
+### extract
 
 ```bash
-dotfiles upgrade
+extract file.zip    # unzip file. Types: tar, bz, dmg, gz, zip, pax and more
+```
+
+### todo
+
+```bash
+todo "this is an todo"      # create an todo file on your desktop
 ```
 
 ## Aliases
 
-This dotfiles offer several aliases for a fast workflow.
+```bash
+# npm
+npm_lg      # npm list --depth=0 -g
+npm_og      # npm outdated --depth=0 -g
 
-### NPM
-
-#### `npm_lg`
-
-List all global instaled packages.
-
-#### `npm_og`
-
-List all outdated global packages.
-
-
-## Functions
-
-### `e [path]`
-
-Open current or specified folder in your editor.
-
-### `todo <description>`
-
-Create a todo file with specified description on the desktop.
+# files
+lsa         # ls -al
+..          # cd ..
+...         # cd ../..
+fs          # stat -f '%z bytes'
+rm_dsstore  # find . -name '*.DS_Store' -type f -ls -delete
+```
