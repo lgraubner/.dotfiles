@@ -1,55 +1,115 @@
 #!/usr/bin/env bash
 
-source ~/.dotfiles/scripts/utils.sh
+if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
+Dotfiles - Lars Graubner - http://larsgraubner.de
 
-update() {
-    echo ''
+Usage: $(basename "$0") {init|install|update|upgrade}
 
-    if [ $(which brew) ]; then
-        _running "Updating Homebrew"
-        echo ''
+See the README for documentation.
+https://github.com/lgraubner/dotfiles
 
-        brew update
-        echo ''
+Copyright (c) 2015 Lars Graubner
+Licensed under the MIT license.
+HELP
+exit; fi
 
-        _success "Homebrew updated"
-        _running "Upgrading formulaes"
-        echo ''
+export DOTFILES=~/.dotfiles
 
-        brew upgrade --all
+backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 
-        echo ''
-        _success "Formulaes upgraded"
-        _running "Clean up old versions"
+source $DOTFILES/scripts/utils.sh
 
-        brew cleanup
+enable_zsh() {
+    e_header "Setting default shell to ZSH"
+    chsh -s $(grep /zsh$ /etc/shells | tail -1)
+    e_success "Default shell set to ZSH"
+}
 
-        echo''
-        _success "Finished cleanup"
+setup_git() {
+    e_header 'Setting up gitconfig'
 
+    git_credential='cache'
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+      git_credential='osxkeychain'
     fi
 
-    echo ''
-    echo 'Updates completed!'
+    read -p 'Author Name: ' git_authorname
+    read -p 'Author E-Mail: ' git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
+
+    e_success 'gitconfig created'
+}
+
+link_files() {
+    e_header 'Linking dotfiles'
+
+    backup=0
+
+    find -H "$DOTFILES" -maxdepth 2 -iname "*.symlink" | while read src; do
+        dst="$HOME/.$(basename "${src%.*}")"
+        if [[ -e "$dst" ]]; then
+            e_arrow "Backing up ${dst/#$HOME\//}"
+            backup=1
+
+            [[ -e "$backup_dir" ]] || mkdir -p "$backup_dir"
+            mv "$dst" "$backup_dir"
+        fi
+        ln -s "$src" "$dst"
+        e_arrow "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
+    done
+
+    echo $backup
+    if [[ "$backup" -eq 1 ]]; then
+        echo -e "\nBackups were moved to ${backup_dir/#$HOME/~}"
+    fi
+
+    e_success "dotfiles linked successfully"
+}
+
+init() {
+    # set ZSH as default shell
+    if [[ -z "$ZSH_VERSION" ]]; then
+        enable_zsh
+    fi
+
+    # setup git
+    if [[ ! -e "$DOTFILES/git/gitconfig.symlink" ]]; then
+        setup_git
+    fi
+
+    # link dotfiles
+    link_files
+}
+
+install() {
+    # find installers and run them iteratively
+    find $DOTFILES -name install.sh | while read installer ; do sh -c "${installer}" ; done
+}
+
+update() {
+    # find updaters and run them iteratively
+    find $DOTFILES -name update.sh | while read updater ; do sh -c "${updater}" ; done
 }
 
 upgrade() {
-    echo ''
-    _running "Upgrading dotfiles"
-    echo ''
+    e_header "Upgrading dotfiles"
 
-    cd ~/.dotfiles
+    cd $DOTFILES
 
     git checkout master
     git pull origin master
-    echo ''
 
-    _success "dotfiles upgraded"
-    echo ''
-    echo 'Finished!'
+    e_success "dotfiles upgraded"
 }
 
 case $1 in
+    init)
+        init
+        ;;
+    install)
+        install
+        ;;
     update)
         update
         ;;
@@ -57,6 +117,7 @@ case $1 in
         upgrade
         ;;
     *)
-        echo $"Usage: dotfiles {upgrade|update}"
         exit 1
 esac
+
+e_header "All done!"

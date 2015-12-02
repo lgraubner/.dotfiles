@@ -5,32 +5,28 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-source ~/.dotfiles/scripts/utils.sh
+source $DOTFILES/scripts/utils.sh
 
 # Check for Homebrew
 if [ ! $(which brew) ]; then
-  _running "Installing Homebrew"
-  echo ''
+  e_header "Installing Homebrew"
 
-  # Install the correct homebrew for each OS type
-  if [ "$(uname)" = "Darwin" ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-  fi
+    # Install the correct homebrew for each OS type
+    if is_osx; then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    fi
 
-  brew doctor
-  brew update
+    brew doctor
+    brew update
 
-  echo ''
-  _success "Homebrew installed"
+    e_success "Homebrew installed"
 fi
 
 # Install homebrew packages
-_running "Installing Homebrew formulaes"
-echo ''
+e_header "Installing Homebrew formulaes"
 brew install grc coreutils spark node
-echo ''
-_success "Required formulaes installed"
+e_success "Required formulaes installed"
 
 exit 0
