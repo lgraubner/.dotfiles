@@ -23,6 +23,8 @@ scripts/bootstrap
 
 ### dotfiles
 
+Manages the dotfiles.
+
 ```bash
 dotfiles install    # install dependencies
 dotfiles update     # update dependencies
@@ -31,6 +33,8 @@ dotfiles upgrade    # upgrade dotfiles
 
 ### e
 
+Quick shortcut to an editor.
+
 ```bash
 e               # open current directory in editor
 e path/to/dir   # open specified dir in editor
@@ -38,11 +42,15 @@ e path/to/dir   # open specified dir in editor
 
 ### extract
 
+Extracts archived files and mounts disk images.
+
 ```bash
 extract file.zip    # unzip file. Types: tar, bz, dmg, gz, zip, pax and more
 ```
 
 ### todo
+
+Creates a todo file on your desktop.
 
 ```bash
 todo "this is an todo"      # create an todo file on your desktop
