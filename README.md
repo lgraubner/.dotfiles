@@ -48,6 +48,14 @@ Extracts archived files and mounts disk images.
 extract file.zip    # unzip file. Types: tar, bz, dmg, gz, zip, pax and more
 ```
 
+### lock
+
+Locks the current screen. Only works on OSX!
+
+```bash
+lock
+```
+
 ### todo
 
 Creates a todo file on your desktop.
