@@ -37,10 +37,7 @@ update() {
 upgrade() {
     e_header "Upgrading dotfiles"
 
-    cd $DOTFILES
-
-    git checkout master
-    git pull origin master
+    ( cd $DOTFILES && git checkout master && git pull origin master )
 
     e_success "dotfiles upgraded"
     e_header "All done!"
