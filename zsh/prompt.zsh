@@ -16,9 +16,9 @@ git_dirty() {
   then
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo " %{$fg_bold[green]%}<git:$(git_prompt_info)$(need_push)>%{$reset_color%}"
+      echo " %{$fg_bold[green]%}<$(git_prompt_info)$(need_push)>%{$reset_color%}"
     else
-      echo " %{$fg_bold[magenta]%}<git:$(git_prompt_info)$(need_push)>%{$reset_color%}"
+      echo " %{$fg_bold[magenta]%}<$(git_prompt_info)$(need_push)>%{$reset_color%}"
     fi
   fi
 }
@@ -42,13 +42,15 @@ need_push () {
 }
 
 directory_name() {
-  #echo "%{$fg_bold[cyan]%}%1/%\%{$reset_color%}"
   path=$(pwd)
   echo "%{$fg_bold[cyan]%}${path/$HOME/~}%{$reset_color%}"
 }
 
-# ›
-export PROMPT=$'$(whoami)@$(hostname -s):$(directory_name)$(git_dirty) $ '
+user_hostname() {
+    echo "$(whoami)@$(hostname -s):"
+}
+
+export PROMPT=$'$(directory_name)$(git_dirty) $ '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
