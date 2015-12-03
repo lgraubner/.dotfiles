@@ -11,8 +11,8 @@
     userId: "f40d6ed2e4ced3d965ce60cc13a1bd62929ae147"
   core:
     themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
+      "one-dark-ui"
+      "one-dark-syntax"
     ]
     audioBeep: false
   linter:

@@ -35,7 +35,6 @@ _link_files() {
         dst="$HOME/.$(basename "${src%.*}")"
         if [[ -e "$dst" ]]; then
             e_arrow "Backing up ${dst/#$HOME\//}"
-            backup=1
 
             [[ -e "$backup_dir" ]] || mkdir -p "$backup_dir"
             mv "$dst" "$backup_dir"
