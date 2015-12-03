@@ -69,4 +69,5 @@ lsa         # ls -al
 ...         # cd ../..
 fs          # stat -f '%z bytes'
 rm_dsstore  # find . -name '*.DS_Store' -type f -ls -delete
+p           # quickly jump to projects folder
 ```

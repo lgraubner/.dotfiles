@@ -18,3 +18,6 @@ alias fs="stat -f '%z bytes'"
 
 # Recursively delete `.DS_Store` files
 alias rm_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+# quick jump to projects folder
+alias p="cd $PROJECTS"
