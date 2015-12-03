@@ -46,11 +46,7 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}${path/$HOME/~}%{$reset_color%}"
 }
 
-user_hostname() {
-    echo "$(whoami)@$(hostname -s):"
-}
-
-export PROMPT=$'$(directory_name)$(git_dirty) $ '
+export PROMPT=$'$(whoami):$(directory_name)$(git_dirty) $ '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
