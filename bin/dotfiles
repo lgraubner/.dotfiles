@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#
+# Manages the dotfiles.
+#
+# USAGE:
+#
+#   $ dotfiles {install|update|upgrade}
+#
 
 if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 Dotfiles - Lars Graubner - http://larsgraubner.de
