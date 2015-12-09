@@ -9,11 +9,8 @@ source $DOTFILES/scripts/utils.sh
 if [ $(which apm) ]; then
     e_header "Updating atom packages"
 
-    for dir in $(find ~/.atom/packages -type d -maxdepth 1 -mindepth 1); do cd "$dir"
-            e_arrow "Updating plugin: $(basename $PWD)"
-            apm upgrade -c false
-    done
-    
+    apm upgrade --confirm=false
+
     e_success "Packages updated successfully"
 fi
 
