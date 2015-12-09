@@ -10,7 +10,7 @@ if [ $(which npm) ]; then
   e_header "Updating global npm packages"
 
   # update NPM
-  sudo npm install -g npm bower jshint sitemap-generator
+  sudo npm update -g
 
   e_success "Updated npm packages successfully"
 fi
