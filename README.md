@@ -18,6 +18,7 @@ scripts/bootstrap
 
 ## Contents
 
+This files include the solarized syntax theme for iTerm2 and can be used in conjunction with the `solarized-dark-syntax` Atom theme.
 
 ## Binaries
 
