@@ -12,7 +12,7 @@
   core:
     themes: [
       "one-dark-ui"
-      "one-dark-syntax"
+      "solarized-dark-syntax"
     ]
     audioBeep: false
   linter:
