@@ -27,29 +27,41 @@ export DOTFILES=~/.dotfiles
 source $DOTFILES/scripts/utils.sh
 
 install() {
-    # find installers and run them iteratively
-    find $DOTFILES -name install.sh | while read installer ; do sh -c "${installer}" ; done
+    if [[ -z "$1" ]]; then
+        # find installers and run them iteratively
+        find $DOTFILES -name install.sh | while read installer ; do sh -c "${installer}" ; done
+    else
+        # find specific installer and run it
+        installer=$DOTFILES/$1/install.sh
+
+        if [[ -f "$installer" ]]; then
+            sh -c "${installer}"
+        else
+            e_error "Install script not found"
+            exit 1
+        fi
+        exit
+    fi
 }
 
 update() {
     # extend sudo timeout
     sudo -v
 
-    if [ -n "$2" ]; then
-        updater=$(find $DOTFILES/$2 -name update.sh 2>&1)
-
-        # exit if file does not exist
-        if [[ -ef ${updater} ]]; then
-            sh -c "${updater}"
-        else
-            echo "Update script not found"
-            exit 1
-        fi
-
-        sh -c "${updater}"
-    else
+    if [[ -z "$1" ]]; then
         # find updaters and run them iteratively
         find $DOTFILES -name update.sh | while read updater ; do sh -c "${updater}" ; done
+    else
+        # find specific updater and run it
+        updater=$DOTFILES/$1/update.sh
+
+        if [[ -f "$updater" ]]; then
+            sh -c "${updater}"
+        else
+            e_error "Update script not found"
+            exit 1
+        fi
+        exit
     fi
 }
 
@@ -67,10 +79,10 @@ upgrade() {
 
 case $1 in
     install)
-        install
+        install ${@:2}
         ;;
     update)
-        update
+        update ${@:2}
         ;;
     upgrade)
         upgrade
