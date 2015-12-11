@@ -39,7 +39,7 @@ update() {
         updater=$(find $DOTFILES/$2 -name update.sh 2>&1)
 
         # exit if file does not exist
-        [[ -e ${updater} ]] || { e_error "Update script not found"; exit 1; }
+        [[ -e ${updater} ]] || { e_error "Update script not found" ; exit 1; }
 
         sh -c "${updater}"
     else
