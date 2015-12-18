@@ -11,7 +11,7 @@ source $DOTFILES/scripts/utils.sh
 if [ $(which apm) ]; then
   e_header "Installing atom packages"
 
-  apm install autocomplete-php color-picker docblockr emmet jshint minimap react travis-ci-status
+  apm install autocomplete-php color-picker docblockr emmet jshint minimap react travis-ci-status pigments merge-conflicts atom-beautify
 
   e_success "Packages installed successfully"
 fi
