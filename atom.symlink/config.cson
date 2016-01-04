@@ -1,7 +1,6 @@
 "*":
   editor:
     showInvisibles: true
-    tabLength: 4
     invisibles: {}
   welcome:
     showOnStartup: false
@@ -17,5 +16,6 @@
   "markdown-preview":
     useGitHubStyle: true
   emmet: {}
-  jshint:
-    supportLintingJsx: true
+  "linter-eslint": {}
+  linter:
+    errorPanelHeight: 176
