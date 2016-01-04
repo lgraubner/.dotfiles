@@ -1,0 +1,10 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "func-names": 0,
+        "no-var": 0
+    }
+}
