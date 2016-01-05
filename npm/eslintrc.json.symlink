@@ -1,16 +1,10 @@
 {
-  "extends": "airbnb",
-  "plugins": [
-    "react"
-  ],
+  "extends": "airbnb/base",
   "rules": {
     "func-names": 0,
     "no-var": 0,
     "prefer-const": 0,
     "object-shorthand": 0,
     "strict": [2, "function"]
-  },
-  "globals": {
-    "define": false
   }
 }
