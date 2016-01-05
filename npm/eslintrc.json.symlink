@@ -6,5 +6,8 @@
   "rules": {
     "func-names": 0,
     "no-var": 0
+  },
+  "globals": {
+    "define": false
   }
 }
