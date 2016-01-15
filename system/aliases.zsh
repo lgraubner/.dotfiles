@@ -23,6 +23,6 @@ alias rm_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 alias p="cd $PROJECTS"
 
 # show invisivle files
-alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
+alias showInvisibles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 # hide invisible files
-alias showFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
+alias hideInvisibles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
