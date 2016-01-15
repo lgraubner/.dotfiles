@@ -11,7 +11,7 @@ if [ $(which gem) ]; then
   e_header "Installing gems"
 
   # install gems
-  sudo gem install sass
+  sudo gem install sass jekyll
 
   e_success "Gems installed successfully"
 fi
