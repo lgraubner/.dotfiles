@@ -1,21 +1,23 @@
 "*":
-  editor:
-    showInvisibles: true
-    invisibles: {}
-  welcome:
-    showOnStartup: false
+  autoprefixer: {}
   core:
+    audioBeep: false
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
-    audioBeep: false
   docblockr: {}
-  autoprefixer: {}
-  minimap: {}
-  "markdown-preview":
-    useGitHubStyle: true
+  editor:
+    invisibles: {}
+    showInvisibles: true
   emmet: {}
-  "linter-eslint": {}
   linter:
     errorPanelHeight: 176
+    showErrorPanel: false
+  "linter-eslint":
+    useGlobalEslint: true
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap: {}
+  welcome:
+    showOnStartup: false
