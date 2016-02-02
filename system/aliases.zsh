@@ -26,3 +26,6 @@ alias p="cd $PROJECTS"
 alias showInvisibles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 # hide invisible files
 alias hideInvisibles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
+
+# reset DNS cache
+alias flush="sudo dscacheutil -flushcache"
