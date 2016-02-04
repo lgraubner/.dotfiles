@@ -10,7 +10,7 @@ if [ $(which gem) ]; then
   e_header "Updating gems"
 
   # update gems and cleanup
-  sudo gem update && sudo gem cleanup
+  sudo gem update
 
   e_success "Updated gems successfully"
 fi
