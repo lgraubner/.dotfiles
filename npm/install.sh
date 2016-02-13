@@ -12,7 +12,7 @@ if [ $(which npm) ]; then
 
   # update NPM
   sudo npm install -g npm
-  sudo npm install -g bower eslint eslint-config-graubnla eslint-plugin-react sitemap-generator-cli w3c-validator-cli lodash-cli password-generator diff-so-fancy
+  sudo npm install -g bower eslint eslint-config-graubnla eslint-plugin-react sitemap-generator-cli w3c-validator-cli
 
   e_success "Dependencies installed successfully"
 fi

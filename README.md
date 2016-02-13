@@ -68,9 +68,17 @@ todo "this is an todo"      # create an todo file on your desktop
 ## Aliases
 
 ```bash
+# git
+gs        # git status -s
+gc        # git clone
+gcm       # git commit -m
+gcam      # git commit -am
+
 # npm
-npm_lg      # npm list --depth=0 -g
-npm_og      # npm outdated --depth=0 -g
+nl       # npm list --depth=0
+nlg      # npm list --depth=0 -g
+no       # npm outdated --depth
+nog      # npm outdated --depth=0 -g
 
 # files
 lsa         # ls -al

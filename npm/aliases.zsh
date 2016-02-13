@@ -1,4 +1,8 @@
+# list local packages
+alias nl="npm list --depth=0"
 # list global packages
-alias npm_lg="npm list --depth=0 -g"
+alias nlg="npm list --depth=0 -g"
+# list outdated packages
+alias no="npm outdated --depth=0"
 # list outdated global packages
-alias npm_og="npm outdated --depth=0 -g"
+alias nog="npm outdated --depth=0 -g"

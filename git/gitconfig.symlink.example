@@ -15,8 +15,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
-        pager = diff-so-fancy | less --tabs=1,5 -R
+        editor = atom
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -31,3 +30,8 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[alias]
+        gs = status -s
+        gc = clone
+        gcm = commit -m
+        gcam = commit -am
