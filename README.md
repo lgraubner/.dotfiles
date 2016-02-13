@@ -69,11 +69,11 @@ todo "this is an todo"      # create an todo file on your desktop
 
 ```bash
 # git
-gs        # git status -s
-gc        # git clone
-gc        # git commit
-gps       # git push
-gpl       # git pull
+git s        # git status -s
+git cl       # git clone
+git c        # git commit
+git cm       # git commit -m
+git cma      # git commit -a -m
 
 # npm
 nl       # npm list --depth=0
