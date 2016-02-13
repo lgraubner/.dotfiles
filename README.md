@@ -71,8 +71,9 @@ todo "this is an todo"      # create an todo file on your desktop
 # git
 gs        # git status -s
 gc        # git clone
-gcm       # git commit -m
-gcam      # git commit -am
+gc        # git commit
+gps       # git push
+gpl       # git pull
 
 # npm
 nl       # npm list --depth=0

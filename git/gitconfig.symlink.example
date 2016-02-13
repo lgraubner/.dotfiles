@@ -33,5 +33,6 @@
 [alias]
         gs = status -s
         gc = clone
-        gcm = commit -m
-        gcam = commit -am
+        gc = commit
+        gps = git push
+        gpl = git pull
