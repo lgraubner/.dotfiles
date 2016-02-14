@@ -14,8 +14,7 @@
   linter:
     errorPanelHeight: 176
     showErrorPanel: false
-  "linter-eslint":
-    useGlobalEslint: true
+  "linter-eslint": {}
   "markdown-preview":
     useGitHubStyle: true
   minimap: {}
