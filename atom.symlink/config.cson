@@ -17,6 +17,7 @@
   "linter-eslint": {}
   "markdown-preview":
     useGitHubStyle: true
-  minimap: {}
+  minimap:
+    absoluteMode: true
   welcome:
     showOnStartup: false
