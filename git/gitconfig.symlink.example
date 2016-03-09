@@ -36,3 +36,4 @@
         c = commit
         cm = commit -m
         cma = commit -a -m
+        l = log -pretty=oneline
