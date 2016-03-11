@@ -34,6 +34,5 @@
         s = status -s
         cl = clone
         c = commit
-        cm = commit -m
         cma = commit -a -m
         l = log -10 --reverse --pretty=oneline
