@@ -1,6 +1,8 @@
 "*":
+  "auto-update-packages": {}
   autoprefixer: {}
   core:
+    allowPendingPaneItems: false
     audioBeep: false
     themes: [
       "one-dark-ui"
@@ -12,7 +14,7 @@
     showInvisibles: true
   emmet: {}
   linter:
-    errorPanelHeight: 176
+    errorPanelHeight: 100
     showErrorPanel: false
   "linter-eslint": {}
   "markdown-preview":
