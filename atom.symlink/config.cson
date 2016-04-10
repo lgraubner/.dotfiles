@@ -1,18 +1,23 @@
 "*":
   "auto-update-packages": {}
-  autoprefixer: {}
   core:
     allowPendingPaneItems: false
     audioBeep: false
     themes: [
       "one-dark-ui"
-      "solarized-dark-syntax"
+      "cobalt2-syntax"
     ]
   docblockr: {}
   editor:
+    backUpBeforeSaving: true
+    fontFamily: "Inconsolata"
+    fontSize: 16
     invisibles: {}
+    lineHeight: 1.4
     showInvisibles: true
   emmet: {}
+  "file-icons":
+    coloured: false
   linter:
     errorPanelHeight: 100
     showErrorPanel: false
@@ -21,5 +26,6 @@
     useGitHubStyle: true
   minimap:
     absoluteMode: true
+  "one-dark-ui": {}
   welcome:
     showOnStartup: false

@@ -35,4 +35,5 @@
         cl = clone
         c = commit
         cma = commit -a -m
+        uc = reset --soft HEAD~
         l = log -10 --reverse --pretty=oneline
