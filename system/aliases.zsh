@@ -12,15 +12,16 @@ alias lsa="ls -al"
 # easy navigation
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 
 #file size
 alias fs="stat -f '%z bytes'"
 
 # Recursively delete `.DS_Store` files
-alias rm_dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+alias rmDsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
 # quick jump to projects folder
-alias p="cd $PROJECTS"
+alias w="cd $WORKSPACE"
 
 # show invisivle files
 alias showInvisibles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
