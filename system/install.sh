@@ -14,4 +14,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | b
 
 e_success "nvm installed successfully"
 
+e_header "Installing composer"
+
+mkdir -p /usr/local/bin
+# install composer globally
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+e_success "Successfully installed composer"
+
 exit 0

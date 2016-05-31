@@ -26,7 +26,7 @@ fi
 
 # Install homebrew packages
 e_header "Installing Homebrew formulaes"
-brew install grc coreutils spark node
+brew install grc coreutils spark node ansible
 e_success "Required formulaes installed"
 
 exit 0
