@@ -41,7 +41,7 @@ done
 if [[ $(git rev-parse HEAD) = $(git ls-remote $(git rev-parse --abbrev-ref @{u} | \
 sed 's/\// /g') | cut -f1) ]]; then
   if [[ is_osx ]]; then
-    sascript -e 'display notification "Type \"dotfiles upgrade\" in your terminal." with title "dotfiles" subtitle "New Version available"'
+    osascript -e 'display notification "Type \"dotfiles upgrade\" in your terminal." with title "dotfiles" subtitle "New Version available"'
   fi
 fi
 
