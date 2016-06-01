@@ -61,8 +61,13 @@ update() {
             e_error "Update script not found"
             exit 1
         fi
-        exit
     fi
+
+    if [[ is_osx ]]; then
+        osascript -e 'display notification "Successfully updated dotfiles." with title "dotfiles"'
+    fi
+
+    exit
 }
 
 upgrade() {

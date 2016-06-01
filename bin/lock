@@ -31,6 +31,8 @@ fi
 
 sleep 0.5
 
+osascript -e "set volume 0"
+
 if [[ "$(ioreg -c AppleSmartBattery | grep '"ExternalConnected" = Yes')" ]]; then
   # Plugged in: start screensaver.
   open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app

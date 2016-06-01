@@ -30,3 +30,6 @@ alias hideInvisibles="defaults write com.apple.finder AppleShowAllFiles NO; kill
 
 # reset DNS cache
 alias flush="sudo dscacheutil -flushcache"
+
+# lock
+alias l="lock"
