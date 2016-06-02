@@ -46,6 +46,7 @@ install() {
 
 update() {
     # extend sudo timeout
+    e_header "Administrator privileges will be required..."
     sudo -v
 
     if [[ -z "$1" ]]; then
