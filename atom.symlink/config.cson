@@ -11,7 +11,7 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "Inconsolata"
-    fontSize: 13
+    fontSize: 15
     invisibles: {}
     lineHeight: 1.4
     showInvisibles: true
