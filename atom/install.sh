@@ -11,7 +11,7 @@ source $DOTFILES/scripts/utils.sh
 if [ $(which apm) ]; then
   e_header "Installing atom packages"
 
-  apm install atom-ternjs auto-detect-indentation auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react synced-sidebar file-icons
+  apm install atom-ternjs auto-detect-indentation auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react synced-sidebar file-icons atom-beautify
 
   e_success "Packages installed successfully"
 fi
