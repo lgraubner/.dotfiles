@@ -8,7 +8,7 @@ source $DOTFILES/scripts/utils.sh
 
 # Check if gem is installed
 if [ $(which gem) ]; then
-  e_header "Install ruby gems"
+  e_install "Ruby gems"
 
   # install gems
   (sudo gem install sass jekyll bundler) > /dev/null 2>&1

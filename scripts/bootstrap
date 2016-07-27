@@ -13,7 +13,7 @@ _enable_zsh() {
 }
 
 _setup_git() {
-    e_header "Setup up gitconfig"
+    e_header "Set up gitconfig"
 
     git_credential='cache'
     if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -34,17 +34,17 @@ _link_files() {
     find -H "$DOTFILES" -maxdepth 2 -iname "*.symlink" | while read src; do
         dst="$HOME/.$(basename "${src%.*}")"
         if [[ -e "$dst" ]]; then
-            e_arrow "Backing up ${dst/#$HOME\//}"
+            e_line "Backing up ${dst/#$HOME\//}"
 
             [[ -e "$backup_dir" ]] || mkdir -p "$backup_dir"
             mv "$dst" "$backup_dir"
         fi
         ln -s "$src" "$dst"
-        e_arrow "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
+        e_line "Linked ${src/#$HOME/~} to ${dst/#$HOME/~}"
     done
 
     if [[ -e $backup_dir ]]; then
-        e_arrow "\nBackups were moved to ${backup_dir/#$HOME/~}"
+        e_line "\nBackups were moved to ${backup_dir/#$HOME/~}"
     fi
 
     e_success

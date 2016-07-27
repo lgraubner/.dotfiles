@@ -7,7 +7,7 @@
 source $DOTFILES/scripts/utils.sh
 
 if [ $(which gem) ]; then
-  e_header "Update ruby gems"
+  e_update "ruby gems"
 
   # update gems
   (sudo gem update) > /dev/null 2>&1

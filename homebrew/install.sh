@@ -9,7 +9,7 @@ source $DOTFILES/scripts/utils.sh
 
 # Check for Homebrew
 if [ ! $(which brew) ]; then
-  e_header "Install Homebrew"
+  e_install "Homebrew"
 
     # Install the correct homebrew for each OS type
     if is_osx; then
@@ -24,14 +24,14 @@ if [ ! $(which brew) ]; then
     e_success
 fi
 
-e_header "Install cask"
+e_install "cask"
 
 brew tap caskroom/cask
 
 e_success
 
 # Install homebrew packages
-e_header "Install Homebrew formulaes"
+e_install "Homebrew formulaes"
 brew install grc coreutils spark node ansible
 e_success
 
