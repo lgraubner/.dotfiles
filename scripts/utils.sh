@@ -1,18 +1,18 @@
 # logging functions
 function e_header() {
-    echo -e "\n=> \e[1m$@\e[0m";
+    echo -e "\n=> \033[1m$@\033[0m";
 }
 
 function e_success() {
-    echo -e "   \e[32m$@\e[0m";
+    echo -e "   \033[32m$@\033[0m";
 }
 
 function e_error() {
-    echo -e "   \e[31m$@\e[0m";
+    echo -e "   \033[31m$@\033[0m";
 }
 
 function e_arrow() {
-    echo -e " \e[34m$@\e[0m";
+    echo -e " \033[34m$@\033[0m";
 }
 
 # OS detection
