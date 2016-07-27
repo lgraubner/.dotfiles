@@ -12,7 +12,7 @@ function e_error() {
 }
 
 function e_arrow() {
-    echo -e " \033[34m$@\033[0m";
+    echo -e "=> $@";
 }
 
 # OS detection
