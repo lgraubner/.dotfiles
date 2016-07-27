@@ -6,11 +6,14 @@
 
 source $DOTFILES/scripts/utils.sh
 
+SECTION="NPM"
+
 if [ $(which npm) ]; then
-  e_update "Global npm packages"
+  e_update $SECTION "packages"
   # update NPM
   exec_task "sudo npm update -g"
   e_success
 fi
 
+unset $SECTION
 exit 0

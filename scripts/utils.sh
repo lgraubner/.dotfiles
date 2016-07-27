@@ -4,15 +4,19 @@ function e_header() {
 }
 
 function e_update() {
-    msg="=> UPDATE [$@] ";
-    while [ ${#msg} -lt 40 ]; do
+    msg="=> $1 [update : $2] ";
+    while [ ${#msg} -lt 60 ]; do
         msg=${msg}*
     done
     echo -e "\n$msg";
 }
 
 function e_install() {
-    echo -e "\n=> INSTALL [$@]";
+    msg="=> INSTALL [$@] ";
+    while [ ${#msg} -lt 60 ]; do
+        msg=${msg}*
+    done
+    echo -e "\n$msg";
 }
 
 function e_success() {
@@ -44,12 +48,4 @@ function get_os() {
 
 function exec_task() {
     (sh -c "$@") > /dev/null 2>&1
-}
-
-function pad_right() {
-    str="$1 ";
-    while [ ${#str} -lt 40 ]; do
-        str=${str}*
-    done
-    return str;
 }
