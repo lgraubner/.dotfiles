@@ -4,7 +4,11 @@ function e_header() {
 }
 
 function e_update() {
-    echo -e "\n=> UPDATE [$@]";
+    msg="=> UPDATE [$@] ";
+    while [ ${#msg} -lt 40 ]; do
+        msg=${msg}*
+    done
+    echo -e "\n$msg";
 }
 
 function e_install() {
@@ -36,4 +40,16 @@ function get_os() {
     for os in osx ubuntu; do
         is_$os; [[ $? == ${1:-0} ]] && echo $os
     done
+}
+
+function exec_task() {
+    (sh -c "$@") > /dev/null 2>&1
+}
+
+function pad_right() {
+    str="$1 ";
+    while [ ${#str} -lt 40 ]; do
+        str=${str}*
+    done
+    return str;
 }

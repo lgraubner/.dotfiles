@@ -9,12 +9,12 @@ source $DOTFILES/scripts/utils.sh
 # Check if NPM is installed
 if [ $(which npm) ]; then
   e_update "npm"
-  (sudo npm install -g npm) > /dev/null 2>&1
+  exec_task "sudo npm install -g npm"
   e_success
 
   e_install "Global npm packages"
   # update NPM
-  (sudo npm install -g bower sitemap-generator-cli w3c-validator-cli gulp-cli) > /dev/null 2>&1
+  exec_task "sudo npm install -g bower sitemap-generator-cli w3c-validator-cli gulp-cli"
   e_success
 fi
 

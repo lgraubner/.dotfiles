@@ -10,7 +10,7 @@ if [ $(which gem) ]; then
   e_update "ruby gems"
 
   # update gems
-  (sudo gem update) > /dev/null 2>&1
+  exec_task "sudo gem update"
 
   e_success
 fi

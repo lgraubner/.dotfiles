@@ -13,26 +13,23 @@ if [ ! $(which brew) ]; then
 
     # Install the correct homebrew for each OS type
     if is_osx; then
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        exec_task "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
     else
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+        exec_task "ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)\""
     fi
 
-    brew doctor
-    brew update
+    exec_task "brew doctor && brew update"
 
     e_success
 fi
 
 e_install "cask"
-
-brew tap caskroom/cask
-
+exec_task "brew tap caskroom/cask"
 e_success
 
 # Install homebrew packages
 e_install "Homebrew formulaes"
-brew install grc coreutils spark node ansible
+exec_task "brew install grc coreutils spark node ansible"
 e_success
 
 # TODO: install cask apps

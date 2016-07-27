@@ -11,7 +11,7 @@ if [ $(which gem) ]; then
   e_install "Ruby gems"
 
   # install gems
-  (sudo gem install sass jekyll bundler) > /dev/null 2>&1
+  exec_task "sudo gem install sass jekyll bundler"
 
   e_success
 fi

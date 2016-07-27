@@ -10,11 +10,11 @@ if [[ $(which brew) ]]; then
     e_update "Homebrew"
     # reset permissions for node
     sudo chown -R $(whoami) /usr/local
-    (brew update) > /dev/null 2>&1
+    exec_task "brew update"
     e_success
 
     e_update "Homebrew formulaes"
-    (brew upgrade --all && brew cleanup) > /dev/null 2>&1
+    exec_task "brew upgrade --all && brew cleanup"
     e_success
 fi
 
