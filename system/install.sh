@@ -6,15 +6,15 @@
 
 source $DOTFILES/scripts/utils.sh
 
-# @TODO: set section var
+SECTION="System"
 
 # Check if NPM is installed
-e_install "nvm"
+e_install $SECTION "nvm"
 # autosetup
 exec_task "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash"
 e_success
 
-e_install "composer"
+e_install $SECTION "composer"
 
 mkdir -p /usr/local/bin
 # install composer globally

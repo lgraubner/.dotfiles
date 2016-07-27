@@ -12,7 +12,7 @@ function e_update() {
 }
 
 function e_install() {
-    msg="=> INSTALL [$@] ";
+    msg="=> $1 [install : $2] ";
     while [ ${#msg} -lt 60 ]; do
         msg=${msg}*
     done
