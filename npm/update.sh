@@ -7,12 +7,12 @@
 source $DOTFILES/scripts/utils.sh
 
 if [ $(which npm) ]; then
-  e_header "Updating global npm packages"
+  e_header "Update global npm packages"
 
   # update NPM
   sudo npm update -g
 
-  e_success "Updated npm packages successfully"
+  e_success
 fi
 
 exit 0

@@ -8,13 +8,14 @@ source $DOTFILES/scripts/utils.sh
 
 # Check if NPM is installed
 if [ $(which npm) ]; then
-  e_header "Installing global npm packages"
-
-  # update NPM
+  e_header "Update npm"
   sudo npm install -g npm
-  sudo npm install -g bower sitemap-generator-cli w3c-validator-cli gulp-cli
+  e_success
 
-  e_success "Dependencies installed successfully"
+  e_header "Install global npm packages"
+  # update NPM
+  sudo npm install -g bower sitemap-generator-cli w3c-validator-cli gulp-cli
+  e_success
 fi
 
 exit 0

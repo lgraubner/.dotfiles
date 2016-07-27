@@ -7,13 +7,13 @@ backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 source $DOTFILES/scripts/utils.sh
 
 _enable_zsh() {
-    e_header "Setting default shell to ZSH"
+    e_header "Set default shell to ZSH"
     chsh -s $(grep /zsh$ /etc/shells | tail -1)
-    e_success "Default shell set to ZSH"
+    e_success
 }
 
 _setup_git() {
-    e_header 'Setting up gitconfig'
+    e_header "Setup up gitconfig"
 
     git_credential='cache'
     if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -25,11 +25,11 @@ _setup_git() {
 
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
 
-    e_success 'gitconfig created'
+    e_success
 }
 
 _link_files() {
-    e_header 'Linking dotfiles'
+    e_header 'Link dotfiles'
 
     find -H "$DOTFILES" -maxdepth 2 -iname "*.symlink" | while read src; do
         dst="$HOME/.$(basename "${src%.*}")"
@@ -44,10 +44,10 @@ _link_files() {
     done
 
     if [[ -e $backup_dir ]]; then
-        echo -e "\nBackups were moved to ${backup_dir/#$HOME/~}"
+        e_arrow "\nBackups were moved to ${backup_dir/#$HOME/~}"
     fi
 
-    e_success "dotfiles linked successfully"
+    e_success
 }
 
 init() {

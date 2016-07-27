@@ -7,15 +7,18 @@
 source $DOTFILES/scripts/utils.sh
 
 if [[ $(which brew) ]]; then
-    e_header "Updating Homebrew and upgrading formulaes"
+    e_header "Update Homebrew"
 
     # reset permissions for node
     sudo chown -R $(whoami) /usr/local
 
     brew update
+    e_success
+
+    e_header "Update Homebrew formulaes"
     brew upgrade --all
     brew cleanup
-    e_success "Updated and upgraded homebrew successfully"
+    e_success
 fi
 
 exit 0

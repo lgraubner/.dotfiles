@@ -6,17 +6,16 @@
 
 source $DOTFILES/scripts/utils.sh
 
-e_header "Updating nvm"
+e_header "Update nvm"
 
 # update nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
-e_success "Updated nvm successfully"
+e_success
 
-e_header "Updating composer itself"
+e_header "Update composer"
 # update composer
 composer self-update
-
-e_success "Updated composer successfully"
+e_success
 
 exit 0

@@ -4,11 +4,11 @@ function e_header() {
 }
 
 function e_success() {
-    echo -e "   \033[32m$@\033[0m";
+    echo -e "   \033[32mOK\033[0m";
 }
 
 function e_error() {
-    echo -e "   \033[31m$@\033[0m";
+    echo -e "   \033[31mFAILED\033[0m";
 }
 
 function e_arrow() {

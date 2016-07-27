@@ -37,7 +37,7 @@ install() {
         if [[ -f "$installer" ]]; then
             sh -c "${installer}"
         else
-            e_error "Install script not found"
+            e_error
             exit 1
         fi
         exit
@@ -59,25 +59,20 @@ update() {
         if [[ -f "$updater" ]]; then
             sh -c "${updater}"
         else
-            e_error "Update script not found"
+            e_error
             exit 1
         fi
-    fi
-
-    if [[ is_osx ]]; then
-        osascript -e 'display notification "Successfully updated dotfiles." with title "dotfiles"'
     fi
 
     exit
 }
 
 upgrade() {
-    e_header "Upgrading dotfiles"
+    e_header "Upgrade dotfiles"
 
     ( cd $DOTFILES && git reset --hard HEAD && git pull ) > /dev/null 2>&1
 
-    e_success "dotfiles upgraded"
-    e_header "All done!"
+    e_success
 
     # reload shell
     exec /bin/zsh -l
@@ -96,5 +91,3 @@ case $1 in
     *)
         exit 1
 esac
-
-e_header "All done!"
