@@ -11,7 +11,7 @@ if [ $(which gem) ]; then
   e_header "Install ruby gems"
 
   # install gems
-  sudo gem install sass jekyll bundler
+  (sudo gem install sass jekyll bundler) > /dev/null 2>&1
 
   e_success
 fi

@@ -8,17 +8,15 @@ source $DOTFILES/scripts/utils.sh
 
 # Check if NPM is installed
 e_header "Install nvm"
-
 # autosetup
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-
+(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash) > /dev/null 2>&1
 e_success
 
 e_header "Install composer"
 
 mkdir -p /usr/local/bin
 # install composer globally
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+(curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer) > /dev/null 2>&1
 
 e_success
 
