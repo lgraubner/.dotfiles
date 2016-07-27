@@ -18,7 +18,7 @@ alias ....="cd ../../.."
 alias fs="stat -f '%z bytes'"
 
 # Recursively delete `.DS_Store` files
-alias rmDsstore="find . -name '*.DS_Store' -type f -ls -delete"
+alias rmds="find . -name '*.DS_Store' -type f -ls -delete"
 
 # quick jump to projects folder
 alias w="cd $WORKSPACE"
@@ -31,5 +31,5 @@ alias hideInvisibles="defaults write com.apple.finder AppleShowAllFiles NO; kill
 # reset DNS cache
 alias flush="sudo dscacheutil -flushcache"
 
-# lock
-alias l="lock"
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"

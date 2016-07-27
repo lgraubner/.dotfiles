@@ -74,7 +74,7 @@ update() {
 upgrade() {
     e_header "Upgrading dotfiles"
 
-    ( cd $DOTFILES && git reset --hard HEAD && git pull )
+    ( cd $DOTFILES && git reset --hard HEAD && git pull ) > /dev/null 2>&1
 
     e_success "dotfiles upgraded"
     e_header "All done!"

@@ -22,4 +22,11 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 e_success "Successfully installed composer"
 
+e_header "setting OSX defaults"
+
+# Finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+e_success "done"
+
 exit 0

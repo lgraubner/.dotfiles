@@ -9,7 +9,8 @@ source $DOTFILES/scripts/utils.sh
 if [ $(which gem) ]; then
   e_header "Updating gems"
 
-  # update gems and cleanup
+  # update gems
+  sudo gem update -system
   sudo gem update
 
   e_success "Updated gems successfully"
