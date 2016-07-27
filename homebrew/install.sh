@@ -24,6 +24,12 @@ if [ ! $(which brew) ]; then
     e_success "Homebrew installed"
 fi
 
+e_header "Installing cask"
+
+brew tap caskroom/cask
+
+e_success "Cask installed"
+
 # Install homebrew packages
 e_header "Installing Homebrew formulaes"
 brew install grc coreutils spark node ansible
