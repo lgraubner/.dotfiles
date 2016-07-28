@@ -11,7 +11,7 @@ SECTION="Homebrew"
 
 # Check for Homebrew
 if [ ! $(which brew) ]; then
-  e_install $SECTION "brew"
+  e_install "brew" $SECTION
 
     # Install the correct homebrew for each OS type
     if is_osx; then
@@ -25,12 +25,12 @@ if [ ! $(which brew) ]; then
     e_success
 fi
 
-e_install $SECTION "cask"
+e_install "cask" $SECTION
 exec_task "brew tap caskroom/cask"
 e_success
 
 # Install homebrew packages
-e_install $SECTION "formulae"
+e_install "formulae" $SECTION
 exec_task "brew install grc coreutils spark node ansible"
 e_success
 

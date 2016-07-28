@@ -3,28 +3,41 @@ function e_header() {
     echo -e "\n=> $@";
 }
 
-function e_update() {
-    msg="=> $1 [update : $2] ";
-    while [ ${#msg} -lt 60 ]; do
+function _write {
+    if [[ $2 ]]; then
+        msg="=> $2 [$3 : $1] ";
+    else
+        msg="=> $1"
+    fi
+
+    while [ ${#msg} -lt 80 ]; do
         msg=${msg}*
     done
     echo -e "\n$msg";
+}
+
+function e_update {
+    _write $1 $2 "update"
 }
 
 function e_install() {
-    msg="=> $1 [install : $2] ";
-    while [ ${#msg} -lt 60 ]; do
-        msg=${msg}*
-    done
-    echo -e "\n$msg";
+    _write $1 $2 "install"
 }
 
 function e_success() {
-    echo -e "=> \033[32mok\033[0m";
+    if [[ $1 ]]; then
+        echo -e "\033[32m=> ok: $1\033[0m";
+    else
+        echo -e "\033[32m=> ok\033[0m";
+    fi
 }
 
 function e_error() {
-    echo -e "=> \033[31mfailed\033[0m";
+    if [[ $1 ]]; then
+        echo -e "\033[31m=> failed: $1\033[0m";
+    else
+        echo -e "\033[31m=> failed\033[0m";
+    fi
 }
 
 function e_line() {
@@ -46,6 +59,10 @@ function get_os() {
     done
 }
 
+# exec task, supress stdout
 function exec_task() {
     (sh -c "$@") > /dev/null 2>&1
 }
+
+# join array
+function join { local d=$1; shift; echo -n "$1"; shift; printf "%s" "${@/#/$d}"; }

@@ -10,7 +10,7 @@ SECTION="Ruby"
 
 # Check if gem is installed
 if [ $(which gem) ]; then
-  e_install $SECTION "gems"
+  e_install "gems" $SECTION
 
   # install gems
   exec_task "sudo gem install sass jekyll bundler"

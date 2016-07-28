@@ -9,7 +9,7 @@ source $DOTFILES/scripts/utils.sh
 SECTION="Ruby"
 
 if [ $(which gem) ]; then
-  e_update $SECTION "gems"
+  e_update "gems" $SECTION
 
   # update gems
   exec_task "sudo gem update"

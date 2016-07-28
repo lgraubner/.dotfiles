@@ -9,7 +9,7 @@ source $DOTFILES/scripts/utils.sh
 SECTION="NPM"
 
 if [ $(which npm) ]; then
-  e_update $SECTION "packages"
+  e_update "packages" $SECTION
   # update NPM
   exec_task "sudo npm update -g"
   e_success

@@ -9,12 +9,12 @@ source $DOTFILES/scripts/utils.sh
 SECTION="System"
 
 # Check if NPM is installed
-e_install $SECTION "nvm"
+e_install "nvm" $SECTION
 # autosetup
 exec_task "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash"
 e_success
 
-e_install $SECTION "composer"
+e_install "composer" $SECTION
 
 mkdir -p /usr/local/bin
 # install composer globally
@@ -25,6 +25,7 @@ e_success
 e_header "Set OSX defaults"
 
 # Finder: show hidden files by default
+e_line "Set show invisibles to true"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 e_success
