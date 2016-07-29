@@ -13,9 +13,10 @@ if [ $(which gem) ]; then
   e_install "gems" $SECTION
 
   # install gems
-  exec_task "sudo gem install sass jekyll bundler"
+  gems="sass jekyll bundler"
+  exec_task "sudo gem install "$gems
 
-  e_success
+  e_success "installed "$gems
 fi
 
 unset $SECTION

@@ -31,8 +31,9 @@ e_success
 
 # Install homebrew packages
 e_install "formulae" $SECTION
-exec_task "brew install grc coreutils spark node ansible"
-e_success
+formulae="grc coreutils spark node ansible"
+exec_task "brew install "$formulae
+e_success "installed "$formulae
 
 # TODO: install cask apps
 
