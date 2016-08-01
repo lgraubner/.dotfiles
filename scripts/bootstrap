@@ -2,7 +2,7 @@
 
 export DOTFILES=~/.dotfiles
 
-backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
+backup_dir="$DOTFILES/backup/$(date "+%Y_%m_%d-%H_%M_%S")/"
 DEFAULT_NAME="Lars Graubner"
 DEFAULT_EMAIL="mail@larsgraubner.de"
 NAME=""
