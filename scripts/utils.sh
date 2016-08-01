@@ -1,6 +1,6 @@
 # logging functions
 function e_header() {
-    echo -e "\n=> $!";
+    echo -e "\n=> $1";
 }
 
 function _write {
