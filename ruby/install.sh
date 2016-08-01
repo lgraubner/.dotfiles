@@ -13,10 +13,18 @@ if [ $(which gem) ]; then
   e_install "gems" $SECTION
 
   # install gems
-  gems="sass jekyll bundler"
-  exec_task "sudo gem install "$gems
+  gems=("sass" "jekyll" "bundler")
+  cmd="gem install "
+  counter=1
+  for gem in ${gems[@]}
+  do
+    echo -ne "\r\033[2K=> installing ${gem} (${counter}/${#gems[@]})"
+    exec_task "${cmd} ${gem}"
+    counter=$((counter+1))
+  done
+  echo -e "\033[2K=> installed ${counter} gems"
 
-  e_success "installed "$gems
+  e_success
 fi
 
 unset $SECTION

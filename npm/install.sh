@@ -16,9 +16,17 @@ if [ $(which npm) ]; then
 
   e_install "packages" $SECTION
   # update NPM
-  packages="sitemap-generator-cli w3c-validator-cli gulp-cli"
-  exec_task "sudo npm install -g "$packages
-  e_success "installed "$packages
+  packages=("sitemap-generator-cli" "w3c-validator-cli" "gulp-cli" "webpack")
+  cmd="npm install -g "
+  counter=1
+  for pkg in ${packages[@]}
+  do
+    echo -ne "\r\033[2K=> installing ${pkg} (${counter}/${#packages[@]})"
+    exec_task "${cmd} ${pkg}"
+    counter=$((counter+1))
+  done
+  echo -e "\r\033[2K=> installed ${counter} packages"
+  e_success
 fi
 
 unset $SECTION

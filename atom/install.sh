@@ -13,14 +13,17 @@ SECTION="Atom"
 if [ $(which apm) ]; then
   e_install "packages" $SECTION
 
-  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax")
+  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" $
   cmd="apm install "
+  counter=1
   for pkg in ${packages[@]}
   do
-    cmd=$cmd$pkg
+    echo -ne "\r\033[2K=> installing ${pkg} (${counter}/${#packages[@]})"
+    exec_task "${cmd} ${pkg}"
+    counter=$((counter+1))
   done
-  exec_task $cmd
-  e_success ${cmd/"apm install "/"installed "}
+  echo -e "\r\033[2K=> installed ${counter} packages"
+  e_success
 fi
 
 unset $SECTION

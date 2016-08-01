@@ -1,6 +1,6 @@
 # logging functions
 function e_header() {
-    echo -e "\n=> $@";
+    echo -e "\n=> $!";
 }
 
 function _write {
@@ -41,7 +41,7 @@ function e_error() {
 }
 
 function e_line() {
-    echo -e "=> $@";
+    echo -e "=> $1";
 }
 
 # OS detection
@@ -61,7 +61,7 @@ function get_os() {
 
 # exec task, supress stdout
 function exec_task() {
-    (sh -c "$@") > /dev/null 2>&1
+    (sh -c "$1") > /dev/null 2>&1
 }
 
 # join array
