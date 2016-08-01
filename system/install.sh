@@ -13,6 +13,7 @@ e_install "nvm" $SECTION
 # autosetup
 exec_task "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash"
 # refresh configuration
+exec /bin/zsh -l
 e_success
 
 e_install "node" $SECTION
