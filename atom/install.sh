@@ -13,7 +13,7 @@ SECTION="Atom"
 if [ $(which apm) ]; then
   e_install "packages" $SECTION
 
-  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" $
+  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint")
   cmd="apm install "
   counter=1
   for pkg in ${packages[@]}
