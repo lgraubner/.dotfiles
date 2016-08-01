@@ -17,7 +17,7 @@ if [ $(which npm) ]; then
   e_install "packages" $SECTION
   # update NPM
   packages=("sitemap-generator-cli" "w3c-validator-cli" "gulp-cli" "webpack")
-  cmd="npm install -g "
+  cmd="sudo npm install -g "
   counter=1
   for pkg in ${packages[@]}
   do

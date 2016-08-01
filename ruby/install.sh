@@ -22,7 +22,7 @@ if [ $(which gem) ]; then
     exec_task "${cmd} ${gem}"
     counter=$((counter+1))
   done
-  echo -e "\033[2K=> installed ${counter} gems"
+  echo -e "\r\033[2K=> installed ${counter} gems"
 
   e_success
 fi

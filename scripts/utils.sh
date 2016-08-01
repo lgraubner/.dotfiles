@@ -41,7 +41,7 @@ function e_error() {
 }
 
 function e_line() {
-    echo -e "=> $1";
+    echo -e "=> $@";
 }
 
 # OS detection

@@ -13,7 +13,7 @@ SECTION="Atom"
 if [ $(which apm) ]; then
   e_install "packages" $SECTION
 
-  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint")
+  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax")
   cmd="apm install "
   counter=1
   for pkg in ${packages[@]}
@@ -22,7 +22,7 @@ if [ $(which apm) ]; then
     exec_task "${cmd} ${pkg}"
     counter=$((counter+1))
   done
-  echo -e "\r\033[2K=> installed ${counter} packages"
+  echo -e "\033[2K=> installed ${counter} packages"
   e_success
 fi
 
