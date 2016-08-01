@@ -22,7 +22,7 @@ if [ $(which apm) ]; then
     exec_task "${cmd} ${pkg}"
     counter=$((counter+1))
   done
-  echo -e "\033[2K=> installed ${counter} packages"
+  echo -e "\r\033[2K=> installed ${counter} packages"
   e_success
 fi
 
