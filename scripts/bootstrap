@@ -58,9 +58,9 @@ init() {
     e_header "Administrator privileges will be required..."
     sudo -v
 
-    read -p 'Author Name ($DEFAULT_NAME): ' name
+    read -p "Author Name ($DEFAULT_NAME): " name
     NAME=${name:-$DEFAULT_NAME}
-    read -p 'Author E-Mail ($DEFAULT_EMAIL): ' email
+    read -p "Author E-Mail ($DEFAULT_EMAIL): " email
     EMAIL=${email:-$DEFAULT_EMAIL}
 
     # set ZSH as default shell
