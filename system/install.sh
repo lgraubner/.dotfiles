@@ -13,12 +13,12 @@ e_install "nvm" $SECTION
 # autosetup
 exec_task "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash"
 # refresh configuration
-exec /bin/zsh -l
+# @TODO refresh
 e_success
 
-e_install "node" $SECTION
-exec_task "export NODE_LATEST=$(nvm ls-remote | tail -1 | xargs) && nvm install $NODE_LATEST && nvm alias default $NODE_LATEST"
-e_success
+# e_install "node" $SECTION
+# exec_task "export NODE_LATEST=$(nvm ls-remote | tail -1 | xargs) && nvm install $NODE_LATEST && nvm alias default $NODE_LATEST"
+# e_success
 
 e_install "composer" $SECTION
 
