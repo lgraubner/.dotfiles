@@ -13,9 +13,14 @@ SECTION="Atom"
 if [ $(which apm) ]; then
   e_install "packages" $SECTION
 
-  packages="atom-ternjs auto-detect-indentation auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react synced-sidebar file-icons atom-beautify"
-  exec_task "apm install "$packages
-  e_success "installed "$packages
+  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax")
+  cmd="apm install "
+  for pkg in ${packages[@]}
+  do
+    cmd=$cmd$pkg
+  done
+  exec_task $cmd
+  e_success ${cmd/"apm install "/"installed "}
 fi
 
 unset $SECTION
