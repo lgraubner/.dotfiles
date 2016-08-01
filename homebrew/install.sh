@@ -21,7 +21,6 @@ if [ ! $(which brew) ]; then
     fi
 
     exec_task "brew doctor && brew update"
-
     e_success
 fi
 
@@ -40,8 +39,7 @@ do
   exec_task "${cmd} ${pkg}"
   counter=$((counter+1))
 done
-echo -e "\r\033[2K=> installed ${counter} formulaes"
-e_success
+echo -e "\r\033[2K\033[32m=> ok: installed ${counter} formulaes\033[0m"
 
 # Install cask packages
 e_install "cask formulae" $SECTION
@@ -54,8 +52,7 @@ do
   exec_task "${cmd} ${pkg}"
   counter=$((counter+1))
 done
-echo -e "\r\033[2K=> installed ${counter} cask formulaes"
-e_success
+echo -e "\r\033[2K\033[32m=> ok: installed ${counter} cask formulaes\033[0m"
 
 unset $SECTION
 exit 0

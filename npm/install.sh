@@ -25,8 +25,7 @@ if [ $(which npm) ]; then
     exec_task "${cmd} ${pkg}"
     counter=$((counter+1))
   done
-  echo -e "\r\033[2K=> installed ${counter} packages"
-  e_success
+  echo -e "\r\033[2K\033[32m=> ok: installed ${counter} packages\033[0m"
 fi
 
 unset $SECTION
