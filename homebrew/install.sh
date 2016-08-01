@@ -43,7 +43,19 @@ done
 echo -e "\r\033[2K=> installed ${counter} formulaes"
 e_success
 
-# TODO: install cask apps
+# Install cask packages
+e_install "cask formulae" $SECTION
+cformulaes=("wget" "alfred" "hyperterm" "atom" "google-chrome" "firefox" "slack" "skype")
+cmd="brew cask install "
+counter=1
+for cformulae in ${cformulaes[@]}
+do
+  echo -ne "\r\033[2K=> installing ${cformulae} (${counter}/${#cformulaes[@]})"
+  exec_task "${cmd} ${pkg}"
+  counter=$((counter+1))
+done
+echo -e "\r\033[2K=> installed ${counter} cask formulaes"
+e_success
 
 unset $SECTION
 exit 0

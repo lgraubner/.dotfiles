@@ -7,7 +7,7 @@
         name = AUTHORNAME
         email = AUTHOREMAIL
 [credential]
-        helper = GIT_CREDENTIAL_HELPER
+        helper = store
 [color]
         diff = auto
         status = auto

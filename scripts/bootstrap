@@ -3,6 +3,10 @@
 export DOTFILES=~/.dotfiles
 
 backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
+DEFAULT_NAME="Lars Graubner"
+DEFAULT_EMAIL="mail@larsgraubner.de"
+NAME=""
+EMAIL=""
 
 source $DOTFILES/scripts/utils.sh
 
@@ -14,18 +18,18 @@ _enable_zsh() {
 
 _setup_git() {
     e_header "Set up gitconfig"
-
-    git_credential='cache'
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-      git_credential='osxkeychain'
-    fi
-
-    read -p 'Author Name: ' git_authorname
-    read -p 'Author E-Mail: ' git_authoremail
-
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
-
+    sed -e "s/AUTHORNAME/$NAME/g" -e "s/AUTHOREMAIL/$EMAIL/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
     e_success
+}
+
+_setup_npm() {
+    # @TODO
+    e_header "Set node publisher information"
+    npm set init.author.name "$NAME"
+    npm set init.author.email "$EMAIL"
+    npm set init.author.url "$SITE"
+    npm set save-exact true
+    npm adduser
 }
 
 _link_files() {
@@ -51,14 +55,24 @@ _link_files() {
 }
 
 init() {
+    e_header "Administrator privileges will be required..."
+    sudo -v
+
+    read -p 'Author Name ($DEFAULT_NAME): ' name
+    NAME=${name:-$DEFAULT_NAME}
+    read -p 'Author E-Mail ($DEFAULT_EMAIL): ' email
+    EMAIL=${email:-$DEFAULT_EMAIL}
+
     # set ZSH as default shell
     if [[ -z "$ZSH_VERSION" ]]; then
         _enable_zsh
     fi
 
     # setup git
-    if [[ ! -e "$DOTFILES/git/gitconfig.symlink" ]]; then
-        _setup_git
+    _setup_git
+
+    if [ $(which npm) ]; then
+        # _setup_npm
     fi
 
     # link dotfiles
