@@ -71,9 +71,9 @@ init() {
     # setup git
     _setup_git
 
-    if [ $(which npm) ]; then
+    #if [ $(which npm) ]; then
         # _setup_npm
-    fi
+    #fi
 
     # link dotfiles
     _link_files
