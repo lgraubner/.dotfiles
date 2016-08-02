@@ -7,18 +7,13 @@ My personal dotfiles, inspired by [Zach Holman's dotfiles](https://github.com/ho
 Copy the files to your machine and run the bootstrap scripts. The setup will guide you and ask for several things.
 
 ```bash
-# clone
 git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles
-
-cd ~/.dotfiles
-
-# bootstrap setup
-scripts/bootstrap
+cd ~/.dotfiles && scripts/bootstrap
 ```
 
 ## Contents
 
-This files include the solarized syntax theme for iTerm2 and can be used in conjunction with the `solarized-dark-syntax` Atom theme.
+This files include the cobalt2 syntax theme for Atom and the snazzy Theme for hyperterm. Alternatively you can use iTerm2 with the cobalt2 theme.
 
 ## Binaries
 
@@ -49,14 +44,6 @@ Extracts archived files and mounts disk images.
 extract file.zip    # unzip file. Types: tar, bz, dmg, gz, zip, pax and more
 ```
 
-### lock
-
-Locks the current screen. Only works on OSX!
-
-```bash
-lock
-```
-
 ### todo
 
 Creates a todo file on your desktop.
@@ -69,11 +56,13 @@ todo "this is an todo"      # create an todo file on your desktop
 
 ```bash
 # git
-git s        # git status -s
+git s        # show git status short version
 git cl       # git clone
 git c        # git commit
-git cm       # git commit -m
 git cma      # git commit -a -m
+git uc       # undo commit
+git l        # log -10 --reverse --pretty=oneline
+git fix      # Open all merge conflicts or currently changed files in Editor
 
 # npm
 nl       # npm list --depth=0
@@ -85,7 +74,12 @@ nog      # npm outdated --depth=0 -g
 lsa         # ls -al
 ..          # cd ..
 ...         # cd ../..
+....        # cd ../../..
 fs          # stat -f '%z bytes'
-rm_dsstore  # find . -name '*.DS_Store' -type f -ls -delete
-p           # quickly jump to projects folder
+w           # jump to workspace
+rmdss       # find . -name '*.DS_Store' -type f -ls -delete
+inv         # display invisibles in finder
+noinv       # hide invisibles in finder
+flush       # flush dns cache
+pubkey      # copy ssh public key to clipboard
 ```

@@ -18,15 +18,15 @@ alias ....="cd ../../.."
 alias fs="stat -f '%z bytes'"
 
 # Recursively delete `.DS_Store` files
-alias rmds="find . -name '*.DS_Store' -type f -ls -delete"
+alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
 
 # quick jump to projects folder
 alias w="cd $WORKSPACE"
 
 # show invisivle files
-alias showInvisibles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
+alias inv="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 # hide invisible files
-alias hideInvisibles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
+alias noinv="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
 
 # reset DNS cache
 alias flush="sudo dscacheutil -flushcache"
