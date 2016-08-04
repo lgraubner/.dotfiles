@@ -4,7 +4,8 @@ module.exports = {
     fontFamily: 'Inconsolata, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     termCSS: '::selection { background-color: rgba(233, 44, 108, 0.8); color: #fcfcfc; }',
     padding: '12px 14px',
-    windowSize: [1100, 670]
+    windowSize: [1100, 670],
+    workingDirectory: '~/dev/workspace',
   },
   plugins: [
     'hyperlinks',
@@ -12,5 +13,4 @@ module.exports = {
     'hyperterm-working-directory',
   ],
   localPlugins: [],
-  workingDirectory: '~/dev/workspace',
 };
