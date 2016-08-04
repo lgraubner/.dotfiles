@@ -9,6 +9,8 @@ module.exports = {
   plugins: [
     'hyperlinks',
     'hyperterm-snazzy',
+    'hyperterm-working-directory',
   ],
-  localPlugins: []
+  localPlugins: [],
+  workingDirectory: '~/dev/workspace',
 };
