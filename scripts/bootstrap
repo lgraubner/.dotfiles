@@ -10,20 +10,23 @@ EMAIL=""
 
 source $DOTFILES/scripts/utils.sh
 
-_enable_zsh() {
-    e_header "Set default shell to ZSH"
-    chsh -s $(grep /zsh$ /etc/shells | tail -1)
-    e_success
-}
-
 _setup_git() {
     e_header "Set up gitconfig"
     sed -e "s/AUTHORNAME/$NAME/g" -e "s/AUTHOREMAIL/$EMAIL/g" $DOTFILES/git/gitconfig.symlink.example > $DOTFILES/git/gitconfig.symlink
     e_success
 }
 
-_setup_npm() {
-    # @TODO
+_install_node() {
+    e_header "Install Node.js"
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
+
+    export NVM_DIR="/Users/larsgraubner/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+    nvm install stable
+    nvm use stable
+    nvm alias default stable
+
     e_header "Set node publisher information"
     npm set init.author.name "$NAME"
     npm set init.author.email "$EMAIL"
@@ -63,20 +66,14 @@ init() {
     read -p "Author E-Mail ($DEFAULT_EMAIL): " email
     EMAIL=${email:-$DEFAULT_EMAIL}
 
-    # set ZSH as default shell
-    if [[ -z "$ZSH_VERSION" ]]; then
-        _enable_zsh
-    fi
-
     # setup git
     _setup_git
 
-    #if [ $(which npm) ]; then
-        # _setup_npm
-    #fi
-
     # link dotfiles
     _link_files
+
+    # install npm
+    _install_node
 
     # reload shell
     exec /bin/zsh -l
