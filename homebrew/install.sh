@@ -30,7 +30,7 @@ e_success
 
 # Install homebrew packages
 e_install "formulae" $SECTION
-formulaes=("grc" "coreutils" "spark" "node" "ansible")
+formulaes=("grc" "coreutils" "spark" "node" "ansible" "tree")
 cmd="brew install "
 counter=1
 for formulae in ${formulaes[@]}
