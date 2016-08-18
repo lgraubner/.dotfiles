@@ -8,7 +8,6 @@ module.exports = {
     workingDirectory: '~/dev/workspace',
   },
   plugins: [
-    'hyperlinks',
     'hyperterm-snazzy',
     'hyperterm-working-directory',
   ],
