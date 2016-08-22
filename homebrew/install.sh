@@ -43,7 +43,7 @@ echo -e "\r\033[2K\033[32m=> ok: installed ${counter} formulaes\033[0m"
 
 # Install cask packages
 e_install "cask formulae" $SECTION
-cformulaes=("wget" "alfred" "hyperterm" "atom" "google-chrome" "firefox" "slack" "skype")
+cformulaes=("wget" "alfred" "hyperterm" "atom" "google-chrome" "firefox" "slack" "skype" "poedit")
 cmd="brew cask install "
 counter=1
 for cformulae in ${cformulaes[@]}
