@@ -6,13 +6,11 @@
 
 source $DOTFILES/scripts/utils.sh
 
-SECTION="Ruby"
-
 if [ $(which gem) ]; then
-  e_update "gems" $SECTION
+  e_header "Update ruby"
 
   # update gems
-  e_line "update ruby gems"
+  e_line "updating ruby gems..."
   exec_task "sudo gem update"
 
   e_success

@@ -70,6 +70,7 @@ update() {
 upgrade() {
     e_header "Upgrade dotfiles"
 
+    e_line "fetching latest version..."
     exec_task "cd $DOTFILES && git reset --hard HEAD && git pull"
 
     e_success
