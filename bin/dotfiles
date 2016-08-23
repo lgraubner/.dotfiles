@@ -48,7 +48,7 @@ update() {
     # extend sudo timeout
     e_header "Administrator privileges will be required..."
     sudo -v
-    echo "\n"
+    echo -e "\n"
 
     if [[ -z "$1" ]]; then
         # find updaters and run them iteratively
@@ -72,7 +72,7 @@ update() {
 
 upgrade() {
 
-    e_header "fetching latest version..."
+    e_header "Fetching latest version..."
     exec_task "cd $DOTFILES && git reset --hard HEAD && git pull"
 
     e_success

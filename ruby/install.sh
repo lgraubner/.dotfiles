@@ -6,11 +6,9 @@
 
 source $DOTFILES/scripts/utils.sh
 
-SECTION="Ruby"
-
 # Check if gem is installed
 if [ $(which gem) ]; then
-  e_install "gems" $SECTION
+  e_header "Installing Ruby gems..."
 
   # install gems
   gems=("sass" "jekyll" "bundler")
@@ -18,11 +16,11 @@ if [ $(which gem) ]; then
   counter=1
   for gem in ${gems[@]}
   do
-    echo -ne "\r\033[2K=> installing ${gem} (${counter}/${#gems[@]})"
+    echo -ne "\r\033[2K   installing ${gem} (${counter}/${#gems[@]})"
     exec_task "${cmd} ${gem}"
     counter=$((counter+1))
   done
-  echo -e "\r\033[2K\033[32m=> ok: installed ${counter} gems\033[0m"
+  echo -e "\r\033[2K\033[32m   installed ${counter} gems\033[0m"
 fi
 
 unset $SECTION
