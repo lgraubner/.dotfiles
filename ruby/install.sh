@@ -16,7 +16,7 @@ if [ $(which gem) ]; then
   counter=1
   for gem in ${gems[@]}
   do
-    echo -ne "\r\033[2K   installing ${gem} (${counter}/${#gems[@]})"
+    echo -ne "\r\033[2K   ${gem} (${counter}/${#gems[@]})"
     exec_task "${cmd} ${gem}"
     counter=$((counter+1))
   done

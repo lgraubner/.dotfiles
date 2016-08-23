@@ -18,7 +18,7 @@ if [ $(which npm) ]; then
   counter=1
   for pkg in ${packages[@]}
   do
-    echo -ne "\r\033[2K   installing ${pkg} (${counter}/${#packages[@]})"
+    echo -ne "\r\033[2K   ${pkg} (${counter}/${#packages[@]})"
     exec_task "${cmd} ${pkg}"
     counter=$((counter+1))
   done

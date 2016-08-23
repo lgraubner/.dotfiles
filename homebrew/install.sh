@@ -32,7 +32,7 @@ cmd="brew install "
 counter=1
 for formulae in ${formulaes[@]}
 do
-  echo -ne "\r\033[2K   installing ${formulae} (${counter}/${#formulaes[@]})"
+  echo -ne "\r\033[2K   ${formulae} (${counter}/${#formulaes[@]})"
   exec_task "${cmd} ${pkg}"
   counter=$((counter+1))
 done
@@ -45,7 +45,7 @@ cmd="brew cask install "
 counter=1
 for cformulae in ${cformulaes[@]}
 do
-  echo -ne "\r\033[2K   installing ${cformulae} (${counter}/${#cformulaes[@]})"
+  echo -ne "\r\033[2K   ${cformulae} (${counter}/${#cformulaes[@]})"
   exec_task "${cmd} ${pkg}"
   counter=$((counter+1))
 done
