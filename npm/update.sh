@@ -10,6 +10,7 @@ SECTION="NPM"
 
 if [ $(which npm) ]; then
   e_update "packages" $SECTION
+  e_line "update global npm packages"
   # update NPM
   exec_task "sudo npm update -g"
   e_success
