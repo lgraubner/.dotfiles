@@ -9,17 +9,17 @@ source $DOTFILES/scripts/utils.sh
 SECTION="Homebrew"
 
 if [[ $(which brew) ]]; then
-    e_header "Update homebrew"
     # reset permissions for node
-    e_line "reset permissions to avoid update problems..."
+    e_header "reset permissions to avoid update problems..."
     sudo chown -R $(whoami) /usr/local
-    e_line "updating homebrew itself..."
+    e_header "updating homebrew itself..."
     exec_task "brew update"
-    e_success
 
-    e_line "updating formulaes..."
-    exec_task "brew upgrade --all && brew cleanup"
-    e_success
+    e_header "updating all formulaes..."
+    exec_task "brew upgrade --all"
+
+    e_header "cleaning up..."
+    exec_task "brew cleanup"
 fi
 
 unset $SECTION

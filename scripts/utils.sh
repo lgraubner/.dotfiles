@@ -5,9 +5,9 @@ function e_header() {
 
 function e_success() {
     if [[ $1 ]]; then
-        echo -e "\033[32m=> ok: $1\033[0m";
+        echo -e "\033[32m=> success: $1\033[0m";
     else
-        echo -e "\033[32m=> ok\033[0m";
+        echo -e "\033[32m=> success\033[0m";
     fi
 }
 
@@ -20,7 +20,7 @@ function e_error() {
 }
 
 function e_line() {
-    echo -e "=> $@";
+    echo -e "   $@";
 }
 
 # OS detection
