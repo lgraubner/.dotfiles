@@ -20,7 +20,7 @@ function e_error() {
 }
 
 function e_line() {
-    echo -e "   $@";
+    echo -e "=> $@";
 }
 
 # OS detection

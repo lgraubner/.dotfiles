@@ -16,7 +16,7 @@ if [[ $(which brew) ]]; then
     e_header "Updating homebrew itself..."
     exec_task "brew update"
 
-    e_header "Updating all formulaes..."
+    e_header "Updating brew formulaes..."
     exec_task "brew upgrade --all"
 
     e_header "Cleaning up..."
