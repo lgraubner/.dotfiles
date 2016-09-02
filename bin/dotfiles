@@ -48,7 +48,6 @@ update() {
     # extend sudo timeout
     e_header "Administrator privileges will be required..."
     sudo -v
-    echo -e "\n"
 
     if [[ -z "$1" ]]; then
         # find updaters and run them iteratively
@@ -65,7 +64,7 @@ update() {
         fi
     fi
 
-    e_success
+    e_success "Your system is now up to date!"
 
     exit
 }

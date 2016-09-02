@@ -5,7 +5,7 @@ function e_header() {
 
 function e_success() {
     if [[ $1 ]]; then
-        echo -e "\033[32m=> success: $1\033[0m";
+        echo -e "\033[32m=> $1\033[0m";
     else
         echo -e "\033[32m=> success\033[0m";
     fi
