@@ -74,7 +74,7 @@ upgrade() {
     e_header "Fetching latest version..."
     exec_task "cd $DOTFILES && git reset --hard HEAD && git pull"
 
-    e_success
+    e_success "dotfiles updated!"
 
     # reload shell
     exec /bin/zsh -l
