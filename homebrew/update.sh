@@ -11,7 +11,7 @@ SECTION="Homebrew"
 if [[ $(which brew) ]]; then
     # reset permissions for node
     e_header "Reset permissions to avoid update problems..."
-    e_line "/usr/local"
+    e_line "Path: /usr/local"
     sudo chown -R $(whoami) /usr/local
     e_header "Updating homebrew..."
     exec_task "brew update"
