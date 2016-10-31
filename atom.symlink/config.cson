@@ -11,7 +11,7 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "Inconsolata"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     lineHeight: 1.4
     showInvisibles: true
@@ -21,7 +21,8 @@
   linter:
     errorPanelHeight: 100
     showErrorPanel: false
-  "linter-eslint": {}
+  "linter-eslint":
+    fixOnSave: true
   "markdown-preview":
     useGitHubStyle: true
   minimap:
