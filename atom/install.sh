@@ -11,13 +11,13 @@ source $DOTFILES/scripts/utils.sh
 if [ $(which apm) ]; then
 
   e_header "installing atom packages..."
-  packages=("atom-ternjs" "auto-detect-indentation" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax" "highlight-selected" "linter-stylelint")
+  packages=("atom-ternjs" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax" "highlight-selected" "linter-stylelint")
   cmd="apm install "
   counter=1
   for pkg in ${packages[@]}
   do
     echo -ne "\r\033[2K   ${pkg} (${counter}/${#packages[@]})"
-    exec_task "${cmd} ${pkg}"
+    exec_task "${cmd} ${pkg}";
     counter=$((counter+1))
   done
   echo -e "\r\033[2K\033[37m   installed ${counter} packages\033[0m"

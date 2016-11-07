@@ -23,7 +23,7 @@ alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
 # quick jump to projects folder
 alias w="cd $WORKSPACE"
 
-# show invisivle files
+# show invisible files
 alias inv="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
 # hide invisible files
 alias noinv="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
@@ -33,3 +33,6 @@ alias flush="sudo dscacheutil -flushcache"
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# Open all merge conflicts or currently changed files in Editor
+alias fix="git diff --name-only | uniq | xargs atom"

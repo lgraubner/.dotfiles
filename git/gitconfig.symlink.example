@@ -37,5 +37,3 @@
         cma = commit -a -m
         uc = reset --soft HEAD~
         l = log -10 --reverse --pretty=oneline
-        # Open all merge conflicts or currently changed files in Editor
-        fix = diff --name-only | uniq | xargs atom

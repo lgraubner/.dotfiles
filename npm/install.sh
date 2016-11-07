@@ -13,7 +13,7 @@ if [ $(which npm) ]; then
 
   e_header "Installing global node packages..."
   # update NPM
-  packages=("eslint" "sitemap-generator-cli" "w3c-validator-cli" "gulp-cli" "webpack" "wpscan" "svgo")
+  packages=("eslint" "sitemap-generator-cli" "webpack" "wpscan" "svgo" "n")
   cmd="sudo npm install -g "
   counter=1
   for pkg in ${packages[@]}

@@ -7,16 +7,10 @@
 source $DOTFILES/scripts/utils.sh
 
 
-# Check if NPM is installed
-e_header "Installing Node version manager (nvm)... "
+# activate stable node versionm
+e_header "Activating stable node version "
 # autosetup
-exec_task "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash"
-# refresh configuration
-# @TODO refresh
-
-# e_install "node" $SECTION
-# exec_task "export NODE_LATEST=$(nvm ls-remote | tail -1 | xargs) && nvm install $NODE_LATEST && nvm alias default $NODE_LATEST"
-# e_success
+exec_task "n stable"
 
 e_header "Installing composer..."
 

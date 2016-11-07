@@ -27,7 +27,7 @@ exec_task "brew tap caskroom/cask"
 
 # Install homebrew packages
 e_header "Installing homebrew formulaes"
-formulaes=("grc" "coreutils" "spark" "node" "ansible" "tree" "yarn")
+formulaes=("grc" "coreutils" "spark" "node" "ansible" "tree" "yarn" "python3")
 cmd="brew install "
 counter=1
 for formulae in ${formulaes[@]}
