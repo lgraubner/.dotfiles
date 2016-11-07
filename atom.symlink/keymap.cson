@@ -1,2 +1,2 @@
-'atom-text-editor[data-grammar~="jsx"]:not([mini])':
+'atom-text-editor[data-grammar*="html"]:not([mini])':
   'tab': 'emmet:expand-abbreviation-with-tab'
