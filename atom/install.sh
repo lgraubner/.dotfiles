@@ -10,7 +10,7 @@ source $DOTFILES/scripts/utils.sh
 # Check if NPM is installed
 if [ $(which apm) ]; then
 
-  e_header "installing atom packages..."
+  e_header "Installing atom packages..."
   packages=("atom-ternjs" "auto-update-packages" "autocomplete-modules" "autocomplete-php" "docblockr" "editorconfig" "emmet" "linter" "linter-eslint" "merge-conflicts" "minimap" "pigments" "react" "synced-sidebar" "file-icons" "atom-beautify" "cobalt2-syntax" "highlight-selected" "linter-stylelint")
   cmd="apm install "
   counter=1

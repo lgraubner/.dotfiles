@@ -8,7 +8,7 @@ source $DOTFILES/scripts/utils.sh
 
 # Check if NPM is installed
 if [ $(which npm) ]; then
-  e_header "Updating Node package manager (npm)"
+  e_header "Updating npm"
   exec_task "sudo npm install -g npm"
 
   e_header "Installing global node packages..."
