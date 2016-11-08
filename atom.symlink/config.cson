@@ -3,6 +3,7 @@
   core:
     allowPendingPaneItems: false
     audioBeep: false
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "cobalt2-syntax"
