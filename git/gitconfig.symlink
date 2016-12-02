@@ -4,8 +4,8 @@
 [hub]
         protocol = https
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
+        name = "Lars Graubner"
+        email = "mail@larsgraubner.de"
 [credential]
         helper = store
 [color]
