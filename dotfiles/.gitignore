@@ -12,9 +12,9 @@ Thumbs.db
 .Trashes
 
 # package managers
-/bower_components
-/node_modules
-/npm-debug.log
+bower_components
+node_modules
+npm-debug.log
 
 # Miscellaneous
 .sass-cache
