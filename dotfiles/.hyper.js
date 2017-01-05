@@ -8,7 +8,7 @@ module.exports = {
     workingDirectory: '~/Projects',
   },
   plugins: [
-    'hyperterm-snazzy',
+    'hyperblue',
     'hyperterm-working-directory',
   ],
   localPlugins: [],
