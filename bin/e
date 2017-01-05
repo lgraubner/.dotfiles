@@ -11,7 +11,7 @@
 #
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
-Dotfiles - Lars Graubner - http://larsgraubner.de
+Dotfiles - Lars Graubner - https://larsgraubner.com
 
 Quick shortcut to an editor.
 
@@ -25,7 +25,7 @@ $ e /usr/local      # opens the specified directory in your editor
 See the README for documentation.
 https://github.com/lgraubner/dotfiles
 
-Copyright (c) 2015 Lars Graubner
+Copyright (c) 2017 Lars Graubner
 Licensed under the MIT license.
 HELP
 exit; fi

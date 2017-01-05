@@ -1,3 +1,4 @@
+# atom files
 atom.symlink/.apm
 atom.symlink/.node-gyp
 atom.symlink/.storage
@@ -6,6 +7,9 @@ atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
 
-git/gitconfig.symlink
+# python binaries
+*.pyc
 
-backup
+# backup folder
+backups/*
+!backups/.gitkeep

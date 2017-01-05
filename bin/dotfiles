@@ -10,59 +10,42 @@
 set -e
 
 if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
-Dotfiles - Lars Graubner - http://larsgraubner.de
+Dotfiles - Lars Graubner - https://larsgraubner.com
 
 Usage: $(basename "$0") {install|update|upgrade}
 
 See the README for documentation.
 https://github.com/lgraubner/dotfiles
 
-Copyright (c) 2015 Lars Graubner
+Copyright (c) 2017 Lars Graubner
 Licensed under the MIT license.
 HELP
 exit; fi
 
 export DOTFILES=~/.dotfiles
 
-source $DOTFILES/scripts/utils.sh
+source $DOTFILES/lib/utils.sh
 
 install() {
-    if [[ -z "$1" ]]; then
-        # find installers and run them iteratively
-        find $DOTFILES -name install.sh | while read installer ; do sh -c "${installer}" ; done
+    installer=$DOTFILES/lib/install.sh
+    if [[ -f "$installer" ]]; then
+        sh $installer
     else
-        # find specific installer and run it
-        installer=$DOTFILES/$1/install.sh
-
-        if [[ -f "$installer" ]]; then
-            sh -c "${installer}"
-        else
-            e_error
-            exit 1
-        fi
-        exit
+        e_error "Installer not found"
+        exit 1
     fi
+    exit
 }
 
 update() {
-    # extend sudo timeout
-    e_header "Administrator privileges will be required..."
-    sudo -v
-
-    if [[ -z "$1" ]]; then
-        # find updaters and run them iteratively
-        find $DOTFILES -name update.sh | while read updater ; do sh -c "${updater}" ; done
+    updater=$DOTFILES/lib/update.sh
+    if [[ -f "$updater" ]]; then
+        sh "$updater"
     else
-        # find specific updater and run it
-        updater=$DOTFILES/$1/update.sh
-
-        if [[ -f "$updater" ]]; then
-            sh -c "${updater}"
-        else
-            e_error
-            exit 1
-        fi
+        e_error
+        exit 1
     fi
+    exit
 
     e_success "Your system is now up to date!"
 
@@ -71,8 +54,8 @@ update() {
 
 upgrade() {
 
-    e_header "Fetching latest version..."
-    exec_task "cd $DOTFILES && git reset --hard HEAD && git pull"
+    e_line "Fetching latest version..."
+    cd $DOTFILES && git reset --hard HEAD && git pull
 
     e_success "dotfiles updated!"
 
@@ -82,10 +65,10 @@ upgrade() {
 
 case $1 in
     install)
-        install ${@:2}
+        install
         ;;
     update)
-        update ${@:2}
+        update
         ;;
     upgrade)
         upgrade

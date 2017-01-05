@@ -1,14 +1,11 @@
-# .dotfiles
-
-My personal dotfiles, inspired by [Zach Holman's dotfiles](https://github.com/holman/dotfiles) and [Ben Alman's dotfiles](https://github.com/cowboy/dotfiles).
+# Lars' dotfiles
 
 ## Get started
 
 Copy the files to your machine and run the bootstrap scripts. The setup will guide you and ask for several things.
 
 ```bash
-git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles && scripts/bootstrap
+git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/setup
 ```
 
 ## Contents
@@ -78,8 +75,6 @@ lsa         # ls -al
 fs          # stat -f '%z bytes'
 w           # jump to workspace
 rmdss       # find . -name '*.DS_Store' -type f -ls -delete
-inv         # display invisibles in finder
-noinv       # hide invisibles in finder
 flush       # flush dns cache
 pubkey      # copy ssh public key to clipboard
 ```

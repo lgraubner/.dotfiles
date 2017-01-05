@@ -1,0 +1,39 @@
+# Sample gitconfig
+#
+
+[hub]
+        protocol = https
+[user]
+        name = Lars Graubner
+        email = mail@larsgraubner.de
+[credential]
+        helper = store
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
+[push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to suppress warning message
+        default = simple
+[alias]
+        s = status -s
+        cl = clone
+        c = commit
+        cma = commit -a -m
+        uc = reset --soft HEAD~
+        l = log -10 --reverse --pretty=oneline

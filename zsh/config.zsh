@@ -42,3 +42,8 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+# Files will be created with these permissions:
+# files 644 -rw-r--r-- (666 minus 022)
+# dirs  755 drwxr-xr-x (777 minus 022)
+umask 022

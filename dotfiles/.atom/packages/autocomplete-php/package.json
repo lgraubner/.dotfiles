@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+        "spec": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/apm-install-dir-11705-50495-143vqco"
+    ]
+  ],
+  "_from": "../d-11705-50495-gfm3e6/package.tgz",
+  "_id": "autocomplete-php@0.3.7",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/autocomplete-php",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+    "spec": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11705-50495-gfm3e6/package.tgz",
+  "_shasum": "048d9418a380a320b4e13ad5eab5d643cc14118e",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/d-11705-50495-gfm3e6/package.tgz",
+  "_where": "/private/var/folders/wq/9qxycb_n5yx8ss0yrc2vbv440000gn/T/apm-install-dir-11705-50495-143vqco",
+  "bugs": {
+    "url": "https://github.com/Azakur4/autocomplete-php/issues"
+  },
+  "dependencies": {},
+  "description": "Autocomplete-php is a PHP provider for autocomplete+",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Azakur4/autocomplete-php#readme",
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "autocomplete-php",
+  "optionalDependencies": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "getProvider"
+      }
+    }
+  },
+  "readme": "# autocomplete-php package\nAn Atom PHP autocompleter for `autocomplete-plus`\n\n**Now is mandatory have PHP in the enviroment PATH**\n\nBeta version.\n\n![Demo](https://raw.github.com/Azakur4/autocomplete-php/master/assets/img/demo.gif)\n\n### Requirements:\n- Atom `autocomplete-plus` package\n  - (instll with `apm install autocomplete-plus`)\n- Now is mandatory have PHP in the enviroment PATH\n\n### Installation\n- `apm install autocomplete-php`\n- or install through Atom's UI\n\n### To-Do\n- [x] Get local variables from current file\n- [x] Get local functions from current file (Included snippets with params)\n\n### Maybe\n- [ ] Update option for list of internal php functions\n\n### Thanks to:\n- [@amp343](https://github.com/amp343) - Add snippets to php internal functions\n- [@fbereche](https://github.com/fbereche) - Help me with some ideas in the new way to get autocomplete\n\n[![Share the love!](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AMS87WQKEVEHG)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azakur4/autocomplete-php.git"
+  },
+  "version": "0.3.7"
+}

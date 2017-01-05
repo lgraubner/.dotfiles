@@ -10,7 +10,7 @@
 #
 
 if [[ -z "$1" || "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
-Dotfiles - Lars Graubner - http://larsgraubner.de
+Dotfiles - Lars Graubner - https://larsgraubner.com
 
 Creates a todo file on your desktop.
 
@@ -21,7 +21,7 @@ $ todo "Get dinner"
 See the README for documentation.
 https://github.com/lgraubner/dotfiles
 
-Copyright (c) 2015 Lars Graubner
+Copyright (c) 2017 Lars Graubner
 Licensed under the MIT license.
 HELP
 exit; fi
