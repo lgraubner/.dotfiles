@@ -1,11 +1,12 @@
 # atom files
-atom.symlink/.apm
-atom.symlink/.node-gyp
-atom.symlink/.storage
-atom.symlink/compile-cache/
-atom.symlink/packages
-atom.symlink/storage
-atom.symlink/themes
+dotfiles/.atom/.apm
+dotfiles/.atom/.node-gyp
+dotfiles/.atom/.storage
+dotfiles/.atom/compile-cache/
+dotfiles/.atom/packages
+dotfiles/.atom/storage
+dotfiles/.atom/themes
+dotfiles/.atom/recovery
 
 # python binaries
 *.pyc
