@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 #
 # Manages the dotfiles.
 #
@@ -55,7 +55,7 @@ update() {
 upgrade() {
 
     e_line "Fetching latest version..."
-    cd $DOTFILES && git reset --hard HEAD && git pull
+    (cd $DOTFILES && git reset --hard HEAD && git pull)
 
     e_success "dotfiles updated!"
 
