@@ -15,7 +15,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install grc coreutils spark node ansible tree python3 ruby openssl dnsmasq
+brew install grc coreutils spark node ansible tree python3 ruby openssl
 
 # install yarn
 e_header "Install yarn"
