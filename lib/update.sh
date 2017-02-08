@@ -19,7 +19,7 @@ sudo chown -R $(whoami) /usr/local
 brew update
 
 # update brew formulaes
-brew upgrade --all
+brew upgrade
 
 # cleanup
 brew cleanup
