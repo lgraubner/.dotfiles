@@ -25,15 +25,19 @@
 [help]
         autocorrect = 1
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+        default = current
 [alias]
         s = status -s
+        co = checkout
         cl = clone
-        c = commit
+        ci = commit -m
         cma = commit -a -m
-        uc = reset --soft HEAD~
+
+        poop = stash pop
+
+        pom = push origin master
+
+        undo = reset --soft HEAD~
+        amend = commit --emend
+
         l = log -10 --reverse --pretty=oneline
