@@ -38,6 +38,6 @@
         pom = push origin master
 
         undo = reset --soft HEAD~
-        amend = commit --emend
+        amend = commit --amend
 
         l = log -10 --reverse --pretty=oneline
