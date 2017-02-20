@@ -1,2 +1,4 @@
 'atom-text-editor[data-grammar*="html"]:not([mini])':
   'tab': 'emmet:expand-abbreviation-with-tab'
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-cmd-{': 'unset!'
