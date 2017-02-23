@@ -32,7 +32,7 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred hyperterm atom google-chrome firefox slack poedit
+brew cask install alfred hyperterm atom google-chrome firefox slack poedit rocket
 
 # install atom plugins
 if [ $(which apm) ]; then
