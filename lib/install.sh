@@ -37,7 +37,7 @@ brew cask install alfred hyperterm atom google-chrome firefox slack poedit rocke
 # install atom plugins
 if [ $(which apm) ]; then
   e_header "Install atom plugins"
-  apm install atom-ternjs auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react synced-sidebar file-icons atom-beautify cobalt2-syntax highlight-selected linter-stylelint
+  apm install atom-ternjs auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react synced-sidebar file-icons atom-beautify cobalt2-syntax highlight-selected linter-stylelint highlight-nbsp
 fi
 
 # install global npm packages
