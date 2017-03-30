@@ -31,5 +31,15 @@
   minimap:
     absoluteMode: true
   "one-dark-ui": {}
+  "prettier-atom":
+    formatOnSaveOptions:
+      excludedGlobs: [
+        "node_modules"
+      ]
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "es5"
+  "tree-view":
+    autoReveal: true
   welcome:
     showOnStartup: false
