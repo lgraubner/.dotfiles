@@ -15,7 +15,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install grc coreutils spark node ansible@2.0 tree python3 ruby openssl hugo
+brew install grc coreutils spark node ansible@2.0 tree python3 openssl hugo
 
 # install yarn
 e_header "Install yarn"
@@ -32,7 +32,7 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred hyperterm atom google-chrome firefox slack poedit rocket
+brew cask install alfred hyperterm atom google-chrome firefox slack poedit
 
 # install atom plugins
 if [ $(which apm) ]; then
@@ -63,6 +63,12 @@ if [ $(which pip) ]; then
   e_header "Install python virtualenv"
   pip install virtualenv
 fi
+
+# install ruby version manager
+e_header "Install rvm"
+curl -L https://get.rvm.io | bash -s stable --ruby
+# reload
+source /Users/$USER/.rvm/scripts/rvm
 
 # install global ruby gems
 if [ $(which gem) ]; then
