@@ -15,7 +15,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install grc coreutils spark node ansible@2.0 tree python3 ruby openssl
+brew install grc coreutils spark node ansible@2.0 tree python3 ruby openssl hugo
 
 # install yarn
 e_header "Install yarn"
@@ -37,13 +37,13 @@ brew cask install alfred hyperterm atom google-chrome firefox slack poedit rocke
 # install atom plugins
 if [ $(which apm) ]; then
   e_header "Install atom plugins"
-  apm install atom-ternjs auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react file-icons atom-beautify cobalt2-syntax highlight-selected linter-stylelint highlight-nbsp
+  apm install atom-ternjs auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react file-icons atom-beautify cobalt2-syntax highlight-selected highlight-nbsp
 fi
 
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  sudo npm install -g eslint sitemap-generator-cli webpack svgo n express-generator flow-bin
+  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
@@ -67,7 +67,7 @@ fi
 # install global ruby gems
 if [ $(which gem) ]; then
   e_header "Install ruby gems"
-  sudo gem install sass jekyll bundler
+  sudo gem install sass bundler
 fi
 
 # install composer globally
