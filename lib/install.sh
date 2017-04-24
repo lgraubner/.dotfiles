@@ -82,7 +82,29 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 ## set macOS options
 # show invisible files
-e_header "Show invisible files on macOS"
+e_header "Set macOS options and defaults"
+
+e_line "Show invisible files on macOS"
 defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# show file extensions
+e_line "Show file extensions"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# expand save dialog
+e_line "Expand save dialog"
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# enable keyboard for dialogs
+e_line "Enable keyboard for dialogs"
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# use current dir as search scope
+e_line "Use current directory as search scope"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# disable open dialog
+e_line "Disable open app dialog"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 e_success "System is ready to use!"
