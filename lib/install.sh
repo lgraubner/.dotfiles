@@ -5,7 +5,7 @@ set -e
 export DOTFILES=~/.dotfiles
 
 # load logging functions
-source utils.sh
+source $DOTFILES/lib/utils.sh
 
 trap 'e_error "\nAn error occured. Aborting."' ERR
 
