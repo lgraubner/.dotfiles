@@ -32,7 +32,7 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred hyperterm atom google-chrome firefox slack poedit
+brew cask install alfred hyperterm atom google-chrome firefox slack poedit visual-studio-code
 
 # install atom plugins
 if [ $(which apm) ]; then
@@ -43,7 +43,7 @@ fi
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin gzip-size-cli
+  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin gzip-size-cli flow-bin
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
