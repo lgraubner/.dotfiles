@@ -1,0 +1,11 @@
+{
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "boundary",
+    "workbench.iconTheme": "vs-seti",
+    "eslint.autoFixOnSave": true,
+    "prettier.trailingComma": "es5",
+    "prettier.singleQuote": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    }
+}
