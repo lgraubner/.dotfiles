@@ -7,5 +7,6 @@
     "prettier.singleQuote": true,
     "[javascript]": {
         "editor.formatOnSave": true
-    }
+    },
+    "emmet.syntaxProfiles": { "javascript": "jsx" }
 }
