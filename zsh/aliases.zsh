@@ -29,7 +29,7 @@ alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
 alias w="cd $WORKSPACE"
 
 # reset DNS cache
-alias flush="sudo dscacheutil -flushcache"
+alias flush="sudo killall -HUP mDNSResponder"
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
