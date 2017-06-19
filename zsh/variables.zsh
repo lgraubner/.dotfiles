@@ -7,5 +7,8 @@ export PATH=$DOTFILES/bin:$PATH
 # homebrew
 export PATH=/usr/local/sbin:$PATH
 
+# composer bin
+export PATH=$HOME/.composer/vendor/bin:$PATH
+
 # editor var
-export EDITOR='atom'
+export EDITOR='code'
