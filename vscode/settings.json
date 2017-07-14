@@ -1,16 +1,17 @@
 {
     "editor.fontSize": 14,
     "editor.renderWhitespace": "boundary",
-    "workbench.iconTheme": "vs-seti",
+    "editor.autoIndent": true,
+    "emmet.syntaxProfiles": { "javascript": "jsx" },
+    "javascript.validate.enable": false,
     "prettier.trailingComma": "es5",
     "prettier.singleQuote": true,
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
     "[javascript]": {
         "editor.formatOnSave": true
     },
     "[scss]": {
         "editor.formatOnSave": true
-    },
-    "emmet.syntaxProfiles": { "javascript": "jsx" },
-    "javascript.validate.enable": false,
-    "window.zoomLevel": 0
+    }
 }
