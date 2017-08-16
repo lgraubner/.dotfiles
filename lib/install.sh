@@ -43,7 +43,7 @@ fi
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin gzip-size-cli flow-bin
+  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin gzip-size-cli flow-bin npx release
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
