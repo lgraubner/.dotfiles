@@ -15,7 +15,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install grc coreutils spark node ansible@2.0 tree python3 openssl hugo
+brew install coreutils node ansible tree python3 hugo
 
 # install yarn
 e_header "Install yarn"
@@ -32,18 +32,12 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred hyperterm atom google-chrome firefox slack poedit visual-studio-code
-
-# install atom plugins
-if [ $(which apm) ]; then
-  e_header "Install atom plugins"
-  apm install atom-ternjs auto-update-packages autocomplete-modules autocomplete-php docblockr editorconfig emmet linter linter-eslint merge-conflicts minimap pigments react file-icons atom-beautify cobalt2-syntax highlight-selected highlight-nbsp
-fi
+brew cask install alfred hyperterm google-chrome firefox slack visual-studio-code
 
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  sudo npm install -g eslint sitemap-generator-cli webpack svgo n flow-bin gzip-size-cli flow-bin npx release
+  sudo npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin npx release
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
@@ -56,24 +50,6 @@ if [ $(which npm) ]; then
   npm set init.author.url "https://larsgraubner.com"
   npm set save-exact true
   npm adduser
-fi
-
-# install global python modules
-if [ $(which pip) ]; then
-  e_header "Install python virtualenv"
-  pip install virtualenv
-fi
-
-# install ruby version manager
-e_header "Install rvm"
-curl -L https://get.rvm.io | bash -s stable --ruby
-# reload
-source /Users/$USER/.rvm/scripts/rvm
-
-# install global ruby gems
-if [ $(which gem) ]; then
-  e_header "Install ruby gems"
-  sudo gem install sass bundler
 fi
 
 # install composer globally

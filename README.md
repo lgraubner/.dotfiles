@@ -10,7 +10,7 @@ git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/s
 
 ## Contents
 
-This files include the cobalt2 syntax theme for Atom and the snazzy Theme for hyperterm. Alternatively you can use iTerm2 with the cobalt2 theme.
+This files include the snazzy Theme for hyperterm. Alternatively you can use iTerm2 with the cobalt2 theme.
 
 ## Binaries
 

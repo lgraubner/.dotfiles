@@ -30,12 +30,6 @@ if [ $(which npm) ]; then
   sudo npm update -g
 fi
 
-# update global gems
-e_header "Updating gems"
-if [ $(which gem) ]; then
-  sudo gem update
-fi
-
 # update composer
 e_header "Updating composer"
 composer self-update

@@ -35,4 +35,4 @@ alias flush="sudo killall -HUP mDNSResponder"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Open all merge conflicts or currently changed files in Editor
-alias fix="git diff --name-only | uniq | xargs atom"
+alias fix="git diff --name-only | uniq | xargs code"
