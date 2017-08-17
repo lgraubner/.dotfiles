@@ -32,7 +32,7 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred hyperterm google-chrome firefox slack visual-studio-code
+brew cask install alfred hyperterm google-chrome firefox slack visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox
 
 # install global npm packages
 if [ $(which npm) ]; then
