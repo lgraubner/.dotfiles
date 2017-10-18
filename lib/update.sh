@@ -27,7 +27,7 @@ brew cleanup
 # update global node packages
 e_header "Updating global node packages"
 if [ $(which npm) ]; then
-  sudo npm update -g
+  npm update -g
 fi
 
 # update composer
