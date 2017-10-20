@@ -45,10 +45,11 @@ if [ $(which npm) ]; then
   sudo n latest
 
   # set npm config
-  npm set init.author.name "Lars Graubner"
-  npm set init.author.email "mail@larsgraubner.de"
-  npm set init.author.url "https://larsgraubner.com"
-  npm set save-exact true
+  npm config set init.author.name "Lars Graubner"
+  npm config set init.author.email "mail@larsgraubner.de"
+  npm config set init.author.url "https://larsgraubner.com"
+  npm config set init.license MIT
+  npm config set save-exact true
   npm adduser
 fi
 
