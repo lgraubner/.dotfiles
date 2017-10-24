@@ -1,13 +1,3 @@
-## npm
-# list local packages
-alias nl="npm list --depth=0"
-# list global packages
-alias nlg="npm list --depth=0 -g"
-# list outdated packages
-alias no="npm outdated --depth=0"
-# list outdated global packages
-alias nog="npm outdated --depth=0 -g"
-
 ## system
 # colored ls
 alias ls="command ls -G"
@@ -36,3 +26,8 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 # Open all merge conflicts or currently changed files in Editor
 alias fix="git diff --name-only | uniq | xargs code"
+
+# create directory and cd into it
+mkdirc() {
+    mkdir -p -- "$1" && cd -P -- "$1"
+}
