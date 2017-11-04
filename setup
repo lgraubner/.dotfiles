@@ -1,8 +1,8 @@
 #!/bin/sh
 
-source lib/utils.sh
-
 export DOTFILES=~/.dotfiles
+
+source $DOTFILES/lib/utils.sh
 
 backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 
@@ -31,4 +31,4 @@ if [[ -e $backup_dir ]]; then
   e_line "\nBackups were moved to ${backup_dir/#$HOME/~}"
 fi
 
-sh ./lib/install.sh
+sh $DOTFILES/lib/install.sh

@@ -62,9 +62,7 @@ git l        # log -10 --reverse --pretty=oneline
 git fix      # Open all merge conflicts or currently changed files in Editor
 
 # npm
-nl       # npm list --depth=0
-nlg      # npm list --depth=0 -g
-no       # npm outdated --depth
+no       # npm outdated
 nog      # npm outdated --depth=0 -g
 
 # files

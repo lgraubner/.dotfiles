@@ -2,8 +2,6 @@
 
 set -e
 
-export DOTFILES=~/.dotfiles
-
 # load logging functions
 source $DOTFILES/lib/utils.sh
 

@@ -31,3 +31,7 @@ alias fix="git diff --name-only | uniq | xargs code"
 mkdirc() {
     mkdir -p -- "$1" && cd -P -- "$1"
 }
+
+# npm
+alias no="npm outdated"
+alias nog="npm outdated --depth=0 -g"
