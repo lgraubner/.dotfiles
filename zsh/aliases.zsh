@@ -4,11 +4,6 @@ alias ls="command ls -G"
 
 alias lsa="ls -al"
 
-# easy navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
 #file size
 alias fs="stat -f '%z bytes'"
 
@@ -26,12 +21,3 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 # Open all merge conflicts or currently changed files in Editor
 alias fix="git diff --name-only | uniq | xargs code"
-
-# create directory and cd into it
-mkdirc() {
-    mkdir -p -- "$1" && cd -P -- "$1"
-}
-
-# npm
-alias no="npm outdated"
-alias nog="npm outdated --depth=0 -g"

@@ -9,6 +9,9 @@ trap 'e_error "\nAn error occured. Aborting."' ERR
 
 e_line "\nUpdating software. May require root password."
 
+e_header "Update Oh My Zsh"
+upgrade_oh_my_zsh
+
 # reset permissions to avoid update problems
 e_header "Updating brew and formulaes"
 sudo chown -R $(whoami) /usr/local
@@ -31,5 +34,7 @@ fi
 # update composer
 e_header "Updating composer"
 composer self-update
+
+source ~/.zshrc
 
 e_success "Software is up to date. Your system is ready to use!"

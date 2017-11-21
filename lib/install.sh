@@ -42,12 +42,7 @@ if [ $(which npm) ]; then
   sudo n stable
   sudo n latest
 
-  # set npm config
-  npm config set init.author.name "Lars Graubner"
-  npm config set init.author.email "mail@larsgraubner.de"
-  npm config set init.author.url "https://larsgraubner.com"
-  npm config set init.license MIT
-  npm config set save-exact true
+  # login
   npm adduser
 fi
 
