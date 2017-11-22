@@ -61,10 +61,6 @@ git uc       # undo commit
 git l        # log -10 --reverse --pretty=oneline
 git fix      # Open all merge conflicts or currently changed files in Editor
 
-# npm
-no       # npm outdated
-nog      # npm outdated --depth=0 -g
-
 # files
 lsa         # ls -al
 ..          # cd ..
