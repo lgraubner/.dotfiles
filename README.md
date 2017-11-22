@@ -2,7 +2,7 @@
 
 ## Get started
 
-Copy the files to your machine and run the bootstrap scripts. The setup will guide you and ask for several things.
+Copy the files to your machine and run the setup scripts. The setup will guide you and ask for several things.
 
 ```bash
 git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/setup
@@ -10,7 +10,7 @@ git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/s
 
 ## Contents
 
-This files include the snazzy Theme for hyperterm. Alternatively you can use iTerm2 with the cobalt2 theme.
+This files are meant to be used with [Oh My Zsh](http://ohmyz.sh/) and [iTerm](https://www.iterm2.com/). Several other tools and libraries will be installed to get a complete development environment.
 
 ## Binaries
 
@@ -72,3 +72,7 @@ rmdss       # find . -name '*.DS_Store' -type f -ls -delete
 flush       # flush dns cache
 pubkey      # copy ssh public key to clipboard
 ```
+
+## Oh My Zsh
+
+For more aliases and commands check the [Oh My Zsh cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet).
