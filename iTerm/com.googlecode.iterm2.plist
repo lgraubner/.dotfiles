@@ -916,10 +916,14 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15170273184776306</real>
+				<real>0.4651947021484375</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.11783610284328461</real>
+				<real>0.36241359823986841</real>
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
@@ -1689,5 +1693,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.1.5</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>1</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
