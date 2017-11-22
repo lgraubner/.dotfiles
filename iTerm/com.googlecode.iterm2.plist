@@ -772,7 +772,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1219 622 796 473 0 0 3440 1417 </string>
+	<string>1218 808 796 473 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 287 650 590 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1200,9 +1200,16 @@
 				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>b</string>
+				</dict>
+				<key>0xf702-0x300000</key>
+				<dict>
+					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
+					<string>0x01</string>
 				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
@@ -1228,9 +1235,16 @@
 				<key>0xf703-0x280000</key>
 				<dict>
 					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>f</string>
+				</dict>
+				<key>0xf703-0x300000</key>
+				<dict>
+					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
+					<string>0x05</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -1373,7 +1387,7 @@
 			<key>Normal Font</key>
 			<string>MenloForPowerline-Regular 13</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -1620,7 +1634,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-21T08:29:58Z</date>
+	<date>2017-11-22T08:13:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
