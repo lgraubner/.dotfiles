@@ -21,3 +21,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 
 # Open all merge conflicts or currently changed files in Editor
 alias fix="git diff --name-only | uniq | xargs code"
+
+# Open current path in folder
+alias o="open ."
