@@ -9,3 +9,6 @@ export EDITOR='code'
 
 # workspace dir
 export WORKSPACE=$HOME/Code
+
+# android studio
+export ANDROID_HOME=/usr/local/opt/android-sdk

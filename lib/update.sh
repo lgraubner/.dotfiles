@@ -32,6 +32,4 @@ fi
 e_header "Updating composer"
 composer self-update
 
-source ~/.zshrc
-
 e_success "Software is up to date. Your system is ready to use!"
