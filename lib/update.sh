@@ -11,7 +11,7 @@ e_line "\nUpdating software. May require root password."
 
 # reset permissions to avoid update problems
 e_header "Updating brew and formulaes"
-sudo chown -R $(whoami) /usr/local
+sudo chown -R $(whoami) $(brew --prefix)/*
 
 # update homebrew
 brew update
