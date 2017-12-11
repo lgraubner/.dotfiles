@@ -24,3 +24,6 @@ alias fix="git diff --name-only | uniq | xargs code"
 
 # Open current path in folder
 alias o="open ."
+
+# npm
+alias dev="npm run dev"
