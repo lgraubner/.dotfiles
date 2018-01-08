@@ -8,7 +8,7 @@ export PATH=$DOTFILES/bin:$PATH
 export EDITOR='code'
 
 # workspace dir
-export WORKSPACE=$HOME/Dev
+export WORKSPACE=$HOME/dev
 
 # android studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
