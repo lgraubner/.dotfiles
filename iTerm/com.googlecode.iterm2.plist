@@ -772,9 +772,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1218 808 796 473 0 0 3440 1417 </string>
+	<string>297 351 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 287 650 590 0 0 1440 877 </string>
+	<string>0 0 1146 1417 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>474 181 650 502 0 0 3440 1417 </string>
 	<key>New Bookmarks</key>
@@ -1563,7 +1563,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/larsgraubner/Code</string>
+			<string>/Users/larsgraubner/dev</string>
 		</dict>
 	</array>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -1638,7 +1638,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-22T08:13:50Z</date>
+	<date>2018-01-08T07:31:45Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
