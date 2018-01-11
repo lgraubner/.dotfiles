@@ -13,9 +13,6 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
 fi
 
-e_header 'Install Oh My Zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # link dotfiles
 e_header 'Link dotfiles'
 find -H "$DOTFILES/dotfiles" -maxdepth 2 -iname ".*" | while read src; do
@@ -35,3 +32,6 @@ if [[ -e $backup_dir ]]; then
 fi
 
 sh $DOTFILES/lib/install.sh
+
+e_header 'Install Oh My Zsh'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
