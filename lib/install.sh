@@ -35,7 +35,7 @@ brew cask install alfred google-chrome firefox visual-studio-code applepi-baker 
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin npx gatsby-cli create-react-native-app flow-typed create-react-app react-native-cli prettier
+  npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin npx gatsby-cli create-react-native-app flow-typed create-react-app react-native-cli prettier git-open
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
