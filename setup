@@ -8,10 +8,10 @@ backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 
 e_line "\nSetting up system. May require root password."
 
-# enable zsh shell
-if [[ "$SHELL" != "/bin/zsh" ]]; then
-  chsh -s $(which zsh)
-fi
+sh $DOTFILES/lib/install.sh
+
+# login npm
+npm adduser
 
 # link dotfiles
 e_header 'Link dotfiles'
@@ -31,7 +31,10 @@ if [[ -e $backup_dir ]]; then
   e_line "\nBackups were moved to ${backup_dir/#$HOME/~}"
 fi
 
-sh $DOTFILES/lib/install.sh
+# enable zsh shell
+if [[ "$SHELL" != "/bin/zsh" ]]; then
+  chsh -s $(which zsh)
+fi
 
 e_header 'Install ZSH theme'
 cd $DOTFILES
@@ -41,3 +44,31 @@ ln -sf "$PWD/spaceship.zsh" "/usr/local/share/zsh/site-functions/prompt_spaceshi
 
 e_header 'Install Oh My Zsh'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+## set macOS options
+# show invisible files
+e_header "Set macOS options and defaults"
+
+e_line "Show invisible files on macOS"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# show file extensions
+e_line "Show file extensions"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# expand save dialog
+e_line "Expand save dialog"
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# enable keyboard for dialogs
+e_line "Enable keyboard for dialogs"
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# use current dir as search scope
+e_line "Use current directory as search scope"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+killall Finder
+
+e_success "System is ready to use!"

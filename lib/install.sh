@@ -41,36 +41,8 @@ if [ $(which npm) ]; then
   e_header "Install stable and latest node versions"
   sudo n stable
   sudo n latest
-
-  # login
-  npm adduser
 fi
 
 # install composer globally
 e_header "Install composer globally"
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
-## set macOS options
-# show invisible files
-e_header "Set macOS options and defaults"
-
-e_line "Show invisible files on macOS"
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
-# show file extensions
-e_line "Show file extensions"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# expand save dialog
-e_line "Expand save dialog"
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-
-# enable keyboard for dialogs
-e_line "Enable keyboard for dialogs"
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# use current dir as search scope
-e_line "Use current directory as search scope"
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-e_success "System is ready to use!"
