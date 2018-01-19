@@ -80,3 +80,6 @@ $RECYCLE.BIN/
 
 tmp
 !tmp/.gitignore
+
+# zsh theme
+spaceship-prompt

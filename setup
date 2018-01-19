@@ -33,5 +33,11 @@ fi
 
 sh $DOTFILES/lib/install.sh
 
+e_header 'Install ZSH theme'
+cd $DOTFILES
+git clone https://github.com/denysdovhan/spaceship-prompt.git
+cd spaceship-prompt
+ln -sf "$PWD/spaceship.zsh" "/usr/local/share/zsh/site-functions/prompt_spaceship_setup"
+
 e_header 'Install Oh My Zsh'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
