@@ -13,7 +13,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install coreutils node ansible tree python3 watchman
+brew install coreutils node ansible tree python3 watchman go
 
 # install yarn
 e_header "Install yarn"
