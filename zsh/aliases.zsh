@@ -27,3 +27,6 @@ alias o="open ."
 
 # npm
 alias dev="npm run dev"
+
+# fun
+alias idk="printf \"¯\_(ツ)_/¯\" | pbcopy && echo \"¯\_(ツ)_/¯ copied to clipboard\""
