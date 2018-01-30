@@ -30,9 +30,10 @@
 [alias]
         s = status -s
         co = checkout
+        cob = checkout -b
         cl = clone
         ci = commit -m
-        cma = commit -a -m
+        cm = !git add -A && git commit -m
 
         poop = stash pop
 
