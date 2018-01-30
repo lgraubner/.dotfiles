@@ -30,14 +30,14 @@
 [alias]
         s = status -s
         co = checkout
-        cob = checkout -b
+        cb = checkout -b
         cl = clone
         ci = commit -m
-        cm = !git add -A && git commit -m
+        ac = !git add -A && git commit -m
 
         poop = stash pop
 
-        pom = push origin master
+        pm = push origin master
 
         undo = reset --soft HEAD~
         amend = commit --amend
