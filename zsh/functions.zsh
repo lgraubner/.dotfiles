@@ -3,7 +3,7 @@ function homestead() {
 }
 
 function mkd() {
-    mkdir -p "$@" && cs "$_";
+    mkdir -p "$@" && cd "$_";
 }
 
 function work() {
