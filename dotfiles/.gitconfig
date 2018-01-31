@@ -35,6 +35,7 @@
         ci = commit -m
         ac = !git add -A && git commit -m
 
+        p = push
         pm = push origin master
 
         undo = reset --soft HEAD~
