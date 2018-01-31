@@ -35,8 +35,6 @@
         ci = commit -m
         ac = !git add -A && git commit -m
 
-        poop = stash pop
-
         pm = push origin master
 
         undo = reset --soft HEAD~
