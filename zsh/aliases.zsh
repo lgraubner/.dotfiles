@@ -12,6 +12,8 @@ alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
 
 # quick jump to projects folder
 alias w="cd $WORKSPACE"
+alias c="cd $WORKSPACE/code"
+alias i="cd $WORKSPACE/code/idearockers"
 
 # reset DNS cache
 alias flush="sudo killall -HUP mDNSResponder"
