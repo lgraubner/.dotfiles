@@ -7,8 +7,7 @@ function mkd() {
 }
 
 function work() {
-    open -a "Google Chrome" https://app.simplenote.com
-    open -a "Google Chrome" https://trello.com/b/5Jeb5fT6/breathe
+    open -a "Google Chrome" https://app.asana.com/0/568732081266236/board
     open -a "Spotify"
     open -a "HipChat"
 
