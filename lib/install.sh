@@ -30,7 +30,7 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred google-chrome firefox visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant 1password hipchat postman
+brew cask install alfred google-chrome firefox visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant 1password hipchat postman caffeine
 
 # install global npm packages
 if [ $(which npm) ]; then
