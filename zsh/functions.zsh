@@ -11,12 +11,9 @@ function work() {
     open -a "Spotify"
     open -a "HipChat"
 
-    # @TODO: open all subfolders, detect php/js project
-    idearockers="$HOME/dev/code/idearockers"
-
-    open -a "PhpStorm" $idearockers/BreatheApi
-    code $idearockers/Breathe
-    open -a "Xcode" $idearockers/Breathe/ios
+    open -a "PhpStorm" $HOME/code/BreatheApi
+    code $HOME/code/Breathe
+    open -a "Xcode" $HOME/code/Breathe/ios
 
     cd "$HOME/dev/code/idearockers/BreatheApi"
 }
