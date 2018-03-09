@@ -15,7 +15,7 @@ function work() {
     code $HOME/code/Breathe
     open -a "Xcode" $HOME/code/Breathe/ios
 
-    cd "$HOME/dev/code/idearockers/BreatheApi"
+    cd "$HOME/dev/code/Breathe"
 }
 
 function bye() {
