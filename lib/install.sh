@@ -30,12 +30,12 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred google-chrome firefox visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant 1password hipchat postman caffeine
+brew cask install alfred google-chrome firefox visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant 1password stride postman caffeine
 
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin gatsby-cli create-react-native-app flow-typed create-react-app react-native-cli prettier git-open http-server npm-check
+  npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin gatsby-cli create-react-native-app flow-typed create-react-app react-native-cli prettier git-open http-server npm-check mjml
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
