@@ -20,7 +20,7 @@ function work() {
 
 function bye() {
     osascript -e 'quit app "Spotify"'
-    osascript -e 'quit app "HipChat"'
+    osascript -e 'quit app "Stride"'
     osascript -e 'quit app "PhpStorm"'
     osascript -e 'quit app "Xcode"'
     osascript -e 'quit app "Visual Studio Code"'
