@@ -20,17 +20,14 @@ Licensed under the MIT license.
 HELP
 exit; fi
 
+PROJECT_NAME=$1
+
 bootstrap() {
-    PROJECT_NAME=$1
-
-    [[ -z "$PROJECT_NAME" ]] && { echo "Please provide a project name." ; exit 1; }
-
-    git init $PROJECT_NAME
-    cd $PROJECT_NAME
+    git init $PROJECT_NAME && cd $PROJECT_NAME
     npm init -y
     touch README.md index.js .gitignore
 
-    cat <<EOF >LICENSE
+cat <<EOF >LICENSE
 MIT License
 
 Copyright (c) 2018 Lars Graubner
@@ -54,7 +51,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 EOF
 
-    cat <<EOF >.editorconfig
+cat <<EOF >.editorconfig
 # editorconfig.org
 
 root = true
@@ -69,4 +66,4 @@ insert_final_newline = true
 EOF
 }
 
-bootstrap()
+bootstrap
