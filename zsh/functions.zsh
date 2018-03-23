@@ -1,5 +1,5 @@
 function homestead() {
-    ( cd ~/dev/Homestead && vagrant $* )
+    ( cd ~/code/Homestead && vagrant $* )
 }
 
 function mkd() {
