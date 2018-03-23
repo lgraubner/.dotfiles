@@ -13,7 +13,7 @@ e_header "Install homebrew"
 
 # install brew formulaes
 e_header "Install brew formulaes"
-brew install coreutils node ansible tree python3 watchman go homebrew/php/php56-xdebug
+brew install coreutils node ansible tree python3 homebrew/php/php56-xdebug
 
 # install yarn
 e_header "Install yarn"
@@ -30,12 +30,12 @@ brew tap caskroom/cask
 
 # install apps with cask
 e_header "Install apps with cask"
-brew cask install alfred google-chrome firefox visual-studio-code applepi-baker dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant 1password stride postman caffeine
+brew cask install alfred google-chrome firefox visual-studio-code dropbox filezilla imageoptim spotify the-unarchiver virtualbox iterm2 vagrant postman caffeine
 
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  npm install -g eslint sitemap-generator-cli webpack svgo n gzip-size-cli flow-bin gatsby-cli create-react-native-app flow-typed create-react-app react-native-cli prettier git-open http-server npm-check mjml fkill-cli strong-pwgen-cli
+  npm install -g sitemap-generator-cli svgo n gzip-size-cli flow-typed create-react-app prettier git-open http-server npm-check fkill-cli strong-pwgen-cli
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
