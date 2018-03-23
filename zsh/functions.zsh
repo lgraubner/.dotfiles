@@ -17,14 +17,3 @@ function work() {
 
     cd "$HOME/code/Breathe"
 }
-
-function bye() {
-    osascript -e 'quit app "Spotify"'
-    osascript -e 'quit app "Stride"'
-    osascript -e 'quit app "PhpStorm"'
-    osascript -e 'quit app "Xcode"'
-    osascript -e 'quit app "Visual Studio Code"'
-
-    cd "$HOME/dev/code/idearockers/BreatheApi"
-    vagrant halt
-}
