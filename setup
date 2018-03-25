@@ -36,15 +36,15 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
 fi
 
-e_header 'Install ZSH theme'
-cd $DOTFILES
-git clone https://github.com/denysdovhan/spaceship-prompt.git
-cd spaceship-prompt
-ln -sf "$PWD/spaceship.zsh" "/usr/local/share/zsh/site-functions/prompt_spaceship_setup"
-
 e_header 'Install Oh My Zsh'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+e_header 'Install ZSH theme'
+mkdir -p "$ZSH_CUSTOM/themes/"
+cd $DOTFILES
+git clone https://github.com/denysdovhan/spaceship-prompt.git
+cd spaceship-prompt
+ln -s "$PWD/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 ## set macOS options
 # show invisible files
