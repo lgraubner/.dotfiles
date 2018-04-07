@@ -13,6 +13,21 @@ sh $DOTFILES/lib/install.sh
 # login npm
 npm adduser
 
+# enable zsh shell
+if [[ "$SHELL" != "/bin/zsh" ]]; then
+  chsh -s $(which zsh)
+fi
+
+e_header 'Install Oh My Zsh'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+e_header 'Install ZSH theme'
+mkdir -p "$ZSH_CUSTOM/themes/"
+cd $DOTFILES
+git clone https://github.com/denysdovhan/spaceship-prompt.git
+cd spaceship-prompt
+ln -s "$PWD/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 # link dotfiles
 e_header 'Link dotfiles'
 find -H "$DOTFILES/dotfiles" -maxdepth 2 -iname ".*" | while read src; do
@@ -30,21 +45,6 @@ done
 if [[ -e $backup_dir ]]; then
   e_line "\nBackups were moved to ${backup_dir/#$HOME/~}"
 fi
-
-# enable zsh shell
-if [[ "$SHELL" != "/bin/zsh" ]]; then
-  chsh -s $(which zsh)
-fi
-
-e_header 'Install Oh My Zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-e_header 'Install ZSH theme'
-mkdir -p "$ZSH_CUSTOM/themes/"
-cd $DOTFILES
-git clone https://github.com/denysdovhan/spaceship-prompt.git
-cd spaceship-prompt
-ln -s "$PWD/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 ## set macOS options
 # show invisible files
