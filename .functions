@@ -1,11 +1,14 @@
+# work with homestead from any dir
 function homestead() {
     ( cd ~/code/Homestead && vagrant $* )
 }
 
+# create directory and cd into it
 function mkd() {
     mkdir -p "$@" && cd "$_";
 }
 
+# open all work related apps
 function work() {
     open -a "Google Chrome" https://app.asana.com/0/568732081266236/board
     open -a "Spotify"
@@ -16,4 +19,17 @@ function work() {
     open -a "Xcode" $HOME/code/Breathe/ios
 
     cd "$HOME/code/Breathe"
+}
+
+# get useful dig info
+function digga() {
+	dig +nocmd "$1" any +multiline +noall +answer;
+}
+
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
 }

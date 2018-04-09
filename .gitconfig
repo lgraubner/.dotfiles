@@ -1,0 +1,44 @@
+# Sample gitconfig
+#
+
+[hub]
+    protocol = https
+[user]
+    name = Lars Graubner
+    email = mail@larsgraubner.de
+    username = lgraubner
+[credential]
+    helper = store
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    editor = vim
+    ignorecase = false
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[push]
+    default = current
+[alias]
+    s = status -s
+    co = checkout
+    cb = checkout -b
+    cl = clone
+    ci = commit -m
+    ac = !git add -A && git commit -m
+
+    p = push
+    pm = push origin master
+
+    undo = reset --soft HEAD~
+    amend = commit --amend
+
+    l = log -10 --reverse --pretty=oneline

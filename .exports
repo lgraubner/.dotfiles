@@ -1,8 +1,5 @@
-# dotfiles dir
-export DOTFILES=$HOME/.dotfiles
-
-# dotfiles bin
-export PATH=$DOTFILES/bin:$PATH
+# custom bin path
+export PATH=$HOME/bin:$PATH
 
 # editor var
 export EDITOR='code'

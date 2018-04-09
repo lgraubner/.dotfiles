@@ -72,7 +72,3 @@ rmdss       # find . -name '*.DS_Store' -type f -ls -delete
 flush       # flush dns cache
 pubkey      # copy ssh public key to clipboard
 ```
-
-## Oh My Zsh
-
-For more aliases and commands check the [Oh My Zsh cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet).

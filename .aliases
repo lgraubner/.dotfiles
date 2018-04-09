@@ -1,0 +1,50 @@
+# easy navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
+## system
+alias lsa="ls -al"
+
+#file size
+alias fs="stat -f '%z bytes'"
+
+# Recursively delete `.DS_Store` files
+alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
+
+# quick jump to projects folder
+alias w="cd $WORKSPACE"
+alias d="cd ~/Desktop"
+alias dl="cd ~/Download"
+
+# reset DNS cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# Open all merge conflicts or currently changed files in Editor
+alias fix="git diff --name-only | uniq | xargs $EDITOR"
+
+# npm
+alias dev="npm run dev"
+
+# fun
+alias idk="printf \"¯\_(ツ)_/¯\" | pbcopy && echo \"¯\_(ツ)_/¯ copied to clipboard\""
+
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# @TODO
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# reload shell
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'

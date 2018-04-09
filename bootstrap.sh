@@ -11,16 +11,6 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
 fi
 
-e_header 'Install Oh My Zsh'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-e_header 'Install ZSH theme'
-mkdir -p "$ZSH_CUSTOM/themes/"
-cd $DOTFILES
-git clone https://github.com/denysdovhan/spaceship-prompt.git
-cd spaceship-prompt
-ln -s "$PWD/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
 # install homebrew
 e_header "Install homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -51,7 +41,7 @@ fi
 # install global npm packages
 if [ $(which npm) ]; then
   e_header "Install global node packages"
-  npm install -g sitemap-generator-cli svgo n gzip-size-cli flow-typed create-react-app prettier git-open http-server npm-check fkill-cli strong-pwgen-cli
+  npm install -g sitemap-generator-cli svgo n gzip-size-cli flow-typed create-react-app prettier git-open http-server npm-check fkill-cli strong-pwgen-cli spaceship-prompt
 
   # activate latest npm version
   e_header "Install stable and latest node versions"
