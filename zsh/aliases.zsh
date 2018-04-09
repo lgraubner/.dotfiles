@@ -1,7 +1,4 @@
 ## system
-# colored ls
-alias ls="command ls -G"
-
 alias lsa="ls -al"
 
 #file size
