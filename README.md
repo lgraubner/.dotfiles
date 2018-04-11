@@ -7,3 +7,7 @@ Copy the files to your machine and run the setup scripts. The setup will guide y
 ```bash
 git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/setup
 ```
+
+## Todo
+
+- optimize autocompletion (case insensitive)

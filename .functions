@@ -38,9 +38,9 @@ function o() {
 # Open in editor
 function e() {
 	if [ $# -eq 0 ]; then
-		exec $EDITOR .;
+		$EDITOR .;
 	else
-		exec $EDITOR "$@";
+		$EDITOR "$@";
 	fi;
 }
 

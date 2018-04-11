@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Enable zsh shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then

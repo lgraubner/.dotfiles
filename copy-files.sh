@@ -13,7 +13,6 @@ function copy() {
 		--exclude "LICENSE" \
     --exclude "fonts" \
 		-avh --no-perms . ~;
-	source ~/.zshrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

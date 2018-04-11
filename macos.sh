@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Credits to https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 # Close system preferences to prevent overwriting options to be changed
