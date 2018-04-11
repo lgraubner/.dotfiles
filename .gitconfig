@@ -6,8 +6,8 @@
 [user]
     name = Lars Graubner
     email = mail@larsgraubner.de
-    username = lgraubner
 [credential]
+    username = lgraubner
     helper = store
 [color]
     diff = auto

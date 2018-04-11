@@ -1,11 +1,5 @@
-# custom bin path
-export PATH=$HOME/bin:$PATH
-
-# editor var
+# Default editor
 export EDITOR='code'
 
-# workspace dir
+# Workspace directory
 export WORKSPACE=$HOME/code
-
-# android studio
-export ANDROID_HOME=$HOME/Library/Android/sdk
