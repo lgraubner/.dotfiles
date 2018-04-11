@@ -12,11 +12,7 @@ create-project - Lars Graubner - https://larsgraubner.com
 
 Usage: $(basename "$0") {name}
 
-See the README for documentation.
-https://github.com/lgraubner/dotfiles
-
-Copyright (c) 2018 Lars Graubner
-Licensed under the MIT license.
+Creates a new project with commonly needed files.
 HELP
 exit; fi
 

@@ -1,78 +1,19 @@
 # Lars' dotfiles
 
-## Get started
+## Installation
 
-Copy the files to your machine and run the setup scripts. The setup will guide you and ask for several things.
-
-```bash
-git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/setup
-```
-
-## Contents
-
-This files are meant to be used with [Oh My Zsh](http://ohmyz.sh/) and [iTerm](https://www.iterm2.com/). Several other tools and libraries will be installed to get a complete development environment.
-
-## Binaries
-
-### dotfiles
-
-Manages the dotfiles.
+To get started clone the dotfiles anywhere you like. `cd` into it and execute the bootstrap script.
 
 ```bash
-dotfiles install    # install dependencies
-dotfiles update     # update dependencies
-dotfiles upgrade    # upgrade dotfiles
+git clone https://github.com/lgraubner/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
 
-### e
+This will install all needed programs and copies the dotfiles into your home directory. If you are running MacOS you might want to apply some useful MacOS defaults by running `./macos.sh`.
 
-Quick shortcut to an editor.
+## Additional files
 
-```bash
-e               # open current directory in editor
-e path/to/dir   # open specified dir in editor
-```
+The dotfiles will load `.path` and `.extra` automatically if they exist. Further configuration can be added here without having to add it the the git repository.
 
-### extract
+## Thanks
 
-Extracts archived files and mounts disk images.
-
-```bash
-extract file.zip    # unzip file. Types: tar, bz, dmg, gz, zip, pax and more
-```
-
-### todo
-
-Creates a todo file on your desktop.
-
-```bash
-todo "this is an todo"      # create an todo file on your desktop
-```
-
-## Aliases
-
-```bash
-# git
-git s        # show git status short version
-git cl       # git clone
-git c        # git commit
-git cma      # git commit -a -m
-git uc       # undo commit
-git l        # log -10 --reverse --pretty=oneline
-git fix      # Open all merge conflicts or currently changed files in Editor
-
-# files
-lsa         # ls -al
-..          # cd ..
-...         # cd ../..
-....        # cd ../../..
-fs          # stat -f '%z bytes'
-w           # jump to workspace
-rmdss       # find . -name '*.DS_Store' -type f -ls -delete
-flush       # flush dns cache
-pubkey      # copy ssh public key to clipboard
-```
-
-## Oh My Zsh
-
-For more aliases and commands check the [Oh My Zsh cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet).
+This dotfiles are heavily inspired by [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) but based on ZSH instead.
