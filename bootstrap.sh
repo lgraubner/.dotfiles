@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Ask for the administrator password upfront
+sudo -v
+
 # Enable zsh shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
@@ -22,7 +25,6 @@ brew install tree
 brew install python3
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
 brew install openssh
 
 # Install yarn
@@ -73,7 +75,7 @@ if [ $(which npm) ]; then
 fi
 
 which -s composer
-if [[ $? != 0 ]] ; then
+if [[ $? != 0 ]]; then
   # Install composer globally
   curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 else
@@ -81,3 +83,4 @@ else
   composer self-update
 fi
 
+source copy-files.sh

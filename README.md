@@ -2,12 +2,8 @@
 
 ## Installation
 
-Copy the files to your machine and run the setup scripts. The setup will guide you and ask for several things.
+To get started clone the dotfiles anywhere you like. `cd` into it and execute the bootstrap script.
 
 ```bash
-git clone https://github.com/lgraubner/dotfiles.git ~/.dotfiles && ~/.dotfiles/setup
+git clone https://github.com/lgraubner/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
-
-## Todo
-
-- optimize autocompletion (case insensitive)
