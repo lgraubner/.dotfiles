@@ -17,6 +17,7 @@
 [core]
     editor = vim
     ignorecase = false
+    excludesfile = ~/.gitignore
 [apply]
     whitespace = nowarn
 [mergetool]
