@@ -11,7 +11,7 @@ prompt spaceship
 
 # Autocompletion
 autoload -U compinit
-compinit
+compinit -u
 zmodload -i zsh/complist
 setopt hash_list_all            # hash everything before completion
 setopt completealiases          # complete alisases
