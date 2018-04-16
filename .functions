@@ -48,3 +48,23 @@ function e() {
 function todo() {
   touch ~/Desktop/$*
 }
+
+# Update system and tools
+function update() {
+  if id -Gn ${whoami} | grep -q -w admin;
+  then
+    # update macos
+    sudo softwareupdate -i -a;
+
+    # update brew
+    brew update;
+    brew upgrade;
+    brew cleanup;
+
+    # update npm and modules
+    npm install npm -g;
+    npm update -g;
+  else
+    echo "This command can only be run as admin."
+  fi
+}
