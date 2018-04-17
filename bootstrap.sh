@@ -24,9 +24,6 @@ brew install ansible
 brew install tree
 brew install python3
 
-# Install more recent versions of some macOS tools.
-brew install openssh
-
 # Install yarn
 brew link --overwrite node
 brew install yarn
