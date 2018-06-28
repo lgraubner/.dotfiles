@@ -44,3 +44,19 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path="echo -e ${PATH//:/\\n}"
+
+# git
+alias gs="git status -s"
+alias ga="git add"
+alias gac="git add -A && git commit -m"
+alias gcm="git commit --message"
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gcod="git checkout develop"
+alias gd="git diff"
+alias gi="git init"
+alias gcl="git clone"
+alias gp="git push"
+alias gpm="git push origin master"
+alias gl="git log -10 --reverse --pretty=oneline"
