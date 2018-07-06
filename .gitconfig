@@ -28,18 +28,3 @@
     autocorrect = 1
 [push]
     default = current
-[alias]
-    s = status -s
-    co = checkout
-    cb = checkout -b
-    cl = clone
-    ci = commit -m
-    ac = !git add -A && git commit -m
-
-    p = push
-    pm = push origin master
-
-    undo = reset --soft HEAD~
-    amend = commit --amend
-
-    l = log -10 --reverse --pretty=oneline
