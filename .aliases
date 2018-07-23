@@ -62,3 +62,6 @@ alias gpm="git push origin master"
 alias gl="git log -10 --reverse --pretty=oneline"
 alias gundo="git reset --soft HEAD~"
 alias gam="git commit --amend"
+
+# simple changelog
+alias did="vim +'normal Go' +'r!date' ~/did.txt"
