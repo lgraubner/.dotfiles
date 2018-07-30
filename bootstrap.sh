@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Ask for the administrator password upfront
-sudo -v
-
 # Enable zsh shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
@@ -66,9 +63,10 @@ if [ $(which npm) ]; then
   npm install -g strong-pwgen-cli
   npm install -g spaceship-prompt
 
-  # Activate latest npm version
-  sudo n stable
-  sudo n latest
+  # Install node versions and active stable release
+  n lts
+  n latest
+  n stable
 fi
 
 which -s composer
