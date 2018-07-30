@@ -62,7 +62,6 @@ function update() {
     brew cleanup;
 
     # update npm and modules
-    npm install npm -g;
     npm update -g;
   else
     echo "This command can only be run as admin."
