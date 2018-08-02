@@ -1,6 +1,6 @@
 # Work with homestead from any dir
 function homestead() {
-    ( cd ~/code/Homestead && vagrant $* )
+    ( cd ~/Homestead && vagrant $* )
 }
 
 # Create directory and cd into it
@@ -14,11 +14,11 @@ function work() {
     open -a "Spotify"
     open -a "Stride"
 
-    open -a "PhpStorm" $HOME/code/BreatheApi
-    code $HOME/code/Breathe
-    open -a "Xcode" $HOME/code/Breathe/ios
+    open -a "PhpStorm" $HOME/code/breathe-api
+    code $HOME/code/breathe-app
+    open -a "Xcode" $HOME/code/breathe-app/ios
 
-    cd "$HOME/code/Breathe"
+    cd "$HOME/codei/breathe-app"
 }
 
 # Get only useful information with dig
