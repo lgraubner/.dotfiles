@@ -20,6 +20,7 @@ brew install node
 brew install ansible
 brew install tree
 brew install python3
+brew install docker
 
 # Install yarn
 brew link --overwrite node
@@ -62,6 +63,7 @@ if [ $(which npm) ]; then
   npm install -g fkill-cli
   npm install -g strong-pwgen-cli
   npm install -g spaceship-prompt
+  npm install -g gatsby-cli
 
   # Install node versions and active stable release
   n lts
