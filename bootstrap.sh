@@ -20,7 +20,6 @@ brew install node
 brew install ansible
 brew install tree
 brew install python3
-brew install docker
 
 # Install yarn
 brew link --overwrite node
@@ -44,6 +43,7 @@ brew cask install iterm2
 brew cask install vagrant
 brew cask install postman
 brew cask install caffeine
+brew install cask docker
 
 # Remove outdated versions
 brew cleanup
