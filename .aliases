@@ -43,7 +43,19 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
-alias path="echo -e ${PATH//:/\\n}"
+alias path="echo -e ${PATH//:/\\\n}"
+
+# improved cat
+alias cat="bat"
+
+# improved top (more linux like)
+alias top="htop"
+
+# interactive disk usage tool
+alias du="ncdu --color dark -rr --exclude .git --exclude node_modules"
+
+# man page summary
+alias help="tldr"
 
 # git
 alias gs="git status -s"

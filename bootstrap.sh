@@ -20,6 +20,12 @@ brew install node
 brew install ansible
 brew install tree
 brew install python3
+brew install bat
+brew install htop
+brew install diff-so-fancy
+brew install ncdu
+brew install tldr
+brew install ack
 
 # Install yarn
 brew link --overwrite node
