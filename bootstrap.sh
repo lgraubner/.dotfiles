@@ -49,7 +49,7 @@ brew cask install iterm2
 brew cask install vagrant
 brew cask install postman
 brew cask install caffeine
-brew install cask docker
+brew cask install docker
 
 # Remove outdated versions
 brew cleanup
