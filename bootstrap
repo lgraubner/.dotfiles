@@ -1,5 +1,72 @@
 #!/usr/bin/env bash
 
+# catch error
+trap 'ret=$?; test $ret -ne 0 && printf "\n\e[31mfailed\033[0m\n" >&2; exit $ret' EXIT
+
+set -e
+
+# check for utils file
+if [ -e utils ]; then
+	cd "$(dirname "${BASH_SOURCE[0]}")" \
+		&& . "utils"
+else
+	printf "\n ⚠️  ./utils not found\n"
+	exit 1
+fi
+
+# install xcode
+if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
+	test -d "${xpath}" && test -x "${xpath}" ; then
+	print_success_muted "Xcode already installed. Skipping."
+else
+	echo "Installing Xcode…"
+	xcode-select --install
+	print_success "Xcode installed!"
+fi
+
+# create home bin
+if [ ! -d "$HOME/.bin/" ]; then
+	mkdir "$HOME/.bin"
+fi
+
+# install brew formulaes
+if [ -e $cwd/swag/brews ]; then
+	echo "Installing Homebrew formulae…"
+
+	for brew in $(<$cwd/swag/brews); do
+		install_brews $brew
+	done
+fi
+
+echo "Updating Homebrew formulae…"
+brew update
+
+# install brew casks
+if [ -e $cwd/swag/casks ]; then
+	echo "Installing apps via Homebrew…"
+
+	for cask in $(<$cwd/swag/casks); do
+	    install_application_via_brew $cask
+	done
+fi
+
+# brew cleanup
+echo "Cleaning up Homebrew files…"
+brew cleanup 2> /dev/null
+brew cask cleanup 2> /dev/null
+
+# install npm packages
+if [ -e $cwd/swag/npm ]; then
+	echo "Installing npm packages…"
+
+  for pkg in $(<$cwd/swag/npm); do
+	    install_npm_packages $pkg
+	done
+fi
+
+exit 0
+
+
 # Enable zsh shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s $(which zsh)
@@ -86,4 +153,29 @@ else
   composer self-update
 fi
 
-source copy-files.sh
+cd "$(dirname "${BASH_SOURCE}")";
+
+# Get latest dotfiles
+#git pull origin master;
+
+function copy() {
+	rsync --exclude ".git/" \
+		--exclude ".DS_Store" \
+		--exclude "*.sh" \
+		--exclude "README.md" \
+		--exclude "LICENSE" \
+    --exclude "fonts" \
+		-avh --no-perms . ~;
+    /bin/zsh -c "source ~/.zshrc"
+}
+
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
+	copy;
+else
+	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+	echo "";
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		copy;
+	fi;
+fi;
+unset copy;
