@@ -107,13 +107,32 @@ check_internet_connection() {
     fi
 }
 
+ask_for_sudo() {
+
+    # Ask for the administrator password upfront.
+
+    sudo -v &> /dev/null
+
+    # Update existing `sudo` time stamp
+    # until this script has finished.
+    #
+    # https://gist.github.com/cowboy/3118588
+
+    # Keep-alive: update existing `sudo` time stamp until script has finished
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+    print_success "Password cached"
+
+}
+
+
 install_brews() {
     if test ! $(brew list | grep $brew); then
         echo_install "Installing $brew"
 		brew install $brew >/dev/null
 		print_in_green "${bold}✓ installed!${normal}\n"
 	else
-		print_success_muted "$brew already installed. Skipped."
+		print_success_muted "$brew already installed."
     fi
 }
 
@@ -123,7 +142,7 @@ install_application_via_brew() {
         brew cask install $cask --appdir=/Applications >/dev/null
         print_in_green "${bold}✓ installed!${normal}\n"
     else
-    	print_success_muted "$cask already installed. Skipped."
+    	print_success_muted "$cask already installed."
     fi
 }
 
@@ -133,11 +152,15 @@ install_npm_packages() {
 		npm install $1 -g --silent
 		print_in_green "${bold}✓ installed!${normal}\n"
 	else
-		print_success_muted "$1 already installed. Skipped."
+		print_success_muted "$1 already installed."
 	fi
 }
 
 echo_install() {
     local fmt="$1"; shift
     printf "  [↓] $fmt " "$@"
+}
+
+echo_chapter() {
+  printf "\n$1\n"
 }

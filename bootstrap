@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # catch error
-trap 'ret=$?; test $ret -ne 0 && printf "\n\e[31mfailed\033[0m\n" >&2; exit $ret' EXIT
+trap 'ret=$?; test $ret -ne 0 && printf "\n\e[31mBootstrap script failed to complete.\033[0m\n" >&2; exit $ret' EXIT
 
 set -e
 
@@ -15,23 +15,33 @@ else
 fi
 
 printf "
-Lars' dotfiles.
+╭───────────────────────────────────────────────────╮
+│                                                   │
+│  ${bold}Lars' dotfiles${normal}                                   │
+│                                                   │
+│  Bootstrap script to get up and running quickly   │
+│  on MacOS. Safe to run multiple times on the      │
+│  same machine.                                    │
+│                                                   │
+│  ${dim}https://github.com/lgraubner/dotfiles${normal}            │
+│                                                   │
+╰───────────────────────────────────────────────────╯
 "
 
-echo "Checking internet connection…"
+echo_chapter "Checking internet connection"
 check_internet_connection
 
-echo "Caching password…"
+echo_chapter "Caching password"
 ask_for_sudo
 
-echo "Installing Dependencies…"
+echo_chapter "Installing Dependencies"
 
 # install xcode
 if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
 	test -d "${xpath}" && test -x "${xpath}" ; then
-	print_success_muted "Xcode already installed. Skipping."
+	print_success_muted "Xcode already installed."
 else
-	echo "Installing Xcode…"
+	echo_chapter "Installing Xcode…"
 	xcode-select --install
 	print_success "Xcode installed!"
 fi
@@ -43,29 +53,30 @@ fi
 
 # install homebrew
 if ! [ -x "$(command -v brew)" ]; then
-	step "Installing Homebrew…"
+	echo_install "Installing Homebrew…"
 	curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
 	export PATH="/usr/local/bin:$PATH"
 	print_success "Homebrew installed!"
 else
-	print_success_muted "Homebrew already installed. Skipping."
+	print_success_muted "Homebrew already installed."
 fi
 
 # install brew formulaes
 if [ -e $cwd/swag/brews ]; then
-	echo "Installing Homebrew formulae…"
+	echo_chapter "Installing Homebrew formulae"
 
 	for brew in $(<$cwd/swag/brews); do
 		install_brews $brew
 	done
 fi
 
-echo "Updating Homebrew formulae…"
-brew update
+echo_chapter "Updating Homebrew formulae"
+brew update &>/dev/null
+print_success "Updated"
 
 # install brew casks
 if [ -e $cwd/swag/casks ]; then
-	echo "Installing apps via Homebrew…"
+	echo "Installing apps via Homebrew"
 
 	for cask in $(<$cwd/swag/casks); do
 	    install_application_via_brew $cask
@@ -73,13 +84,15 @@ if [ -e $cwd/swag/casks ]; then
 fi
 
 # brew cleanup
-echo "Cleaning up Homebrew files…"
+echo_chapter "Cleaning up Homebrew files"
 brew cleanup 2> /dev/null
 brew cask cleanup 2> /dev/null
 
+print_success "Cleaned up"
+
 # install npm packages
 if [ -e $cwd/swag/npm ]; then
-	echo "Installing npm packages…"
+	echo_chapter "Installing npm packages"
 
   for pkg in $(<$cwd/swag/npm); do
 	    install_npm_packages $pkg
@@ -103,29 +116,6 @@ else
   brew update
 fi
 
-
-# Install brew cask
-brew tap caskroom/cask
-
-# Install apps with cask
-brew cask install alfred
-brew cask install google-chrome
-brew cask install firefox
-brew cask install visual-studio-code
-brew cask install dropbox
-brew cask install filezilla
-brew cask install imageoptim
-brew cask install spotify
-brew cask install the-unarchiver
-brew cask install virtualbox
-brew cask install iterm2
-brew cask install vagrant
-brew cask install postman
-brew cask install caffeine
-brew cask install docker
-
-# Remove outdated versions
-brew cleanup
 
 # Install global npm packages
 if [ $(which npm) ]; then
