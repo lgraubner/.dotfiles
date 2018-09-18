@@ -17,6 +17,9 @@ indent="   "
 # working directory
 cwd="$(cd "$(dirname "$0")" && pwd)"
 
+# home bin
+homebin="$HOME/.bin/"
+
 _print_in_color() {
     printf "%b" \
         "$(tput setaf "$2" 2> /dev/null)" \

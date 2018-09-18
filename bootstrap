@@ -28,9 +28,6 @@ printf "
 ╰───────────────────────────────────────────────────╯
 "
 
-symlink_dotfiles
-exit 0
-
 chapter "Checking internet connection"
 check_internet_connection
 
@@ -123,10 +120,14 @@ else
   print_success "ZSH activated"
 fi
 
-# create home bin
-if [ ! -d "$HOME/.bin/" ]; then
-	mkdir "$HOME/.bin"
+# create home bin and copy binaries
+if [ ! -d "$homebin" ]; then
+	mkdir "$homebin"
 fi
+
+chapter "Copying custom binaries"
+cp -r "$cwd/bin/." "$homebin"
+print_success "Copied"
 
 # symlink files
 symlink_dotfiles
