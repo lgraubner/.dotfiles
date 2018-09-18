@@ -130,9 +130,10 @@ cp -r "$cwd/bin/." "$homebin"
 print_success "Copied"
 
 # symlink files
+chapter "Linking dotfiles"
 symlink_dotfiles
 
-# reload shell to apply changes-
+# reload shell to apply changes
 reload
 
 cd "$(dirname "${BASH_SOURCE}")";
