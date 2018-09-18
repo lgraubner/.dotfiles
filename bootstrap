@@ -28,6 +28,9 @@ printf "
 ╰───────────────────────────────────────────────────╯
 "
 
+symlink_dotfiles
+exit 0
+
 chapter "Checking internet connection"
 check_internet_connection
 

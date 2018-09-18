@@ -88,7 +88,7 @@ _link_file() {
 
     if [ "$skip" == "true" ]
     then
-      printf "\n  ${dim}    ✓ $src already linked. Skipped.${reset}"
+      printf "\n  ${dim}    ✓ $src already linked..${reset}"
     fi
   fi
 
@@ -241,10 +241,9 @@ install_npm_packages() {
 symlink_dotfiles() {
   local overwrite_all=false backup_all=false skip_all=false
 
-  for src in $(find -H "$cwd" -maxdepth 1 -name '.*' -not -path './.git')
+  for src in $(find -H "$cwd" -maxdepth 1 -name '.*' -not -path '*.git' -not -path '*.DS_Store')
   do
-    dst="$HOME/$src"
-    echo $dst
+    dst="$HOME/${src##*/}"
     _link_file "$src" "$dst"
   done
 }
