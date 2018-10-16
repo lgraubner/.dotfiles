@@ -46,6 +46,21 @@ else
 	print_success "Xcode installed!"
 fi
 
+# install nvm
+if [ -x nvm ]; then
+	install "Installing NVM"
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+	print_success "NVM installed!"
+	install "Installing latest Node…"
+	nvm install node
+	nvm use node
+	nvm run node --version
+	nodev=$(node -v)
+	print_success "Using Node $nodev!"
+else
+	print_success_muted "NVM/Node already installed. Skipping."
+fi
+
 # install homebrew
 if ! [ -x "$(command -v brew)" ]; then
 	install "Installing Homebrew"
@@ -103,14 +118,6 @@ if [ -e $cwd/swag/npm ]; then
 	    install_npm_packages $pkg
 	done
 fi
-
-chapter "Install node versions via n"
-versions=("lts" "latest" "stable")
-
-for version in "${versions[@]}"; do
-  n $version &>/dev/null
-  print_success "Node $version installed"
-done
 
 chapter "Activate ZSH"
 if [ -n "$ZSH_VERSION" ]; then
