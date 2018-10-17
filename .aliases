@@ -21,7 +21,7 @@ alias d="cd ~/Desktop"
 alias dl="cd ~/Download"
 
 # Reset DNS cache
-alias flush="sudo killall -HUP mDNSResponder"
+alias flush="sudo killall -HUP mDNSResponder; sleep 2;"
 
 # Pipe public key to clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
