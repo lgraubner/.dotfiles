@@ -57,23 +57,35 @@ alias du="ncdu --color dark -rr --exclude .git --exclude node_modules"
 # man page summary
 alias help="tldr"
 
+# get current git branch
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
 # git
 alias gs="git status -s"
 alias ga="git add"
 alias gac="git add -A && git commit -m"
-alias gcm="git commit --message"
+alias gc="git commit --message"
 alias gcb="git checkout -b"
 alias gco="git checkout"
-alias gcom="git checkout master"
-alias gcod="git checkout develop"
+alias gcm="git checkout master"
+alias gcd="git checkout develop"
 alias gd="git diff"
 alias gi="git init"
 alias gcl="git clone"
-alias gp="git push"
-alias gplm="git pull origin master"
+alias gp="git push origin $(current_branch)"
+alias gpf="git push origin $(current_branch) -f"
+alias gpl="git pull origin $(current_branch) --rebase"
 alias gl="git log -10 --reverse --pretty=oneline"
 alias gundo="git reset --soft HEAD~"
 alias gam="git commit --amend"
+alias gf="git fetch"
+alias grbc="git rebase --continue"
+alias gsta="git stash"
+alias gstp="git stash pop"
 
 # simple changelog
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
