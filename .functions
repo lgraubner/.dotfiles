@@ -53,9 +53,6 @@ function todo() {
 function update() {
   if id -Gn ${whoami} | grep -q -w admin;
   then
-    # update macos
-    sudo softwareupdate -i -a;
-
     # update brew
     brew update;
     brew upgrade;
