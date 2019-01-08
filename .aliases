@@ -89,3 +89,6 @@ alias gstp="git stash pop"
 
 # simple changelog
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+
+# init new project
+alias init="npx license mit && npx gitignore node && git init && npm init -y"

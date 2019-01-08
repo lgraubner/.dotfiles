@@ -127,15 +127,6 @@ else
   print_success "ZSH activated"
 fi
 
-# create home bin and copy binaries
-if [ ! -d "$homebin" ]; then
-	mkdir "$homebin"
-fi
-
-chapter "Copying custom binaries"
-cp -r "$cwd/bin/." "$homebin"
-print_success "Copied"
-
 # symlink files
 chapter "Linking dotfiles"
 symlink_dotfiles
