@@ -91,4 +91,4 @@ alias gstp="git stash pop"
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
 
 # init new project
-alias init="npx license mit && npx gitignore node && git init && npm init -y"
+alias init="npx license mit > LICENSE && npx gitignore node && git init && npm init -y"
