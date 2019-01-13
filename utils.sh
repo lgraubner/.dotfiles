@@ -241,6 +241,23 @@ install_npm_packages() {
 	fi
 }
 
+install_rbenv_ruby() {
+  install "Installing v2.6.0"
+  rbenv install 2.6.0 2> /dev/null
+  rbenv rehash
+  rbenv init 2> /dev/null
+  rbenv global 2.6.0
+}
+
+install_ruby_gems() {
+  if [[ ! $(gem list -i $1) ]]; then
+    install "Installing $1"
+    gem install --silent $1
+  else
+		print_success_muted "$1 already installed."
+  fi
+}
+
 symlink_dotfiles() {
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -252,5 +269,5 @@ symlink_dotfiles() {
 }
 
 reload() {
-  /bin/zsh -c "source ~/.zshrc"
+  /bin/bash -c "source ~/.bashrc"
 }

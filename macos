@@ -14,9 +14,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool false
-
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -62,7 +59,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-# Enable natural scrollen (default)
+# Enable natural scrolling (default)
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
 # Increase sound quality for Bluetooth headphones/headsets
@@ -73,8 +70,8 @@ defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+#defaults write NSGlobalDomain KeyRepeat -int 2
+#defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -170,7 +167,7 @@ for app in "cfprefsd" \
 	"Dock" \
 	"Finder" \
 	"SystemUIServer" \
-  "iTerm2"; do
+  "Terminal"; do
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

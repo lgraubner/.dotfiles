@@ -1,13 +1,13 @@
 coreutils
 ansible
 tree
-python3
 bat
 htop
 diff-so-fancy
 ncdu
-tldr
 ack
 yarn
 rbenv
 exiftool
+bash-completion
+git

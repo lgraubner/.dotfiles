@@ -1,19 +1,15 @@
 # Lars' dotfiles
 
+My personal dotfiles grown over the years. Created for MacOS. Inspired by a lot of awesome dotfiles out there. Currently running with Bash and Terminal.
+
+**Don't just install this without reviewing and adjusting this to your needs! This is strongly opinionated and suited to my own needs.**
+
 ## Installation
 
 To get started clone the dotfiles anywhere you like. `cd` into it and execute the bootstrap script.
 
 ```bash
-git clone https://github.com/lgraubner/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone https://github.com/lgraubner/dotfiles.git && ./dotfiles/bootstrap
 ```
 
-This will install all needed programs and copies the dotfiles into your home directory. If you are running MacOS you might want to apply some useful MacOS defaults by running `./macos.sh`.
-
-## Additional files
-
-The dotfiles will load `.path` and `.extra` automatically if they exist. Further configuration can be added here without having to add it the the git repository.
-
-## Thanks
-
-This dotfiles are heavily inspired by [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) but based on ZSH instead.
+This will install all needed programs and copies the dotfiles into your home directory. You might want to apply some useful MacOS defaults by running `./macos`.

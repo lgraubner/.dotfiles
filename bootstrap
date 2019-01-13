@@ -6,11 +6,11 @@ trap 'ret=$?; test $ret -ne 0 && printf "\n\e[31mBootstrap script failed to comp
 set -e
 
 # check for utils file
-if [ -e utils ]; then
+if [ -e utils.sh ]; then
 	cd "$(dirname "${BASH_SOURCE[0]}")" \
-		&& . "utils"
+		&& . "utils.sh"
 else
-	printf "\n ⚠️  ./utils not found\n"
+	printf "\n ⚠️  ./utils.sh not found\n"
 	exit 1
 fi
 
@@ -49,7 +49,7 @@ fi
 # install nvm
 if [ -x nvm ]; then
 	install "Installing NVM"
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 	print_success "NVM installed!"
 	install "Installing latest Node…"
 	nvm install node
@@ -106,7 +106,6 @@ fi
 # brew cleanup
 chapter "Cleaning up Homebrew files"
 brew cleanup 2> /dev/null
-brew cask cleanup 2> /dev/null
 
 print_success "Cleaned up"
 
@@ -119,12 +118,23 @@ if [ -e $cwd/swag/npm ]; then
 	done
 fi
 
-chapter "Activate ZSH"
-if [ -n "$ZSH_VERSION" ]; then
-  print_success_muted "ZSH already activated."
-else
-  chsh -s $(which zsh)
-  print_success "ZSH activated"
+# install npm completions
+npm completion > /usr/local/etc/bash_completion.d/npm
+
+# @TODO
+RBENV_RUBY_VERSION=`rbenv version`
+if [[ ! "$RBENV_RUBY_VERSION" =~ ^2\.6\.0.* ]]; then
+  chapter "Installing stable Ruby version"
+  install_rbenv_ruby
+fi
+
+# install ruby gems
+if [ -e $cwd/swag/gems ]; then
+	chapter "Installing ruby gems"
+
+  for gem in $(<$cwd/swag/gems); do
+	    install_ruby_gems $gem
+	done
 fi
 
 # symlink files
