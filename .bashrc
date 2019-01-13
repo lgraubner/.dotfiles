@@ -3,28 +3,16 @@
 # Bash and terminal configuration from Lars Graubner.
 #
 # Content:
-# 1.  Environment Configuration
-# 2.  Prompt
-# 3.  Completion
-# 4.  Functions
-# 5.  Aliases
-# 6.  Misc
+# 1.  Prompt
+# 2.  Completion
+# 3.  Functions
+# 4.  Aliases
+# 5.  Misc
 #
 # ---------------------------------------------------------
 
-
-# -------------------------------------
-# 1. ENVIRONMENT CONFIGURATION
-# -------------------------------------
-
-# Default editor
-export EDITOR='code'
-
-# Workspace directory
-export WORKSPACE=$HOME/code
-
 # -----------------------------------------------------------------------------
-# 2. PROMPT
+# 1. PROMPT
 # -----------------------------------------------------------------------------
 
 red=$(tput setaf 1)
@@ -40,7 +28,7 @@ GIT_PS1_STATESEPARATOR=""
 PROMPT_COMMAND='__git_ps1 "$cyan\w$reset" "\n➜ " " on $magenta%s$reset"'
 
 # -----------------------------------------------------------------------------
-# 3. COMPLETION
+# 2. COMPLETION
 # -----------------------------------------------------------------------------
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -48,7 +36,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 #--------------------------------------
-# 4. FUNCTIONS
+# 3. FUNCTIONS
 # -------------------------------------
 
 # Work with homestead from any dir
@@ -142,7 +130,7 @@ extract () {
 
 
 # -------------------------------------
-# 5. ALIASES
+# 4. ALIASES
 # -------------------------------------
 
 # Easy navigation
@@ -247,11 +235,10 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt"
 alias init="npx license mit > LICENSE && npx gitignore node && git init && npm init -y"
 
 # -----------------------------------------------------------------------------
-# 6. Misc
+# 5. Misc
 # -----------------------------------------------------------------------------
 
 # nvm init
-export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # add ssh keys on login
@@ -261,6 +248,4 @@ ssh-add -A 2> /dev/null;
 bind 'set completion-ignore-case on'
 
 # init rbenv
-export RBENV_ROOT=~/.rbenv
-export PATH="$RBENV_ROOT:$PATH"
 eval "$(rbenv init -)"
