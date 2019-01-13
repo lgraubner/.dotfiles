@@ -141,6 +141,11 @@ fi
 chapter "Linking dotfiles"
 symlink_dotfiles
 
+# create code folder
+chapter "Creating folders"
+mkdir -p ~/code
+print_success "Created ~/code"
+
 # reload shell to apply changes
 reload
 
