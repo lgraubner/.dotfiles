@@ -1,3 +1,2 @@
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
+. ~/.profile
+if [[ $- == *i* ]]; then . ~/.bashrc; fi
