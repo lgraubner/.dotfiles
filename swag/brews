@@ -11,3 +11,4 @@ rbenv
 exiftool
 bash-completion
 git
+watchman
