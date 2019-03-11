@@ -10,3 +10,6 @@ export PATH="$RBENV_ROOT:$PATH"
 
 # nvm root
 export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+
+# git language
+export LANG=en_US.UTF-8
