@@ -9,7 +9,8 @@ ack
 yarn
 rbenv
 exiftool
-bash-completion
 git
 watchman
 cocoapods
+zsh
+zsh-completions

@@ -34,6 +34,9 @@ check_internet_connection
 chapter "Caching password"
 ask_for_sudo
 
+chapter "Activate ZSH shell"
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+
 chapter "Installing Dependencies"
 
 # install xcode
@@ -121,7 +124,7 @@ if [ -e $cwd/swag/npm ]; then
 fi
 
 # install npm completions
-npm completion > /usr/local/etc/bash_completion.d/npm
+npm completion > /usr/local/share/zsh/site-functions/npm
 
 # @TODO
 RBENV_RUBY_VERSION=`rbenv version`

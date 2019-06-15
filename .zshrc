@@ -15,25 +15,14 @@
 # 1. PROMPT
 # -----------------------------------------------------------------------------
 
-red=$(tput setaf 1)
-cyan=$(tput setaf 6)
-magenta=$(tput setaf 5)
-reset=$(tput sgr0)
-
-# see https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-#GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_STATESEPARATOR=""
-PROMPT_COMMAND='__git_ps1 "$cyan\w$reset" "\n➜ " " on $magenta%s$reset"'
+autoload -U promptinit; promptinit
+prompt pure
 
 # -----------------------------------------------------------------------------
 # 2. COMPLETION
 # -----------------------------------------------------------------------------
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
+export FPATH="/usr/local/share/zsh-completions:$FPATH"
 
 #--------------------------------------
 # 3. FUNCTIONS
@@ -238,14 +227,17 @@ alias init="npx license mit > LICENSE && npx gitignore node && git init && npm i
 # 5. Misc
 # -----------------------------------------------------------------------------
 
+setopt auto_cd
+setopt correct_all
+setopt auto_list
+setopt auto_menu
+setopt always_to_end
+
 # nvm init
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # add ssh keys on login
 ssh-add -A 2> /dev/null;
-
-# ignore case on cd autocompletion
-bind 'set completion-ignore-case on'
 
 # init rbenv
 eval "$(rbenv init -)"
