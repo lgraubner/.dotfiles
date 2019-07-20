@@ -13,3 +13,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # git language
 export LANG=en_US.UTF-8
+
+# cra code overlay
+ export REACT_EDITOR=code
