@@ -38,19 +38,6 @@ function mkd() {
     mkdir -p "$@" && cd "$_";
 }
 
-# Open all work related apps
-# @TODO: add config in $HOME
-function work() {
-    open -a "Google Chrome" https://app.asana.com/0/568732081266236/board
-    open -a "Spotify"
-
-    open -a "PhpStorm" $HOME/code/breathe-api
-    code $HOME/code/breathe-app
-    open -a "Xcode" $HOME/code/breathe-app/ios
-
-    cd "$HOME/codei/breathe-app"
-}
-
 # Open directory
 function o() {
 	if [ $# -eq 0 ]; then
@@ -115,6 +102,26 @@ extract () {
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+# create a Node.js project
+create-project () {
+  mkdir -p "$@" && cd "$_";
+  git init
+  npx license $(npm get init.license) -o "$(npm get init.author.name)" > LICENSE
+  npx gitignore node
+  npm init -y
+  git add -A
+  git commit -m "Initial commit"
+}
+
+# backup all GitHub projects
+function backup-github() {
+  if [[ -z $GITHUB_ACCESS_TOKEN ]]; then
+    echo "Please set env variable GITHUB_ACCESS_TOKEN";
+  else
+    npx github-clone-all --ignore-forks --access-token=$GITHUB_ACCESS_TOKEN --username=lgraubner --overwrite ~/Documents/Github
+  fi;
 }
 
 
