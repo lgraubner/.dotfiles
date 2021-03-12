@@ -15,4 +15,4 @@ export NVM_DIR="$HOME/.nvm"
 export LANG=en_US.UTF-8
 
 # cra code overlay
- export REACT_EDITOR=code
+export REACT_EDITOR=code

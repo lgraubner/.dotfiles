@@ -28,11 +28,6 @@ export FPATH="/usr/local/share/zsh-completions:$FPATH"
 # 3. FUNCTIONS
 # -------------------------------------
 
-# Work with homestead from any dir
-function homestead() {
-    ( cd ~/Homestead && vagrant $* )
-}
-
 # Create directory and cd into it
 function mkd() {
     mkdir -p "$@" && cd "$_";
@@ -213,7 +208,7 @@ alias gcd="git checkout develop"
 alias gd="git diff"
 alias gi="git init"
 alias gcl="git clone"
-alias gp="git push origin $(current_branch)"
+alias gp="git push origin HEAD"
 alias gpf="git push origin $(current_branch) -f"
 alias gpl="git pull origin $(current_branch) --rebase"
 alias gl="git log -10 --reverse --pretty=oneline"
@@ -245,6 +240,3 @@ setopt always_to_end
 
 # add ssh keys on login
 ssh-add -A 2> /dev/null;
-
-# init rbenv
-eval "$(rbenv init -)"
