@@ -29,7 +29,7 @@ export FPATH="/usr/local/share/zsh-completions:$FPATH"
 # -------------------------------------
 
 # Create directory and cd into it
-function mkd() {
+function take() {
     mkdir -p "$@" && cd "$_";
 }
 
@@ -230,7 +230,7 @@ alias init="npx license mit > LICENSE && npx gitignore node && git init && npm i
 # -----------------------------------------------------------------------------
 
 setopt auto_cd
-setopt correct_all
+unsetopt correct_all
 setopt auto_list
 setopt auto_menu
 setopt always_to_end
