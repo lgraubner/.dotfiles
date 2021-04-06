@@ -11,3 +11,5 @@ exiftool
 git
 zsh
 zsh-completions
+php
+composer
