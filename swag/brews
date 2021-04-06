@@ -13,3 +13,4 @@ zsh
 zsh-completions
 php
 composer
+php-cs-fixer
