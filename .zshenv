@@ -16,3 +16,6 @@ export LANG=en_US.UTF-8
 
 # cra code overlay
 export REACT_EDITOR=code
+
+# add sbin to path
+export PATH="/usr/local/sbin:$PATH"
