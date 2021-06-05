@@ -34,9 +34,6 @@ check_internet_connection
 chapter "Caching password"
 ask_for_sudo
 
-chapter "Activate ZSH shell"
-sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
-
 chapter "Installing Dependencies"
 
 # install xcode
@@ -53,10 +50,11 @@ fi
 if [ -x nvm ]; then
 	install "Installing NVM"
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+  cp swag/npm "$NVM_DIR/default-packages"
 	print_success "NVM installed!"
-	install "Installing latest Node…"
-	nvm install node
-	nvm use node
+	install "Installing Node LTS…"
+	nvm install --lts
+	nvm use --lts
 	nvm run node --version
 	nodev=$(node -v)
 	print_success "Using Node $nodev!"
@@ -72,16 +70,6 @@ if ! [ -x "$(command -v brew)" ]; then
 	print_success "Homebrew installed!"
 else
 	print_success_muted "Homebrew already installed."
-fi
-
-# install composer
-if ! [ -x "$(command -v composer)" ]; then
-	install "Installing Composer"
-	curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
-	print_success "Composer installed!"
-else
-	print_success_muted "Composer already installed."
 fi
 
 # install brew formulaes
@@ -123,24 +111,15 @@ if [ -e $cwd/swag/npm ]; then
 	done
 fi
 
+chapter "Install Pure ZSH Prompt"
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
 # install npm completions
 npm completion > /usr/local/share/zsh/site-functions/npm
 
-# @TODO
-RBENV_RUBY_VERSION=`rbenv version`
-if [[ ! "$RBENV_RUBY_VERSION" =~ ^2\.6\.0.* ]]; then
-  chapter "Installing stable Ruby version"
-  install_rbenv_ruby
-fi
-
-# install ruby gems
-if [ -e $cwd/swag/gems ]; then
-	chapter "Installing ruby gems"
-
-  for gem in $(<$cwd/swag/gems); do
-	    install_ruby_gems $gem
-	done
-fi
+chapter "Activate ZSH shell"
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
 
 # symlink files
 chapter "Linking dotfiles"

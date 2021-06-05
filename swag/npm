@@ -1,7 +1,3 @@
-svgo
-gzip-size-cli
 prettier
-git-open
 npm-check
-fkill-cli
-pure-prompt
+git-open

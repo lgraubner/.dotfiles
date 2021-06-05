@@ -19,10 +19,10 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # -----------------------------------------------------------------------------
-# 2. COMPLETION
+# 2. COMPLETION + PROMPT
 # -----------------------------------------------------------------------------
 
-export FPATH="/usr/local/share/zsh-completions:$FPATH"
+export FPATH="$HOME/.zsh/pure:/usr/local/share/zsh-completions:$FPATH"
 
 #--------------------------------------
 # 3. FUNCTIONS
@@ -138,9 +138,6 @@ alias lsa="ls -FGlAhp"
 # Print file size
 alias fs="stat -f '%z bytes'"
 
-# Recursively delete `.DS_Store` files
-alias rmdss="find . -name '*.DS_Store' -type f -ls -delete"
-
 # Quick jump to folders
 alias w="cd $WORKSPACE"
 alias d="cd ~/Desktop"
@@ -162,7 +159,7 @@ alias pubip="curl -w '\n' https://api.ipify.org"
 alias fix="git diff --name-only | uniq | xargs $EDITOR"
 
 # remove .DS_Store files
-alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
+alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Npm run dev alias
 alias dev="npm run dev"
@@ -221,9 +218,6 @@ alias gstp="git stash pop"
 
 # simple changelog
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
-
-# init new project
-alias init="npx license mit > LICENSE && npx gitignore node && git init && npm init -y"
 
 # -----------------------------------------------------------------------------
 # 5. Misc

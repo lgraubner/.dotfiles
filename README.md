@@ -13,3 +13,8 @@ git clone https://github.com/lgraubner/dotfiles.git && ./dotfiles/bootstrap
 ```
 
 This will install all needed programs and copies the dotfiles into your home directory. You might want to apply some useful MacOS defaults by running `./macos`.
+
+## Todo
+
+zshrc cleanup
+window manager?
