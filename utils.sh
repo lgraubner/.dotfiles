@@ -224,7 +224,7 @@ install_brews() {
 install_application_via_brew() {
     if [[ ! $(brew list | grep $cask) ]]; then
         install "Installing $cask"
-        brew install $cask --appdir=/Applications >/dev/null
+        brew install --cask $cask --appdir=/Applications >/dev/null
         print_in_green "${bold}✓ installed!${normal}\n"
     else
       print_success_muted "$cask already installed."
