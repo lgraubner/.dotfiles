@@ -15,3 +15,6 @@ Thumbs.db
 
 # PHPStorm
 .idea
+
+# VS Code
+.vscode
