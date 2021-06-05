@@ -119,7 +119,7 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 npm completion > /usr/local/share/zsh/site-functions/npm
 
 chapter "Activate ZSH shell"
-sudo -s 'echo "$(which zsh)" >> /etc/shells' && chsh -s $(which zsh)
+sudo -s echo "$(which zsh)" >> /etc/shells && chsh -s $(which zsh)
 
 # symlink files
 chapter "Linking dotfiles"
