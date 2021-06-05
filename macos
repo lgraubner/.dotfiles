@@ -164,10 +164,10 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 cp ./fonts/* /Library/Fonts
 
 for app in "cfprefsd" \
-	"Dock" \
-	"Finder" \
-	"SystemUIServer" \
+    "Dock" \
+    "Finder" \
+    "SystemUIServer" \
   "Terminal"; do
-	killall "${app}" &> /dev/null
+    killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

@@ -214,31 +214,31 @@ ask_for_sudo() {
 install_brews() {
     if test ! $(brew list | grep $brew); then
         install "Installing $brew"
-		brew install $brew >/dev/null
-		print_in_green "${bold}✓ installed!${normal}\n"
-	else
-		print_success_muted "$brew already installed."
+      brew install $brew >/dev/null
+      print_in_green "${bold}✓ installed!${normal}\n"
+    else
+      print_success_muted "$brew already installed."
     fi
 }
 
 install_application_via_brew() {
     if [[ ! $(brew cask list | grep $cask) ]]; then
         install "Installing $cask"
-        brew install --cask $cask --appdir=/Applications >/dev/null
+        brew install $cask --appdir=/Applications >/dev/null
         print_in_green "${bold}✓ installed!${normal}\n"
     else
-    	print_success_muted "$cask already installed."
+      print_success_muted "$cask already installed."
     fi
 }
 
 install_npm_packages() {
-	if [[ $(cli_is_installed $2) == 0 ]]; then
-		install "Installing $1"
-		npm install $1 -g --silent
-		print_in_green "${bold}✓ installed!${normal}\n"
-	else
-		print_success_muted "$1 already installed."
-	fi
+  if [[ $(cli_is_installed $2) == 0 ]]; then
+    install "Installing $1"
+    npm install $1 -g --silent
+    print_in_green "${bold}✓ installed!${normal}\n"
+  else
+    print_success_muted "$1 already installed."
+  fi
 }
 
 install_rbenv_ruby() {
@@ -254,7 +254,7 @@ install_ruby_gems() {
     install "Installing $1"
     gem install --silent $1
   else
-		print_success_muted "$1 already installed."
+    print_success_muted "$1 already installed."
   fi
 }
 
