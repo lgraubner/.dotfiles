@@ -212,7 +212,7 @@ ask_for_sudo() {
 
 
 install_brews() {
-    if test ! $(brew list | grep $brew); then
+    if [[ ! $(brew list | grep $brew) ]]; then
         install "Installing $brew"
       brew install $brew >/dev/null
       print_in_green "${bold}✓ installed!${normal}\n"
@@ -222,7 +222,7 @@ install_brews() {
 }
 
 install_application_via_brew() {
-    if [[ ! $(brew cask list | grep $cask) ]]; then
+    if [[ ! $(brew list | grep $cask) ]]; then
         install "Installing $cask"
         brew install $cask --appdir=/Applications >/dev/null
         print_in_green "${bold}✓ installed!${normal}\n"
