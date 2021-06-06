@@ -22,7 +22,10 @@ prompt pure
 # 2. COMPLETION + PROMPT
 # -----------------------------------------------------------------------------
 
-export FPATH="$HOME/.zsh/pure:/usr/local/share/zsh-completions:$FPATH"
+export FPATH="$HOME/.zsh/pure:$FPATH"
+
+autoload -Uz compinit
+compinit
 
 #--------------------------------------
 # 3. FUNCTIONS
