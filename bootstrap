@@ -127,7 +127,7 @@ else
 fi
 
 # install npm completions
-npm completion > /usr/local/share/zsh/site-functions/npm
+npm completion > /opt/homebrew/share/zsh/site-functions/npm
 
 chapter "Activate ZSH shell"
 sudo -s echo "$(which zsh)" >> /etc/shells && chsh -s $(which zsh)
@@ -141,14 +141,14 @@ if [ -d $HOME/.iTerm2 ]; then
     print_success_muted "iTerm2 settings folder already created."
 else
     chapter "Creating iTerm2 settings folder"
-    cp -r iTerm2 ~/.iTerm2
+    cp -r $cwd/iTerm2 $HOME/.iTerm2
     print_success "Folder successfully created!"
 fi
 
 
 # create code folder
 chapter "Creating folders"
-mkdir -p ~/code
+mkdir -p $HOME/code
 print_success "Folder successfully created!"
 
 # reload shell to apply changes
