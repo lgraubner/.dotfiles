@@ -46,6 +46,11 @@ else
     print_success "Xcode installed!"
 fi
 
+# install rosetta if m1 mac
+if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
+    sudo softwareupdate --install-rosetta
+fi
+
 # install nvm
 if [ -x nvm ]; then
     install "Installing NVM"
