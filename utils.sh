@@ -269,5 +269,5 @@ symlink_dotfiles() {
 }
 
 reload() {
-  /bin/bash -c "source ~/.bashrc"
+  exec ${SHELL} -l
 }
