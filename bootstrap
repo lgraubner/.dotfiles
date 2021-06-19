@@ -106,14 +106,20 @@ print_success "Cleaned up"
 if [ -e $cwd/swag/npm ]; then
     chapter "Installing npm packages"
 
-  for pkg in $(<$cwd/swag/npm); do
+    for pkg in $(<$cwd/swag/npm); do
         install_npm_packages $pkg
     done
 fi
 
-chapter "Install Pure ZSH Prompt"
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# install pure prompt via git
+if [ -d $HOME/.zsh/pure ]; then
+    print_success_muted "Pure prompt already installed."
+else
+    chapter "Install Pure ZSH Prompt"
+    mkdir -p "$HOME/.zsh"
+    git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+    print_success "Pure prompt installed!"
+fi
 
 # install npm completions
 npm completion > /usr/local/share/zsh/site-functions/npm
