@@ -15,14 +15,14 @@
 # 1. PROMPT
 # -----------------------------------------------------------------------------
 
+export FPATH="$HOME/.zsh/pure:$FPATH"
+
 autoload -U promptinit; promptinit
 prompt pure
 
 # -----------------------------------------------------------------------------
 # 2. COMPLETION + PROMPT
 # -----------------------------------------------------------------------------
-
-export FPATH="$HOME/.zsh/pure:$FPATH"
 
 autoload -Uz compinit
 compinit
