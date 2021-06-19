@@ -136,10 +136,20 @@ sudo -s echo "$(which zsh)" >> /etc/shells && chsh -s $(which zsh)
 chapter "Linking dotfiles"
 symlink_dotfiles
 
+# copy iTerm2 settings folder
+if [ -d $HOME/.iTerm2 ]; then
+    print_success_muted "iTerm2 settings folder already created."
+else
+    chapter "Creating iTerm2 settings folder"
+    cp -r iTerm2 ~/.iTerm2
+    print_success "Folder successfully created!"
+fi
+
+
 # create code folder
 chapter "Creating folders"
 mkdir -p ~/code
-print_success "Created ~/code"
+print_success "Folder successfully created!"
 
 # reload shell to apply changes
 reload
