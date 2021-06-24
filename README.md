@@ -13,3 +13,10 @@ git clone https://github.com/lgraubner/dotfiles.git && ./dotfiles/bootstrap
 ```
 
 This will install all needed programs and copies the dotfiles into your home directory.
+
+## Mac OS Settings
+
+```
+# enable key repeating
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
