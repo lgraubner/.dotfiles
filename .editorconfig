@@ -21,3 +21,7 @@ max_line_length = 0
 [*.{js,jsx,ts,tsx}]
 indent_style = space
 indent_size = 2
+
+[*.go]
+indent_style = tab
+indent_size = 4
