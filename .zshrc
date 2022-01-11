@@ -164,6 +164,9 @@ alias top="htop"
 # interactive disk usage tool
 alias du="ncdu --color dark -rr --exclude .git --exclude node_modules"
 
+# use neovim
+alias vim=$(which nvim)
+
 # get current git branch
 function current_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \

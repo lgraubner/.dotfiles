@@ -12,3 +12,6 @@ composer
 vim
 curl
 node
+neovim
+ripgrep
+fd
