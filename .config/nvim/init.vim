@@ -2,6 +2,9 @@ call plug#begin()
 " color scheme
 Plug 'arcticicestudio/nord-vim'
 
+" indentation
+Plug 'tpope/vim-sleuth'
+
 " language server
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
