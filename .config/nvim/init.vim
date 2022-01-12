@@ -4,6 +4,8 @@ Plug 'arcticicestudio/nord-vim'
 
 " indentation
 Plug 'tpope/vim-sleuth'
+" commenting
+Plug 'tpope/vim-commentary'
 
 " language server
 Plug 'neovim/nvim-lspconfig'
