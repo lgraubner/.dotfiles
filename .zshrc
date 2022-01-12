@@ -79,6 +79,24 @@ function backup-github() {
   fi;
 }
 
+function daily() {
+  year=$(date +"%Y");
+  month=$(date +"%m");
+
+  date=$(date +"%Y-%m-%d");
+
+  dir=$HOME/Nextcloud/Notizen/Daily/$year/$month;
+  filePath=$dir/$date.md;
+
+  mkdir -p $dir;
+
+  if [ ! -f $filePath ]; then
+    echo "# Daily $(date +"%d.%m.%Y")\n\n" > $filePath;    
+  fi;
+
+  nvim '+normal GA' $filePath;
+}
+
 
 # -------------------------------------
 # 4. ALIASES
