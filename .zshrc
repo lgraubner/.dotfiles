@@ -54,27 +54,6 @@ function e() {
 	fi;
 }
 
-# Create a todo file on desktop
-function todo() {
-  touch ~/Desktop/$*
-}
-
-# Update system and tools
-function update() {
-  if id -Gn ${whoami} | grep -q -w admin;
-  then
-    # update brew
-    brew update;
-    brew upgrade;
-    brew cleanup;
-
-    # update npm and modules
-    npm update -g;
-  else
-    echo "This command can only be run as admin."
-  fi
-}
-
 # move file/folder to trash
 trash () {
   command mv "$@" ~/.Trash;
@@ -145,13 +124,6 @@ alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
 # Npm run dev alias
 alias dev="npm run dev"
 
-# Fun
-alias idk="printf \"¯\_(ツ)_/¯\" | pbcopy && echo \"¯\_(ツ)_/¯ copied to clipboard\""
-
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
 # Reload shell
 alias reload="exec ${SHELL} -l"
 
@@ -197,11 +169,6 @@ alias grbc="git rebase --continue"
 alias gsta="git stash"
 alias gstp="git stash pop"
 
-# simple changelog
-alias did="vim +'normal Go' +'r!date' ~/did.txt"
-
-# -----------------------------------------------------------------------------
-# 5. Misc
 # -----------------------------------------------------------------------------
 
 setopt auto_cd

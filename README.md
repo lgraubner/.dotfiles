@@ -20,3 +20,7 @@ This will install all needed programs and copies the dotfiles into your home dir
 # enable key repeating
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
+
+## Todo
+
+- git branch in vim bar
