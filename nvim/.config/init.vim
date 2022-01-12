@@ -99,3 +99,15 @@ lua << EOF
     capabilities = capabilities
   }
 EOF
+
+lua << EOF
+  local telescope = require('telescope')
+  telescope.setup({
+    pickers = {
+      find_files = {
+        hidden = true,
+        file_ignore_patterns = {'.git/.*'}
+      }
+    }
+  })
+EOF
