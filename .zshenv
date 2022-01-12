@@ -1,5 +1,5 @@
 # Default editor
-export EDITOR='code'
+export EDITOR='nvim'
 
 # Workspace directory
 export WORKSPACE=$HOME/code
