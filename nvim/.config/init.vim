@@ -22,6 +22,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" prettier
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 colorscheme nord
@@ -111,3 +114,10 @@ lua << EOF
     }
   })
 EOF
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx Neoformat
+augroup END
+
+nnoremap <leader>p :Neoformat<cr>
