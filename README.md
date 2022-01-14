@@ -23,7 +23,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 ## VIM Key bindings
 
-- `<leader>` = Leader
+- `<leader>` = Space
 
 ### Telescope
 
