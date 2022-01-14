@@ -21,6 +21,39 @@ This will install all needed programs and copies the dotfiles into your home dir
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
+## VIM Key bindings
+
+- `<leader>` = Leader
+
+### Telescope
+
+- `<leader>ff` Find file in current directory
+- `<leader>fg` Grep through files in current directory
+- `<leader>fb` Find file in active buffers
+- `<leader>fgb` Find git branches
+- `<leader>fgc` Find git commits
+- `<leader>fgs` Find changed git files
+
+### Neoformat
+
+- `<leader>p` Format active buffer
+
+## tmux
+
+- `<C-a>` Prefix
+- `<C-a> w` Show open windows
+- `<C-a> s` Show active sessions
+- `<C-a> c` Create new window
+- `<C-a> d` Detach from tmux session
+- `<C-a> p` Switch to previous window
+- `<C-a> n` Switch to next window
+- `<C-a> -` Split pane horizontally
+- `<C-a> |` Split pane vertically
+- `<C-a> x` Close pane
+- `<C-a> arrow` Move cursor
+
+Full list: https://wiki.ubuntuusers.de/tmux/
+
 ## Todo
 
 - git branch in vim bar
