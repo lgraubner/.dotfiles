@@ -38,6 +38,11 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 - `<leader>p` Format active buffer
 
+### Misc
+
+- `gc` comment out selection
+- `gcc` comment out line
+
 ## tmux
 
 - `<C-a>` Prefix
@@ -56,4 +61,5 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 
 ## Todo
 
-- git branch in vim bar
+- vim status line
+- tmux status line

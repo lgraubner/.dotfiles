@@ -33,9 +33,19 @@ set number relativenumber
 
 set fileencoding=utf-8
 
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
+
+set nowrap
+
+set hidden
+
+set scrolloff=8
+
+set colorcolumn=80
+set signcolumn=yes
 
 let mapleader = " "
 
