@@ -49,3 +49,5 @@ set signcolumn=yes
 
 let mapleader = " "
 
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
