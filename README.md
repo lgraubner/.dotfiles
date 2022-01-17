@@ -67,3 +67,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - improve dotfiles management (GNUStow?)
 - oh my zsh + zsh-autocompletions?
 - Switch from nvm to n
+- tmux sessionizer
