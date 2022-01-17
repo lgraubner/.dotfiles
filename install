@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+pushd $DOTFILES
+
+stowFolders=('zsh' 'tmux' 'nvim' 'misc' 'alacritty')
+
+for folder in $stowFolders; do
+    stow -R $folder
+done
+
+popd
