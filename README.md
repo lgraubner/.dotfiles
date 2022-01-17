@@ -66,3 +66,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - configure lpsaga
 - improve dotfiles management (GNUStow?)
 - oh my zsh + zsh-autocompletions?
+- Switch from nvm to n
