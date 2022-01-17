@@ -7,7 +7,7 @@
 # 2.  Completion
 # 3.  Functions
 # 4.  Aliases
-# 5.  Misc
+# 5.  Key Bindings
 #
 # ---------------------------------------------------------
 
@@ -186,6 +186,12 @@ alias gf="git fetch"
 alias grbc="git rebase --continue"
 alias gsta="git stash"
 alias gstp="git stash pop"
+
+# -------------------------------------
+# 5. KEY BINDINGS
+# -------------------------------------
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 # -----------------------------------------------------------------------------
 

@@ -64,7 +64,5 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - vim status line
 - tmux status line
 - configure lpsaga
-- improve dotfiles management (GNUStow?)
 - oh my zsh + zsh-autocompletions?
 - Switch from nvm to n
-- tmux sessionizer
