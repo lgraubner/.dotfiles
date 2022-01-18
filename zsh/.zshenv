@@ -17,3 +17,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export DOTFILES=$HOME/.dotfiles
+
+if [[ -f $HOME/.zshenv.local ]]; then
+    source $HOME/.zshenv.local
+fi
