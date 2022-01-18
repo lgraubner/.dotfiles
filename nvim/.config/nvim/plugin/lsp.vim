@@ -1,5 +1,6 @@
 lua << EOF
 require'lspconfig'.tsserver.setup{}
+require'lspconfig'.prismals.setup{}
 EOF
 
 set completeopt=menu,menuone,noselect
