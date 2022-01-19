@@ -71,6 +71,10 @@ nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 
+" create new line without entering insert mode
+nmap oo m`o<esc>``
+nmap OO m`O<esc>``
+
 " highlight yank
 augroup highlight_yank
     autocmd!
