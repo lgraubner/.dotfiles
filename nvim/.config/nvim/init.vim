@@ -67,6 +67,10 @@ inoremap <C-k> <esc>:m .-2<CR>==gi
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+" faster buffer navigation
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+
 " highlight yank
 augroup highlight_yank
     autocmd!
