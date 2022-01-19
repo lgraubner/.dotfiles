@@ -22,14 +22,16 @@ font:
 
 # mac os german key bindings
 key_bindings:
-  - { key: 28,      mods: Alt, chars: "{" }
-  - { key: 25,      mods: Alt, chars: "}" }
-  - { key: 37,      mods: Alt, chars: "@" }
-  - { key: 26,      mods: Alt|Shift, chars: "\\" }
-  - { key: 26,      mods: Alt, chars: "|" }
-  - { key: 45,      mods: Alt, chars: "~" }
-  - { key: 23,      mods: Alt, chars: "[" }
-  - { key: 22,      mods: Alt, chars: "]" }
+  - { key: 28, mods: Alt, chars: "{" }
+  - { key: 25, mods: Alt, chars: "}" }
+  - { key: 37, mods: Alt, chars: "@" }
+  - { key: 26, mods: Alt|Shift, chars: "\\" }
+  - { key: 26, mods: Alt, chars: "|" }
+  - { key: 23, mods: Alt, chars: "[" }
+  - { key: 22, mods: Alt, chars: "]" }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
 
 # https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
 colors:
