@@ -68,3 +68,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - Switch from nvm to n
 - replace bootstrap script
         - git + npm config via install script
+- adjust vim swap file behavior
