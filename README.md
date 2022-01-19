@@ -67,3 +67,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - oh my zsh + zsh-autocompletions?
 - Switch from nvm to n
 - replace bootstrap script
+        - git + npm config via install script
