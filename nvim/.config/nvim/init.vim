@@ -72,11 +72,12 @@ nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 
 " create new line without entering insert mode
-nmap oo m`o<esc>``
-nmap OO m`O<esc>``
+nmap <leader>o m`o<Esc>``
+nmap <leader>O m`O<esc>``
 
 " highlight yank
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 100})
 augroup END
+
