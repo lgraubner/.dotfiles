@@ -66,3 +66,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 - configure lpsaga
 - oh my zsh + zsh-autocompletions?
 - Switch from nvm to n
+- replace bootstrap script
