@@ -49,5 +49,20 @@ set signcolumn=yes
 
 let mapleader = " "
 
+" more intuitive chapter up/down
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+
+" undo breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==gi
+inoremap <C-k> <esc>:m .-2<CR>==gi
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
