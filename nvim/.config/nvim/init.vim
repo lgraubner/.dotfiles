@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 
@@ -47,6 +48,14 @@ set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 
+" disable swap file and stuff
+set nobackup
+set nowritebackup
+set noswapfile
+
+" use system clipboard
+set clipboard=unnamed
+
 let mapleader = " "
 
 " more intuitive chapter up/down
@@ -70,6 +79,8 @@ nnoremap <leader>k :m .-2<CR>==
 " faster buffer navigation
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bf :bfirst<CR>
+nnoremap <leader>bl :blast<CR>
 
 " create new line without entering insert mode
 nmap <leader>o m`o<Esc>``
