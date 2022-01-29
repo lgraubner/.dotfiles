@@ -62,5 +62,8 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 ## Todo
 
 - oh my zsh + zsh-autocompletions?
-- replace bootstrap script
-        - git + npm config via install script
+- Machine Installation Script (Ansible, own repo)
+        - OhMyZsh
+        - git config
+        - npm config
+        - packages
