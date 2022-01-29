@@ -61,9 +61,6 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 
 ## Todo
 
-- vim status line
-- tmux status line
 - oh my zsh + zsh-autocompletions?
-- telescope delete buffer
 - replace bootstrap script
         - git + npm config via install script
