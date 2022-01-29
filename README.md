@@ -61,7 +61,6 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 
 ## Todo
 
-- oh my zsh + zsh-autocompletions?
 - Machine Installation Script (Ansible, own repo)
         - OhMyZsh
         - git config
