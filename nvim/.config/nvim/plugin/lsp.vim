@@ -45,5 +45,9 @@ lua << EOF
   require('lspconfig').prismals.setup {
     capabilities = capabilities
   }
+
+  require('lspconfig').gopls.setup {
+    capabilities = capabilities
+  }
 EOF
 
