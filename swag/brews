@@ -18,3 +18,4 @@ fd
 stow
 fzf
 go
+gopls
