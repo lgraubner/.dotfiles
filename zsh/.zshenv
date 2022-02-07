@@ -14,6 +14,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export DOTFILES="$HOME/.dotfiles"
+export DAILY="$HOME/Notizen/Daily"
 
 # n dir
 export N_PREFIX="$HOME/n"

@@ -85,7 +85,7 @@ function daily() {
 
   date=$(date +"%Y-%m-%d");
 
-  dir=$HOME/Nextcloud/Notizen/Daily/$year/$month;
+  dir=$DAILY/$year/$month;
   filePath=$dir/$date.md;
 
   mkdir -p $dir;
