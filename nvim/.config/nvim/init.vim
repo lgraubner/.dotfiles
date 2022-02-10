@@ -86,6 +86,9 @@ nnoremap <leader>bl :blast<CR>
 nmap <leader>o m`o<Esc>``
 nmap <leader>O m`O<esc>``
 
+" switch tmux sessions in vim
+nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
+
 " highlight yank
 augroup highlight_yank
     autocmd!
