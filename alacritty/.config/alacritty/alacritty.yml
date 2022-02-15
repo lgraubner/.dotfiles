@@ -10,7 +10,7 @@ font:
   bold_italic:
     family: Fira Code
 
-  size: 14.0
+  size: 15.0
 
   # line height
   offset:
