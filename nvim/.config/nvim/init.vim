@@ -2,6 +2,9 @@ call plug#begin()
 " color scheme
 Plug 'arcticicestudio/nord-vim'
 
+" status line
+Plug 'nvim-lualine/lualine.nvim'
+
 " indentation
 Plug 'tpope/vim-sleuth'
 " commenting
