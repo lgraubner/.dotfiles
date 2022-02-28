@@ -51,22 +51,6 @@ if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
     sudo softwareupdate --install-rosetta
 fi
 
-# install nvm
-if [ -x nvm ]; then
-    install "Installing NVM"
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-  cp swag/npm "$NVM_DIR/default-packages"
-    print_success "NVM installed!"
-    install "Installing Node LTS…"
-    nvm install --lts
-    nvm use --lts
-    nvm run node --version
-    nodev=$(node -v)
-    print_success "Using Node $nodev!"
-else
-    print_success_muted "NVM/Node already installed. Skipping."
-fi
-
 # install homebrew
 if ! [ -x "$(command -v brew)" ]; then
     install "Installing Homebrew"
@@ -134,17 +118,7 @@ sudo -s echo "$(which zsh)" >> /etc/shells && chsh -s $(which zsh)
 
 # symlink files
 chapter "Linking dotfiles"
-symlink_dotfiles
-
-# copy iTerm2 settings folder
-if [ -d $HOME/.iTerm2 ]; then
-    print_success_muted "iTerm2 settings folder already created."
-else
-    chapter "Creating iTerm2 settings folder"
-    cp -r $cwd/iTerm2 $HOME/.iTerm2
-    print_success "Folder successfully created!"
-fi
-
+./install
 
 # create code folder
 chapter "Creating folders"
