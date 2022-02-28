@@ -86,7 +86,6 @@ if [ -e $cwd/swag/casks ]; then
 fi
 
 install_extra=${EXTRA:=false}
-echo $install_extra
 
 if [ $install_extra = "true" ]; then
     if [ -e $cwd/swag/casks_extra ]; then
