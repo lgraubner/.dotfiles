@@ -85,6 +85,19 @@ if [ -e $cwd/swag/casks ]; then
     done
 fi
 
+install_extra=${EXTRA:=false}
+echo $install_extra
+
+if [ $install_extra = "true" ]; then
+    if [ -e $cwd/swag/casks_extra ]; then
+        chapter "Installing extra apps via Homebrew"
+
+        for cask in $(<$cwd/swag/casks_extra); do
+            install_application_via_brew $cask
+        done
+    fi
+fi
+
 # brew cleanup
 chapter "Cleaning up Homebrew files"
 brew cleanup 2> /dev/null
@@ -112,9 +125,6 @@ fi
 
 # install npm completions
 npm completion > /opt/homebrew/share/zsh/site-functions/npm
-
-chapter "Activate ZSH shell"
-sudo -s echo "$(which zsh)" >> /etc/shells && chsh -s $(which zsh)
 
 # symlink files
 chapter "Linking dotfiles"
