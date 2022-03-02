@@ -70,3 +70,5 @@ Full list: https://wiki.ubuntuusers.de/tmux/
         - git config
         - npm config
         - packages
+- install xcode before clone
+- enable rosetta before script?
