@@ -14,6 +14,10 @@ git clone https://github.com/lgraubner/dotfiles.git && ./dotfiles/bootstrap
 
 This will install all needed programs and copies the dotfiles into your home directory.
 
+## Create SSH-key
+
+Follow the steps listed here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 ## Mac OS Settings
 
 ```

@@ -201,12 +201,10 @@ setopt auto_list
 setopt auto_menu
 setopt always_to_end
 
-# nvm init
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# add ssh keys on login
-ssh-add -A 2> /dev/null;
-
 # zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 [ -s /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
