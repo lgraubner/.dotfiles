@@ -72,3 +72,4 @@ Full list: https://wiki.ubuntuusers.de/tmux/
         - packages
 - install xcode before clone
 - enable rosetta before script?
+- install vim plug

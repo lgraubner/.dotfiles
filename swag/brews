@@ -15,3 +15,4 @@ fzf
 go
 gopls
 ansible
+tmux
