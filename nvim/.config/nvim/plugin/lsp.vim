@@ -7,6 +7,7 @@ nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>ve :lua vim.diagnostic.open_float()<CR>
 
 lua << EOF
     local cmp = require'cmp'
