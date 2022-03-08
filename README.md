@@ -25,8 +25,11 @@ Follow the steps listed here: https://docs.github.com/en/authentication/connecti
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # lower key repeat delay
-defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+# normal minimum is 15 (225ms)
+defaults write -g InitialKeyRepeat -int 10
+
+# normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 1
 ```
 
 ## VIM Key bindings
