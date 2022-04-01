@@ -50,5 +50,9 @@ lua << EOF
   require('lspconfig').gopls.setup {
     capabilities = capabilities
   }
+
+  require('lspconfig').tailwindcss.setup {
+    capabilities = capabilities
+  }
 EOF
 
