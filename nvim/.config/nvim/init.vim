@@ -9,6 +9,8 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'tpope/vim-sleuth'
 " commenting
 Plug 'tpope/vim-commentary'
+" surround text objects
+Plug 'tpope/vim-surround'
 
 " language server
 Plug 'neovim/nvim-lspconfig'
