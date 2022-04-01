@@ -72,11 +72,11 @@ Full list: https://wiki.ubuntuusers.de/tmux/
 
 ## Todo
 
-- Machine Installation Script (Ansible, own repo)
-        - OhMyZsh
+- Create Machine Installation Script (Ansible, own repo)
         - git config
         - npm config
         - packages
-- install xcode before clone
-- enable rosetta before script?
-- install vim plug
+        - install xcode (for git and stuff)
+        - enable rosetta
+- chrome vs firefox
+- Alacritty vs iTerm
