@@ -78,5 +78,3 @@ Full list: https://wiki.ubuntuusers.de/tmux/
         - packages
         - install xcode (for git and stuff)
         - enable rosetta
-- chrome vs firefox
-- Alacritty vs iTerm
