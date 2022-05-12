@@ -207,4 +207,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 
 # homebrew
 export PATH="/opt/homebrew/bin:$PATH"
-
+export PATH="/opt/homebrew/sbin:$PATH"
