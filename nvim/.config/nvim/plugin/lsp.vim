@@ -37,21 +37,24 @@ lua << EOF
       })
   })
 
+  require("nvim-lsp-installer").setup {}
+
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local lspconfig = require('lspconfig')
 
-  require('lspconfig').tsserver.setup {
+  lspconfig.tsserver.setup {
     capabilities = capabilities
   }
 
-  require('lspconfig').prismals.setup {
+  lspconfig.gopls.setup {
     capabilities = capabilities
   }
 
-  require('lspconfig').gopls.setup {
+  lspconfig.tailwindcss.setup {
     capabilities = capabilities
   }
 
-  require('lspconfig').tailwindcss.setup {
+  lspconfig.svelte.setup {
     capabilities = capabilities
   }
 EOF

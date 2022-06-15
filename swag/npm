@@ -2,6 +2,3 @@ prettier
 npm-check
 git-open
 typescript
-typescript-language-server
-@prisma/language-server
-@tailwindcss/language-server

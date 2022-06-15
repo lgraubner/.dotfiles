@@ -70,6 +70,16 @@ defaults write -g KeyRepeat -int 1
 
 Full list: https://wiki.ubuntuusers.de/tmux/
 
+## Install LSP Servers
+
+To use specific language servers with LSP servers have to be installed: https://github.com/williamboman/nvim-lsp-installer#commands
+
+Configured servers can be seen in `plugin/lsp.vim`.
+
+```
+:LspInstall tsserver
+```
+
 ## Todo
 
 - Create Machine Installation Script (Ansible, own repo)
