@@ -27,6 +27,7 @@ Plug 'evanleck/vim-svelte'
 
 " telescope fuzzy finder
 Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
