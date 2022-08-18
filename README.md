@@ -82,6 +82,7 @@ Configured servers can be seen in `plugin/lsp.vim`.
 
 ## Todo
 
+- switch to OHMYZSH + powerlevel10k (https://github.com/romkatv/powerlevel10k)
 - Create Machine Installation Script (Ansible, own repo)
         - git config
         - npm config
