@@ -57,5 +57,9 @@ lua << EOF
   lspconfig.svelte.setup {
     capabilities = capabilities
   }
+
+  lspconfig.eslint.setup {
+    capabilities = capabilities
+  }
 EOF
 
