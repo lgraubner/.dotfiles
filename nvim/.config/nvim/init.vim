@@ -103,3 +103,5 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 100})
 augroup END
 
+" fix ambigous command
+command! E Explore
