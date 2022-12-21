@@ -192,11 +192,6 @@ vim.keymap.set('n', '<C-f>', ':silent !tmux neww tmux-sessionizer<CR>')
 -- Paste content and keep paste buffer
 vim.keymap.set('x', '<leader>p', '"_dP')
 
--- Easier copying in system clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>Y', '"+Y')
-
 -- Faster buffer navigation
 vim.keymap.set('n', '<leader>bn', ':bn<CR>')
 vim.keymap.set('n', '<leader>bp', ':bp<CR>')
@@ -216,6 +211,9 @@ vim.o.wrap = false
 -- Disable backups
 vim.o.swapfile = false
 vim.o.backup = false
+
+-- Use system clipboard
+vim.o.clipboard = 'unnamed'
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
