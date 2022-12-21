@@ -270,21 +270,21 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
-    pickers = {
-      find_files = {
-        hidden = true,
-        file_ignore_patterns = {'.git/.*', '.DS_Store'}
-      },
-      buffers = {
-        sort_lastused = true,
-        mappings = {
-          i = {
-            ["<c-d>"] = "delete_buffer"
-          }
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+      file_ignore_patterns = {'.git/.*', '.DS_Store'}
+    },
+    buffers = {
+      sort_lastused = true,
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer"
         }
       }
     }
-  },
+  }
 }
 
 -- Enable telescope fzf native, if installed
