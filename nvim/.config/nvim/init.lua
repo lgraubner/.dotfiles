@@ -161,9 +161,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Explorer kemap
-vim.keymap.set('n', '<leader>ee', vim.cmd.Ex)
-
 -- Moving text
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -214,6 +211,12 @@ vim.o.backup = false
 
 -- Use system clipboard
 vim.o.clipboard = 'unnamed'
+
+-- Allow W for write file for accidental shift presses
+vim.api.nvim_create_user_command('W', 'write', { force = true })
+
+-- Overwrite E for explorer
+vim.api.nvim_create_user_command('E', 'Explore', { force = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
