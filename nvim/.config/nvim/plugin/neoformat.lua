@@ -4,7 +4,7 @@ local format_group = vim.api.nvim_create_augroup('fmt', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'Neoformat',
   group = format_group,
-  pattern = '*.js,*.jsx,*.ts,*.tsx,*.json',
+  pattern = '*.js,*.jsx,*.ts,*.tsx,*.json,*.svelte',
 })
 
 vim.keymap.set('n', '<leader>p', ':Neoformat<cr>')
