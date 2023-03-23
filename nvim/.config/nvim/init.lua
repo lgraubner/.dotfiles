@@ -578,8 +578,8 @@ require('formatter').setup {
 }
 
 local format_group = vim.api.nvim_create_augroup('FormatAutogroup', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-  command = 'FormatWrite',
+vim.api.nvim_create_autocmd('BufWritePre', {
+  command = 'Format',
   group = format_group,
   pattern = '*',
 })
