@@ -73,7 +73,9 @@ require('packer').startup(function(use)
     end
   })
 
-  use 'sbdchd/neoformat'
+  use 'mhartington/formatter.nvim'
+
+  use 'github/copilot.vim'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -501,15 +503,15 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
+    -- ['<Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -525,6 +527,64 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+require('formatter').setup {
+  filetype = {
+    javascript = {
+      require('formatter.filetypes.javascript').prettier
+    },
+
+    javascriptreact = {
+      require('formatter.filetypes.javascriptreact').prettier
+    },
+
+    css = {
+      require('formatter.filetypes.css').prettier
+    },
+
+    go = {
+      require('formatter.filetypes.go').gofmt
+    },
+
+    html = {
+      require('formatter.filetypes.html').prettier
+    },
+
+    json = {
+      require('formatter.filetypes.json').prettier
+    },
+
+    markdown = {
+      require('formatter.filetypes.markdown').prettier
+    },
+
+    svelte = {
+      require('formatter.filetypes.svelte').prettier
+    },
+
+    typescript = {
+      require('formatter.filetypes.typescript').prettier
+    },
+
+    typescriptreact = {
+      require('formatter.filetypes.typescriptreact').prettier
+    },
+
+    yaml = {
+      require('formatter.filetypes.yaml').prettier
+    },
+
+  }
+}
+
+local format_group = vim.api.nvim_create_augroup('FormatAutogroup', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  command = 'FormatWrite',
+  group = format_group,
+  pattern = '*',
+})
+
+vim.keymap.set('n', '<leader>p', ':FormatWrite<cr>')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
