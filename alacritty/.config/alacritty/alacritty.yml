@@ -20,8 +20,6 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
 
-alt_send_esc: false
-
 # https://github.com/arcticicestudio/nord-alacritty/blob/develop/src/nord.yml
 colors:
   primary:
