@@ -50,7 +50,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'arcticicestudio/nord-vim' -- Theme https://www.nordtheme.com/ports/vim
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -137,10 +137,6 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 vim.o.colorcolumn = '80'
-
--- Set colorscheme
-vim.o.termguicolors = false
-vim.cmd [[colorscheme nord]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -231,12 +227,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Set colorscheme
+require("catppuccin").setup({
+  flavour = "mocha",
+})
+
+vim.o.termguicolors = true
+vim.cmd'colorscheme catppuccin'
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'nord',
+    theme = 'catppuccin',
     component_separators = '',
     section_separators = '',
   },

@@ -135,6 +135,15 @@ else
     print_success "Tmux Plugin Manager installed!"
 fi
 
+if [ -d $HOME/.config/alacritty/catppuccin ]; then
+    print_success_muted "Alacritty Cappuccin theme already already installed."
+else
+    chapter "Installing Alacritty Cappuccin theme"
+    git clone https://github.com/catppuccin/alacritty.git ~/.config/alacritty/catppuccin
+    print_success "Alacritty Cappuccin theme installed!"
+fi
+
+
 # install npm completions
 npm completion > /opt/homebrew/share/zsh/site-functions/npm
 
