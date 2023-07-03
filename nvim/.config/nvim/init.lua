@@ -229,7 +229,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Set colorscheme
 require("catppuccin").setup({
-  flavour = "mocha",
+  flavour = "macchiato",
 })
 
 vim.o.termguicolors = true

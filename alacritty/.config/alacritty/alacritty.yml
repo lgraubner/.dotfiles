@@ -24,4 +24,4 @@ key_bindings:
   - { key: Minus, mods: Control, action: DecreaseFontSize }
 
 import:
-  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
