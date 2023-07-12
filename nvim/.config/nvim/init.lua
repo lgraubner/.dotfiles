@@ -46,8 +46,7 @@ require('packer').startup(function(use)
   }
 
   -- Git related plugins
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
+  use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim' }
   use 'lewis6991/gitsigns.nvim'
 
   use { "catppuccin/nvim", as = "catppuccin" }
@@ -589,6 +588,11 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 
 vim.keymap.set('n', '<leader>p', ':FormatWrite<cr>')
+
+local neogit = require('neogit')
+neogit.setup {
+  diffview = true
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
