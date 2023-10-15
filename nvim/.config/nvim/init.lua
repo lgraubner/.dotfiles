@@ -74,8 +74,6 @@ require('packer').startup(function(use)
 
   use 'mhartington/formatter.nvim'
 
-  use 'github/copilot.vim'
-
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -250,9 +248,7 @@ require('Comment').setup()
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
-require('indent_blankline').setup {
-  show_end_of_line = true,
-}
+require('ibl').setup()
 
 -- Gitsigns
 -- See `:help gitsigns.txt`
