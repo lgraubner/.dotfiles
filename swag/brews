@@ -18,3 +18,4 @@ ansible
 tmux
 bettertouchtool
 wget
+jq
