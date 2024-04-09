@@ -1,3 +1,10 @@
 .DS_Store
 packer_compiled.lua
 alacritty/.config/alacritty/catppuccin
+
+tags
+test.sh
+.luarc.json
+
+spell/
+lazy-lock.json
