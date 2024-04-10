@@ -30,4 +30,9 @@ defaults write -g InitialKeyRepeat -int 10
 
 # normal minimum is 2 (30 ms)
 defaults write -g KeyRepeat -int 1
+
+# change screenshot location to ~/Screenshots
+mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Screenshots
+
+killall SystemUIServer
 ```
