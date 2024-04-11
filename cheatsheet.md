@@ -1,0 +1,36 @@
+# Cheatsheet
+
+- <kbd>\<leader>D</kbd> show prev error in file
+- <kbd>\<leader>d</kbd> show next error in file
+- <kbd>\<leader>e</kbd> show error details
+- <kbd>J</kbd> move selection in visual mode down
+- <kbd>K</kbd> move selection in visual mode up
+- <kbd>\<leader>o</kbd> create new line beneath without leavin normal mode
+- <kbd>\<leader>O</kbd> create new line above without leavin normal mode
+- <kbd>\<leader>p</kbd> paste content and keep paste buffer
+- <kbd>\<leader>sf</kbd> search files by name
+- <kbd>\<leader>sg</kbd> search string with grep in project
+- <kbd>\<leader>sr</kbd> reopen last search
+- <kbd>\<leader>sd</kbd> show list of errors in project
+- <kbd>\<leader>\<leader></kbd> show list of buffers
+- <kbd>\<leader>/</kbd> search in open file
+- <kbd>\<leader>sn</kbd> search in neovim config
+- <kbd>gd</kbd> go to definition
+- <kbd>gr</kbd> list or go to references
+- <kbd>gI</kbd> go to implementation
+- <kbd>\<leader>rn</kbd> rename symbol
+- <kbd>\<leader>ca</kbd> execute code action
+- <kbd>K</kbd> show documentation for word under cursor
+- <kbd>\<leader>f</kbd> format buffer
+- <kbd>\<C-n></kbd> next suggestion
+- <kbd>\<C-p></kbd> previous suggestion
+- <kbd>\<C-b></kbd> scroll back suggestion
+- <kbd>\<C-f></kbd> scroll forward suggestion
+- <kbd>\<C-y></kbd> apply suggestion
+- <kbd>:TimerStart 10m</kbd> start 10 minute timer
+- <kbd>:E</kbd> show file explorer
+- <kbd>\<leader>g</kbd> open neogit
+- <kbd>\<leader>sm</kbd> search harpoon marks
+- <kbd>\<leader>a</kbd> add harpoon mark for current file
+- <kbd>\<C-e></kbd> show list of harpoon marks
+- <kbd>\<leader>1</kbd> open harpoon mark 1 etc.
