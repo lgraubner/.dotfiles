@@ -91,7 +91,7 @@ function daily() {
   mkdir -p $dir;
 
   if [ ! -f $filePath ]; then
-    echo "# Daily $(date +"%d.%m.%Y")\n\n" > $filePath;    
+    echo "# Daily $(date +"%d.%m.%Y")\n\n" > $filePath;
   fi;
 
   nvim '+normal GA' $filePath;

@@ -11,7 +11,7 @@ export LANG=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 
 export DOTFILES="$HOME/.dotfiles"
-export DAILY="$HOME/Notizen/Daily"
+export DAILY="$HOME/Notes/Daily"
 
 # n dir
 export N_PREFIX="$HOME/n"
