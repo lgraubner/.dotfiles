@@ -14,7 +14,8 @@
 - <kbd>\<leader>sd</kbd> show list of errors in project
 - <kbd>\<leader>\<leader></kbd> show list of buffers
 - <kbd>\<leader>/</kbd> search in open file
-- <kbd>\<leader>sn</kbd> search in neovim config
+- <kbd>\<leader>sN</kbd> search in neovim config
+- <kbd>\<leader>sn</kbd> search in notes
 - <kbd>gd</kbd> go to definition
 - <kbd>gr</kbd> list or go to references
 - <kbd>gI</kbd> go to implementation
