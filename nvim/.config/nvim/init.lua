@@ -621,7 +621,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'prettierd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -673,17 +672,17 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
-        javascript = { { 'prettierd', 'prettier' } },
-        javascriptreact = { { 'prettierd', 'prettier' } },
-        css = { { 'prettierd', 'prettier' } },
-        html = { { 'prettierd', 'prettier' } },
-        json = { { 'prettierd', 'prettier' } },
-        markdown = { { 'prettierd', 'prettier' } },
-        svelte = { { 'prettierd', 'prettier' } },
-        typescript = { { 'prettierd', 'prettier' } },
-        typescriptreact = { { 'prettierd', 'prettier' } },
-        yaml = { { 'prettierd', 'prettier' } },
-        got = { 'gofmt' },
+        javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        css = { 'prettier' },
+        html = { 'prettier' },
+        json = { 'prettier' },
+        markdown = { 'prettier' },
+        svelte = { 'prettier' },
+        typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        yaml = { 'prettier' },
+        go = { 'gofmt' },
       },
     },
   },
