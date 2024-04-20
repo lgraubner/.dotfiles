@@ -1,0 +1,32 @@
+[hub]
+    protocol = https
+[user]
+    name = Lars Graubner
+    email = mail@larsgraubner.de
+[credential]
+    username = lgraubner
+    helper = store
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    editor = vim
+    ignorecase = false
+    excludesfile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs=1,5 -RFX
+[apply]
+    whitespace = nowarn
+[mergetool]
+    keepBackup = false
+[difftool]
+    prompt = false
+[help]
+    autocorrect = 1
+[push]
+    default = current
+[pull]
+    rebase = true
+[init]
+    defaultBranch = main
