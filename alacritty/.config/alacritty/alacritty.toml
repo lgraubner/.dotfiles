@@ -1,4 +1,4 @@
-import = ["/Users/larsgraubner/.config/alacritty/catppuccin/catppuccin-macchiato.toml"]
+import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
 
 [env]
 TERM = "xterm-256color"

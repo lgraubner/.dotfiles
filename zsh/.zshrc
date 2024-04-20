@@ -15,7 +15,7 @@
 # 1. PROMPT
 # -----------------------------------------------------------------------------
 
-export FPATH="$HOME/.zsh/pure:$FPATH"
+export FPATH="$FPATH:$(brew --prefix)/share/zsh/site-functions"
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -33,41 +33,30 @@ compinit
 
 # Create directory and cd into it
 function take() {
-    mkdir -p "$@" && cd "$_";
+  mkdir -p "$@" && cd "$_";
 }
 
 # Open directory
 function o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+    open .;
+  else
+    open "$@";
+  fi;
 }
 
 # Open in editor
 function e() {
-	if [ $# -eq 0 ]; then
-		$EDITOR .;
-	else
-		$EDITOR "$@";
-	fi;
+  if [ $# -eq 0 ]; then
+    $EDITOR .;
+  else
+    $EDITOR "$@";
+  fi;
 }
 
 # move file/folder to trash
 trash () {
   command mv "$@" ~/.Trash;
-}
-
-# create a Node.js project
-create-project () {
-  mkdir -p "$@" && cd "$_";
-  git init
-  npx license $(npm get init.license) -o "$(npm get init.author.name)" > LICENSE
-  npx gitignore node
-  npm init -y
-  git add -A
-  git commit -m "Initial commit"
 }
 
 # backup all GitHub projects
@@ -105,8 +94,7 @@ function daily() {
 # Easy navigation
 alias ..="cd .."
 alias ...="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
+alias ....="cd ../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
@@ -138,9 +126,6 @@ alias fix="git diff --name-only | uniq | xargs $EDITOR"
 
 # remove .DS_Store files
 alias rmdss="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Npm run dev alias
-alias dev="npm run dev"
 
 # Reload shell
 alias reload="exec ${SHELL} -l"
@@ -204,7 +189,3 @@ setopt always_to_end
 # zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 [ -s /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# homebrew
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"

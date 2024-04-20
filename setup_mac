@@ -1,0 +1,176 @@
+#!/usr/bin/env bash
+
+## PRECONDITIONS
+# 1)
+# Enable App Management permissions for Terminal
+# (System Settings -> Privacy & Security)
+#
+# 2)
+# https://docs.brew.sh/Installation#macos-requirements
+# xcode-select --install
+
+set -e
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  printf "\\n$fmt\\n" "$@"
+}
+
+ask_for_sudo() {
+    # Ask for the administrator password upfront.
+
+    sudo -v &> /dev/null
+
+    # Update existing `sudo` time stamp
+    # until this script has finished.
+    #
+    # https://gist.github.com/cowboy/3118588
+
+    # Keep-alive: update existing `sudo` time stamp until script has finished
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+}
+
+# cache sudo password
+fancy_echo "Caching sudo password..."
+ask_for_sudo
+
+## Homebrew
+#
+# install homebrew
+if test ! $(which brew); then
+  fancy_echo "Installing homebrew..."
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # add Homebrew to path
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+brew update
+brew upgrade
+
+PACKAGES=(
+    htop
+    diff-so-fancy
+    ncdu
+    exiftool
+    git
+    zsh
+    zsh-completions
+    curl
+    n
+    neovim
+    ripgrep
+    fd
+    stow
+    fzf
+    go
+    gopls
+    ansible
+    tmux
+    bettertouchtool
+    wget
+    jq
+    zsh-autosuggestions
+    pure
+)
+
+fancy_echo "Installing packages..."
+brew install ${PACKAGES[@]}
+
+APPS=(
+    alfred
+    firefox
+    visual-studio-code
+    imageoptim
+    spotify
+    docker
+    font-fira-code
+    obsidian
+    insomnia
+    alacritty
+
+    # optional:
+    #
+    # veracrypt
+    # libreoffice
+    # nextcloud
+    # discord
+)
+
+fancy_echo "Installing apps..."
+brew install --cask ${APPS[@]}
+
+fancy_echo "Cleaning up Homebrew stuff..."
+brew cleanup
+
+## Tmux and Alacritty settings and dependencies
+#
+# install tmux plugin manager
+if [ ! -d $HOME/.tmux/plugins/tpm ]; then
+    fancy_echo "Installing Tmux Plugin Manager..."
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+fi
+
+# install catppuccin macchiato alacritty theme
+if [ ! -f $HOME/.config/alacritty/catppuccin-macchiato.toml ]; then
+    fancy_echo "Installing Alacritty Catppuccin theme..."
+    curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
+fi
+
+## Misc
+#
+# install npm completions
+npm completion > /opt/homebrew/share/zsh/site-functions/npm
+
+# install Node LTS
+fancy_echo "Installing Node LTS"
+n lts
+
+# create folder
+mkdir -p $HOME/code
+mkdir -p $HOME/Notes
+
+
+# symlink files
+./install
+
+## MacOS settings
+#
+# lower key repeat delay
+# normal minimum is 15 (225ms)
+defaults write -g InitialKeyRepeat -int 10
+
+# normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 1
+
+# change screenshot location to ~/Screenshots
+mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Screenshots
+
+# don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# disabling press-and-hold for keys in favor of a key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# showing all filename extensions in Finder by default
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# disabling the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+
+killall SystemUIServer
+
+cd $WORKSPACE
+
+printf "
+All done!
+"
+
+## Finish
+#
+# reload shell to apply changes
+exec ${SHELL} -l
+

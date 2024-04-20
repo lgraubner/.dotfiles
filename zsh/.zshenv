@@ -14,8 +14,8 @@ export DOTFILES="$HOME/.dotfiles"
 export DAILY="$HOME/Notes/Daily"
 
 # n dir
-export N_PREFIX="$HOME/n"
-export PATH="$HOME/n/bin:$PATH";
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH";
 
 # load additional non versioned local vars
 if [[ -f $HOME/.zshenv.local ]]; then
