@@ -116,7 +116,7 @@ alias c="clear"
 alias flushDNS="sudo killall -HUP mDNSResponder; sleep 2;"
 
 # Pipe public key to clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="more ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Get public ip
 alias pubip="curl -w '\n' https://api.ipify.org"
