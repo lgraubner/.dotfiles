@@ -138,12 +138,15 @@ mkdir -p $HOME/Notes
 
 ## MacOS settings
 #
+# disabling press-and-hold for keys in favor of a key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 # lower key repeat delay
 # normal minimum is 15 (225ms)
-defaults write -g InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # normal minimum is 2 (30 ms)
-defaults write -g KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # change screenshot location to ~/Screenshots
 mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Screenshots
@@ -151,14 +154,18 @@ mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Scre
 # don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-# disabling press-and-hold for keys in favor of a key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # showing all filename extensions in Finder by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # disabling the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 
 killall SystemUIServer
