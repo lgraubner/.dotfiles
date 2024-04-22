@@ -132,6 +132,8 @@ N_PREFIX="$HOME/.n" n lts
 mkdir -p $HOME/code
 mkdir -p $HOME/Notes
 
+# copy git config
+cp ./git/.gitconfig ~/.gitconfig
 
 # symlink files
 ./install

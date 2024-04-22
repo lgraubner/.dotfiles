@@ -14,6 +14,13 @@ git clone https://github.com/lgraubner/dotfiles.git && ./dotfiles/setup_mac
 
 This will install all needed programs and copies the dotfiles into your home directory.
 
+## Set Git details
+
+```
+git config --global user.name "Mona Lisa"
+git config --global user.email "mona@lisa.com"
+```
+
 ## Create SSH-key
 
 Follow the steps listed here: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
