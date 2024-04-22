@@ -1,11 +1,5 @@
 [hub]
     protocol = https
-[user]
-    name = Lars Graubner
-    email = mail@larsgraubner.de
-[credential]
-    username = lgraubner
-    helper = store
 [color]
     diff = auto
     status = auto
