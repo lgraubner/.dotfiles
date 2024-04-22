@@ -126,7 +126,7 @@ npm completion > /opt/homebrew/share/zsh/site-functions/npm
 
 # install Node LTS
 fancy_echo "Installing Node LTS"
-n lts
+N_PREFIX="$HOME/.n" n lts
 
 # create folder
 mkdir -p $HOME/code
