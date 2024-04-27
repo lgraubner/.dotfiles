@@ -216,6 +216,9 @@ vim.opt.expandtab = true
 -- Allow W for write file for accidental shift presses
 vim.api.nvim_create_user_command('W', 'write', { force = true })
 
+-- force E for Netrw (overriden by ESLint LSP EslintFixAll)
+vim.api.nvim_create_user_command('E', 'Explore', { force = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
