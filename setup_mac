@@ -125,8 +125,12 @@ fi
 npm completion > /opt/homebrew/share/zsh/site-functions/npm
 
 # install Node LTS
-fancy_echo "Installing Node LTS"
+fancy_echo "Installing Node LTS..."
 N_PREFIX="$HOME/.n" n lts
+
+# install PNPM via brew without dependencies (Node) to avoid overwriting n installed Node
+fancy_echo "Installing PNPM..."
+brew install --ignore-dependencies pnpm
 
 # create folder
 mkdir -p $HOME/code
