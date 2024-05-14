@@ -35,3 +35,4 @@
 - <kbd>\<leader>a</kbd> add harpoon mark for current file
 - <kbd>\<C-e></kbd> show list of harpoon marks
 - <kbd>\<leader>1</kbd> open harpoon mark 1 etc.
+- <kbd>\<leader>tt</kbd> toggle markdown checkbox
