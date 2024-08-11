@@ -90,6 +90,7 @@ APPS=(
     obsidian
     insomnia
     alacritty
+    gimp
 
     # optional:
     #
@@ -128,9 +129,8 @@ npm completion > /opt/homebrew/share/zsh/site-functions/npm
 fancy_echo "Installing Node LTS..."
 N_PREFIX="$HOME/.n" n lts
 
-# install PNPM via brew without dependencies (Node) to avoid overwriting n installed Node
 fancy_echo "Installing PNPM..."
-brew install --ignore-dependencies pnpm
+npm install -g pnpm
 
 # create folder
 mkdir -p $HOME/code
