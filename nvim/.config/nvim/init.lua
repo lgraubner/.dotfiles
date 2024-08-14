@@ -233,6 +233,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- set variable to toggle format on save with conform
+vim.api.nvim_create_user_command('FormatToggle', function(args)
+  local is_global = not args.bang
+  if is_global then
+    vim.g.disable_autoformat = not vim.g.disable_autoformat
+    if vim.g.disable_autoformat then
+      print 'Autoformat-on-save disabled globally'
+    else
+      print 'Autoformat-on-save enabled globally'
+    end
+  else
+    vim.b.disable_autoformat = not vim.b.disable_autoformat
+    if vim.b.disable_autoformat then
+      print 'Autoformat-on-save disabled for this buffer'
+    else
+      print 'Autoformat-on-save enabled for this buffer'
+    end
+  end
+end, {
+  desc = 'Toggle autoformat-on-save',
+  bang = true,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -661,10 +684,16 @@ require('lazy').setup({
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
+
         return {
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],

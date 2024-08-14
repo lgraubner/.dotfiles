@@ -36,3 +36,4 @@
 - <kbd>\<C-e></kbd> show list of harpoon marks
 - <kbd>\<leader>1</kbd> open harpoon mark 1 etc.
 - <kbd>\<leader>tt</kbd> toggle markdown checkbox
+- <kbd>:FormatToggle</kbd> Toggle format on save
