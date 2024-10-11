@@ -118,6 +118,12 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Disable visual line break
+vim.opt.wrap = false
+
+-- Show visual indicator at 80 chars column
+vim.opt.colorcolumn = '80'
+
 -- Save undo history
 vim.opt.undofile = true
 
