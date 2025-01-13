@@ -54,7 +54,6 @@ PACKAGES=(
     htop
     diff-so-fancy
     ncdu
-    exiftool
     git
     zsh
     zsh-completions
@@ -67,20 +66,18 @@ PACKAGES=(
     fzf
     go
     gopls
-    ansible
     tmux
-    bettertouchtool
     wget
     jq
     zsh-autosuggestions
     pure
+    libpq
 )
 
 fancy_echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 APPS=(
-    alfred
     firefox
     visual-studio-code
     imageoptim
@@ -90,7 +87,7 @@ APPS=(
     obsidian
     insomnia
     alacritty
-    gimp
+    raycast
 
     # optional:
     #
@@ -159,7 +156,6 @@ mkdir -p ~/Screenshots && defaults write com.apple.screencapture location ~/Scre
 
 # don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
-
 
 # showing all filename extensions in Finder by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true

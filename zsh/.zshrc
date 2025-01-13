@@ -60,7 +60,7 @@ trash () {
 }
 
 # backup all GitHub projects
-function backup-github() {
+function backup_github() {
   if [[ -z $GITHUB_ACCESS_TOKEN ]]; then
     echo "Please set env variable GITHUB_ACCESS_TOKEN";
   else
@@ -113,7 +113,7 @@ alias dl="cd ~/Download"
 alias c="clear"
 
 # Reset DNS cache
-alias flushDNS="sudo killall -HUP mDNSResponder; sleep 2;"
+alias flushdns="sudo killall -HUP mDNSResponder; sleep 2;"
 
 # Pipe public key to clipboard.
 alias pubkey="more ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
@@ -156,7 +156,7 @@ alias gac="git add -A && git commit -m"
 alias gc="git commit --message"
 alias gcb="git checkout -b"
 alias gco="git checkout"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias gcd="git checkout develop"
 alias gd="git diff"
 alias gi="git init"
