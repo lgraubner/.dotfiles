@@ -72,6 +72,7 @@ PACKAGES=(
     zsh-autosuggestions
     pure
     libpq
+    pnpm
 )
 
 fancy_echo "Installing packages..."
@@ -86,7 +87,7 @@ APPS=(
     font-fira-code
     obsidian
     insomnia
-    alacritty
+    ghostty
     raycast
 
     # optional:
@@ -103,18 +104,12 @@ brew install --cask ${APPS[@]}
 fancy_echo "Cleaning up Homebrew stuff..."
 brew cleanup
 
-## Tmux and Alacritty settings and dependencies
+## Tmux and dependencies
 #
 # install tmux plugin manager
 if [ ! -d $HOME/.tmux/plugins/tpm ]; then
     fancy_echo "Installing Tmux Plugin Manager..."
     git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-fi
-
-# install catppuccin macchiato alacritty theme
-if [ ! -f $HOME/.config/alacritty/catppuccin-macchiato.toml ]; then
-    fancy_echo "Installing Alacritty Catppuccin theme..."
-    curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 fi
 
 ## Misc
@@ -125,9 +120,6 @@ npm completion > /opt/homebrew/share/zsh/site-functions/npm
 # install Node LTS
 fancy_echo "Installing Node LTS..."
 N_PREFIX="$HOME/.n" n lts
-
-fancy_echo "Installing PNPM..."
-npm install -g pnpm
 
 # create folder
 mkdir -p $HOME/code
