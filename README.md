@@ -19,6 +19,7 @@ This will install all needed programs and copies the dotfiles into your home dir
 ```
 git config --global user.name "Mona Lisa"
 git config --global user.email "mona@lisa.com"
+git config --global core.ignorecase false
 ```
 
 ## Create SSH-key
