@@ -21,3 +21,10 @@ export PATH="$N_PREFIX/bin:$PATH";
 if [[ -f $HOME/.zshenv.local ]]; then
     source $HOME/.zshenv.local
 fi
+
+# pnpm
+export PNPM_HOME="/Users/larsgraubner/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
