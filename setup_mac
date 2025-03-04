@@ -86,7 +86,7 @@ APPS=(
     docker
     font-fira-code
     obsidian
-    insomnia
+    bruno
     ghostty
     raycast
 
