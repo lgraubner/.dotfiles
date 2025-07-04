@@ -31,20 +31,6 @@ compinit
 # 3. FUNCTIONS
 # -------------------------------------
 
-# Create directory and cd into it
-function take() {
-  mkdir -p "$@" && cd "$_";
-}
-
-# Open directory
-function o() {
-  if [ $# -eq 0 ]; then
-    open .;
-  else
-    open "$@";
-  fi;
-}
-
 # Open in editor
 function e() {
   if [ $# -eq 0 ]; then
@@ -91,13 +77,6 @@ function daily() {
 # 4. ALIASES
 # -------------------------------------
 
-# Easy navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias ~="cd ~"
-alias -- -="cd -"
-
 # ls alias
 alias lsa="ls -FGlAhp"
 
@@ -108,9 +87,6 @@ alias fs="stat -f '%z bytes'"
 alias w="cd $WORKSPACE"
 alias d="cd ~/Desktop"
 alias dl="cd ~/Download"
-
-# clear console
-alias c="clear"
 
 # Reset DNS cache
 alias flushdns="sudo killall -HUP mDNSResponder; sleep 2;"
@@ -150,27 +126,7 @@ function current_branch() {
 }
 
 # git
-alias gs="git status -s"
-alias ga="git add"
-alias gac="git add -A && git commit -m"
-alias gc="git commit --message"
-alias gcb="git checkout -b"
-alias gco="git checkout"
-alias gcm="git checkout main"
-alias gcd="git checkout develop"
-alias gd="git diff"
-alias gi="git init"
-alias gcl="git clone"
-alias gp="git push origin HEAD"
-alias gpf="git push origin $(current_branch) -f"
-alias gpl="git pull origin $(current_branch) --rebase"
-alias gl="git log -10 --reverse --pretty=oneline"
 alias gundo="git reset --soft HEAD~"
-alias gam="git commit --amend"
-alias gf="git fetch"
-alias grbc="git rebase --continue"
-alias gsta="git stash"
-alias gstp="git stash pop"
 
 # -------------------------------------
 # 5. KEY BINDINGS
