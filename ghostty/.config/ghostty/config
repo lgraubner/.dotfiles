@@ -4,3 +4,4 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 adjust-cell-height = 20%
+font-feature = -calt
