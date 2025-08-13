@@ -84,7 +84,6 @@ APPS=(
     imageoptim
     spotify
     docker
-    font-fira-code
     obsidian
     bruno
     ghostty
@@ -92,7 +91,6 @@ APPS=(
 
     # optional:
     #
-    # veracrypt
     # libreoffice
     # nextcloud
     # discord

@@ -1,8 +1,6 @@
 theme = catppuccin-mocha
-font-family = Fira Code
-font-size = 15
+font-size = 15.5
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 adjust-cell-height = 20%
-font-feature = -calt
