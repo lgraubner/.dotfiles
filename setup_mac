@@ -73,6 +73,7 @@ PACKAGES=(
     pure
     libpq
     pnpm
+    exiftool
 )
 
 fancy_echo "Installing packages..."
