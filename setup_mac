@@ -74,6 +74,7 @@ PACKAGES=(
     libpq
     pnpm
     exiftool
+    yt-dlp
 )
 
 fancy_echo "Installing packages..."
