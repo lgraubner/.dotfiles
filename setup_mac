@@ -77,6 +77,9 @@ PACKAGES=(
     yt-dlp
 )
 
+# unlink node package which is installed as dependency, but later installed via n
+brew unlink node
+
 fancy_echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
