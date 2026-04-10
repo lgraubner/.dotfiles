@@ -59,7 +59,7 @@ PACKAGES=(
     zsh-completions
     curl
     n
-    neovim
+    bob
     ripgrep
     fd
     stow
@@ -106,6 +106,13 @@ brew install --cask ${APPS[@]}
 
 fancy_echo "Cleaning up Homebrew stuff..."
 brew cleanup
+
+## Neovim
+if test ! $(which nvim); then
+    fancy_echo "Installing Neovim v0.11.7..."
+    bob use v0.11.7
+fi
+
 
 ## Tmux and dependencies
 #
