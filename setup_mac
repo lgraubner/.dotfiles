@@ -93,6 +93,7 @@ APPS=(
     bruno
     ghostty
     raycast
+    puremac
 
     # optional:
     #
