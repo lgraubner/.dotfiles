@@ -94,6 +94,7 @@ APPS=(
     ghostty
     raycast
     puremac
+    claude-code@latest
 
     # optional:
     #
