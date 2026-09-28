@@ -75,6 +75,7 @@ PACKAGES=(
     pnpm
     exiftool
     yt-dlp
+    direnv
 )
 
 # unlink node package which is installed as dependency, but later installed via n

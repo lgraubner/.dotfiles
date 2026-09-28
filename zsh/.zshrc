@@ -145,3 +145,6 @@ setopt always_to_end
 # zsh autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 [ -s /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# direnv
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"

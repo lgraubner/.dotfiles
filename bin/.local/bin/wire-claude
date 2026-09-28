@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+## sets up a per-customer claude config dir for the current folder via direnv
+
+set -euo pipefail
+
+target=$PWD
+
+if [[ $target == "$HOME" ]]; then
+    echo "error: refusing to put .envrc in \$HOME, it would apply to every folder" >&2
+    exit 1
+fi
+
+if ! command -v direnv > /dev/null; then
+    echo "error: direnv is not installed (brew install direnv)" >&2
+    exit 1
+fi
+
+# customer name -> lowercase, non-alphanumerics to single dashes, no leading/trailing dash
+customer=${1:-}
+if [[ -z $customer ]]; then
+    read -rp "Customer name: " customer
+fi
+customer=$(echo "$customer" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+
+if [[ -z $customer ]]; then
+    echo "error: customer name is empty after normalizing" >&2
+    exit 1
+fi
+
+config_dir="$HOME/.claude-$customer"
+if [[ -d $config_dir ]]; then
+    echo "config dir $config_dir already exists, reusing it"
+else
+    mkdir -p "$config_dir"
+fi
+
+# .envrc: keep other content, replace any existing CLAUDE_CONFIG_DIR line
+envrc="$target/.envrc"
+envrc_line="export CLAUDE_CONFIG_DIR=\"\$HOME/.claude-$customer\""
+if [[ -f $envrc ]]; then
+    grep -v 'CLAUDE_CONFIG_DIR' "$envrc" > "$envrc.tmp" || true
+    mv "$envrc.tmp" "$envrc"
+fi
+echo "$envrc_line" >> "$envrc"
+
+# global gitignore (git falls back to $XDG_CONFIG_HOME/git/ignore when unset)
+gitignore=$(git config --global core.excludesFile || true)
+gitignore=${gitignore/#\~/$HOME}
+gitignore=${gitignore:-${XDG_CONFIG_HOME:-$HOME/.config}/git/ignore}
+
+if ! { [[ -f $gitignore ]] && grep -qxF '.envrc' "$gitignore"; }; then
+    read -rp "Add .envrc to global gitignore ($gitignore)? [y/N] " answer
+    if [[ $answer =~ ^[Yy]$ ]]; then
+        mkdir -p "$(dirname "$gitignore")"
+        # make sure we don't glue onto a last line without newline
+        if [[ -s $gitignore ]] && [[ -n $(tail -c1 "$gitignore") ]]; then
+            echo >> "$gitignore"
+        fi
+        echo '.envrc' >> "$gitignore"
+    fi
+fi
+
+direnv allow "$target"
+
+tilde="~" # bash 5 would expand a literal ~ in the replacement back to $HOME
+echo
+echo "Successfully set up claude for $customer."
+echo "  config dir: ${config_dir/#$HOME/$tilde}"
+echo "  .envrc:     ${envrc/#$HOME/$tilde}"
+echo
+echo "Next: run claude and /login with the $customer account."
