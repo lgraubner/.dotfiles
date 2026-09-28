@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## sets up a per-customer claude config dir for the current folder via direnv
+## sets up a separate claude config dir (own login, mcp, skills, settings) for the current folder via direnv
 
 set -euo pipefail
 
@@ -16,19 +16,19 @@ if ! command -v direnv > /dev/null; then
     exit 1
 fi
 
-# customer name -> lowercase, non-alphanumerics to single dashes, no leading/trailing dash
-customer=${1:-}
-if [[ -z $customer ]]; then
-    read -rp "Customer name: " customer
+# env name -> lowercase, non-alphanumerics to single dashes, no leading/trailing dash
+name=${1:-}
+if [[ -z $name ]]; then
+    read -rp "Environment name: " name
 fi
-customer=$(echo "$customer" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
+name=$(echo "$name" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//')
 
-if [[ -z $customer ]]; then
-    echo "error: customer name is empty after normalizing" >&2
+if [[ -z $name ]]; then
+    echo "error: environment name is empty after normalizing" >&2
     exit 1
 fi
 
-config_dir="$HOME/.claude-$customer"
+config_dir="$HOME/.claude-$name"
 if [[ -d $config_dir ]]; then
     echo "config dir $config_dir already exists, reusing it"
 else
@@ -37,7 +37,7 @@ fi
 
 # .envrc: keep other content, replace any existing CLAUDE_CONFIG_DIR line
 envrc="$target/.envrc"
-envrc_line="export CLAUDE_CONFIG_DIR=\"\$HOME/.claude-$customer\""
+envrc_line="export CLAUDE_CONFIG_DIR=\"\$HOME/.claude-$name\""
 if [[ -f $envrc ]]; then
     grep -v 'CLAUDE_CONFIG_DIR' "$envrc" > "$envrc.tmp" || true
     mv "$envrc.tmp" "$envrc"
@@ -65,8 +65,8 @@ direnv allow "$target"
 
 tilde="~" # bash 5 would expand a literal ~ in the replacement back to $HOME
 echo
-echo "Successfully set up claude for $customer."
+echo "Successfully set up claude environment $name."
 echo "  config dir: ${config_dir/#$HOME/$tilde}"
 echo "  .envrc:     ${envrc/#$HOME/$tilde}"
 echo
-echo "Next: run claude and /login with the $customer account."
+echo "Next: run claude in this folder (/login if this env needs its own account)."
