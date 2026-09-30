@@ -55,6 +55,7 @@ PACKAGES=(
     hunk
     ncdu
     git
+    gh
     zsh
     zsh-completions
     curl
