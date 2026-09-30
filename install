@@ -6,7 +6,7 @@ fi
 
 pushd $DOTFILES
 
-stowFolders=('zsh' 'tmux' 'nvim' 'misc' 'bin' 'ghostty' 'ssh')
+stowFolders=('zsh' 'tmux' 'nvim' 'misc' 'bin' 'ghostty' 'ssh' 'hunk')
 
 for folder in $stowFolders; do
     stow -R $folder

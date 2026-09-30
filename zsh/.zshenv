@@ -29,4 +29,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-. "/Users/larsgraubner/.local/share/bob/env/env.sh"
+source "/Users/larsgraubner/.local/share/bob/env/env.sh"

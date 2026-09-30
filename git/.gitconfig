@@ -9,13 +9,16 @@
 	editor = vim
 	ignorecase = false
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=1,5 -RFX
+	pager = hunk pager
 [apply]
 	whitespace = nowarn
 [mergetool]
 	keepBackup = false
 [difftool]
+	tool = hunk
 	prompt = false
+[difftool "hunk"]
+	cmd = hunk difftool \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [help]
 	autocorrect = 1
 [push]

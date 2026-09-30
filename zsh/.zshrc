@@ -148,3 +148,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 
 # direnv
 command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+
+# fnm
+command -v fnm >/dev/null && eval "$(fnm env --use-on-cd --shell zsh)"
+command -v fnm >/dev/null && eval "$(fnm completions --shell zsh)"

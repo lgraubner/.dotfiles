@@ -52,13 +52,13 @@ brew upgrade
 
 PACKAGES=(
     htop
-    diff-so-fancy
+    hunk
     ncdu
     git
     zsh
     zsh-completions
     curl
-    n
+    fnm
     bob
     ripgrep
     fd
