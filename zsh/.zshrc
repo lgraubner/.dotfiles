@@ -54,7 +54,7 @@ function backup_github() {
   fi;
 }
 
-function daily() {
+function daily_open() {
   year=$(date +"%Y");
   month=$(date +"%m");
 
@@ -70,6 +70,32 @@ function daily() {
   fi;
 
   nvim '+normal GA' $filePath;
+}
+
+function _daily_cleanup() {
+  local keep=$1 old
+  tmux list-sessions -F '#S' 2>/dev/null | grep '^daily-' | grep -vx "$keep" |
+    while read -r old; do
+      tmux send-keys -t "=$old:" Escape ':silent! wa | qa!' Enter
+      sleep 0.3
+      tmux kill-session -t "=$old" 2>/dev/null
+    done
+}
+
+function daily() {
+  local session="daily-$(date +%Y-%m-%d)"
+
+  if [[ -n $TMUX ]]; then
+    if [[ $(tmux display -p '#S') == $session ]]; then
+      daily_open
+    else
+      tmux display-popup -E -w 80% -h 80% "env -u TMUX zsh -ic daily"
+    fi
+    return
+  fi
+
+  _daily_cleanup $session
+  tmux new-session -A -s $session "zsh -ic daily_open"
 }
 
 
