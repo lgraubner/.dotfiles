@@ -12,4 +12,6 @@ for folder in $stowFolders; do
     stow -R $folder
 done
 
+git config core.hooksPath .githooks
+
 popd
